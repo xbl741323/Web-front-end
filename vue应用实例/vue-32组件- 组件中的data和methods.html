@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-32</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+    </style>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <mycom1></mycom1>
+    </div>
+    <script>
+        //1、组件可以有自己的data数据
+        //2、组件中的data和实例中的data有点不一样，实例中的data可以是一个对象，但是组件中的data必须是一个方法
+        //3、组件中的data必须为一个方法外，该方法内部必须返回一个对象才行
+        //4、组件中的data数据和实例中的data数据使用方式完全一样！！！
+        Vue.component('mycom1', {
+            template: '<h3>这是一个全局的Vue.extend组件---{{msg}}</h3>',
+            data: function () {
+                return {
+                    msg:'这是组件中data定义的数据'
+                }
+            }
+        })
+        var vm = new Vue({
+            el: ".app",
+            data: {
+
+            },
+            methods: {
+
+            },
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>加载进度条 jq</title>
+    <style type="text/css">
+        body {
+            background-color: #353b48;
+        }
+
+        .box {
+            width: 400px;
+            height: 200px;
+            background-color: #353b48;
+            margin: 250px auto;
+        }
+
+        .box p {
+            font-size: 1.5rem;
+            text-align: center;
+            color: #8aaaff;
+            line-height: 80px;
+        }
+
+        .t1 {
+            width: 400px;
+            height: 10px;
+            background-color: #e6eeff;
+            border-radius: 5px;
+        }
+
+        .t1 .t2 {
+            /* width: 400px; */
+            width: 0px;
+            height: 10px;
+            background: linear-gradient(90deg, #8aaaff, #fa8cff);
+            border: 1px solid;
+            border-radius: 5px;
+        }
+    </style>
+    <script src="/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+         var index = 0;
+         var timer;
+        timer =  setInterval(function(){
+            index+=2;
+            $("p").text(index+"%");
+            $(".t2").css({
+                width: index*4
+            });
+            if(index==100){
+                clearInterval(timer);
+            };
+        },50);
+      });
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <p>100%</p>
+        <div class="t1">
+            <div class="t2"></div>
+        </div>
+    </div>
+</body>
+
+</html>

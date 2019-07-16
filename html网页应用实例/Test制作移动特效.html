@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>做一个三角形小案例</title>
+	<style type="text/css">
+		body{
+			background: white;
+		}
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		ul{
+			list-style: none;
+		}
+		.tx{
+			width: 1000px;
+			height: 200px;
+			background-color: lightyellow;
+			margin: 20px auto;
+		}
+		.tx li{
+           float: left;
+           width: 100px;
+           height: 200px;
+           background-color: gray;
+           margin-left: 50px;
+           transition: transform 0.3s;
+		}
+		.tx li:hover{
+			cursor: pointer;
+			transform: translate(-10px,0px);
+		}
+		.tx1{
+			width: 1000px;
+			height: 200px;
+			background-color: lightyellow;
+			margin: 100px auto;
+		}
+		.tx1 li{
+           float: left;
+           width: 100px;
+           height: 200px;
+           background-color: gray;
+           margin-left: 50px;
+           transition: transform 0.3s;
+		}
+		.tx1 li:hover{
+			cursor: pointer;
+			transform: scale(1.1);
+		}
+		.tx2{
+			width: 1000px;
+			height: 200px;
+			background-color: lightyellow;
+			margin: 100px auto;
+		}
+		.tx2 li{
+           float: left;
+           width: 100px;
+           height: 200px;
+           background-color: gray;
+           margin-left: 50px;
+           transition: transform 0.3s;
+		}
+		.tx2 li:hover{
+			cursor: pointer;
+			transform: rotateX(180deg);
+		}
+		.tx2 .dc2:hover{
+			cursor: pointer;
+			transform: rotateY(180deg);
+		}
+		.tx2 .dc3:hover{
+			cursor: pointer;
+			transform: rotateZ(180deg);
+		}
+		.tx2 .dc4:hover{
+			cursor: pointer;
+			transform: rotate3d(90deg,90deg,90deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="tx">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<div class="tx1">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<div class="tx2">
+		<ul>
+			<li></li>
+			<li class="dc2"></li>
+			<li class="dc3"></li>
+			<li class="dc4"></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	
+</body>
+</html>

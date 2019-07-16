@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>dom增删改</title>
+	<style type="text/css">
+		body{
+			background-color: lightyellow;
+		}
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		ul{
+			list-style: none;
+		}
+		.t1{
+			float: left;
+			width: 300px;
+			height: 400px;
+			border: 1px solid;
+			margin-top: 50px;
+			margin-left: 600px;
+		}	
+		.t1 div{
+			float: left;
+			width: 260px;
+			margin-left: 10px;
+			font-size: 14px;
+			margin-top: 30px;
+			border: 1px solid;
+			/*background-color: lightblue;*/
+		}
+		.t1 .t3 li{
+            float: left;
+            width: 40px;
+            height: 20px;
+            margin-left: 10px;
+            background-color: pink;
+            text-align: center;
+		}
+		.t2{
+			float: left;
+			width: 300px;
+			height: 400px;
+			border: 1px solid;
+			margin-top: 50px;
+			margin-left: 30px;
+		}
+		.t2 li{
+			float: left;
+			width: 280px;
+			height: 20px;
+			margin-top: 40px;
+			background-color: pink;
+		}
+		.t2 li input{
+			float: left;
+			display: block;
+			width: 280px;
+			height: 20px;
+		}			
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var btn1 = document.getElementById("btn1");
+			btn1.onclick = function(){
+				var city = document.getElementById("city");
+				var gz = document.createElement("li");
+				gz.innerHTML = "广州";
+				city.appendChild(gz);
+			};
+		    var btn2 = document.getElementById("btn2");
+		    btn2.onclick = function(){
+		    	var city = document.getElementById("city");
+		    	var bj = document.getElementById("bj");
+		    	var gz = document.createElement("li");
+				gz.innerHTML = "广州";
+				city.insertBefore(gz,bj);
+		    };
+		    var btn3 = document.getElementById("btn3");
+		    btn3.onclick = function(){
+		    	var bj = document.getElementById("bj");
+		    	var gz = document.createElement("li");
+				gz.innerHTML = "广州";
+				city.replaceChild(gz,bj);
+		    };
+		    var btn4 = document.getElementById("btn4");
+		    btn4.onclick = function(){
+		    	var city = document.getElementById("city");
+		    	var bj = document.getElementById("bj");
+		    	city.removeChild(bj);
+		    };
+		    var btn5 = document.getElementById("btn5");
+		    btn5.onclick = function(){
+		    	var city = document.getElementById("city");
+		    	alert(city.innerHTML);
+		    };
+		    var btn6 = document.getElementById("btn6");
+		    btn6.onclick = function(){
+		    	var bj = document.getElementById("bj");
+		    	bj.innerHTML = "台湾";
+		    };
+		};
+	  
+	</script>
+</head>
+<body>
+	<div class="t1">
+		<div>你喜欢哪个城市？</div>
+		<div class="t3">
+			<ul id="city">
+				<li id="bj">北京</li>
+				<li>上海</li>
+				<li>东京</li>
+				<li>首尔</li>
+			</ul>
+		</div>
+	</div>
+	<div class="t2">
+		<ul>
+			<li><input type="submit" name="" value="创建一个广州节点到#city下" id="btn1"></li>
+			<li><input type="submit" name="" value="将广州节点添加到#bj前面" id="btn2"></li>
+			<li><input type="submit" name="" value="使用广州节点替换#bj" id="btn3"></li>
+			<li><input type="submit" name="" value="删除#bj节点" id="btn4"></li>
+			<li><input type="submit" name="" value="读取#city下的HTML代码" id="btn5"></li>
+			<li><input type="submit" name="" value="设置#bj里的HTML代码" id="btn6"></li>
+		</ul>
+	</div>
+
+</body>
+</html>

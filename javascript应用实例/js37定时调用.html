@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>定时调用</title>
+	<style type="text/css">
+		body{
+			background-color: lightyellow;
+		}
+	</style>
+	<script src="jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+	    window.onload = function(){
+	    var t1 = document.querySelector(".t1");
+	  // for(var i=0;i<100;i++){
+   //           t1.innerHTML = i;
+   //           alert(i);
+	  // };
+	  var num = 0;
+	  var timr = setInterval(function(){
+	  	t1.innerHTML = num++;
+	  	if(num == 11){
+            clearInterval(timr);
+	  	};
+	  },1000);
+	  // alert(timr);
+	    	
+	};
+	</script>
+</head>
+<body>
+    <h1 class="t1"></h1>
+	
+</body>
+</html>

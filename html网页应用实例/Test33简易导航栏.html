@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>制作一个简易导航栏</title>
+	<style type="text/css">
+		body{
+             background-color: white;
+		    }
+		   *{
+		    	margin: 0px;
+		    	padding: 0px;
+		    }
+		    ul{
+                list-style: none;
+		    }
+		    .nav{
+		    	width: 1000px;
+		    	height: 35px;
+		    	background-color: white;
+		    	margin: 100px auto;
+		    	/*overflow: hidden;*/
+		    }
+		    .nav li{
+		    	float: left;
+		    	width: 125px;
+		    	height: 30px;
+		    	font-size: 15px;
+		    	/*overflow: hidden;*/
+                text-align: center;
+                margin: 0px auto;
+		    }
+		    a{
+		    	display: block;
+		    	padding: 5px 0px;
+		    	text-decoration: none;
+		    	color: black;
+		    }
+		    .a2{
+                background-image: url(images/x4.png);
+		    }
+		    .a1{
+                background-color: lightblue;
+                background-image: url(images/x5.png);
+                color: white;
+		    }
+		    .a11{
+                color: white;
+		    }
+		    .a11:hover{
+                color: white;
+                text-decoration:underline;
+                border-top: 5px solid pink;
+                position: relative;
+                top: -5px;
+		    }
+		    a:hover{
+                color: white;
+                text-decoration:underline;
+                background-color: lightblue;
+                border-top: 5px solid pink;
+                position: relative;
+                top: -5px;
+		    }
+
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<ul>
+			<li class="a1"><a class="a11" href="">首页</a></li>
+			<li class="a2"><a href="a2">动画</a></li>
+			<li class="a2"><a href="a2">番剧</a></li>
+			<li class="a2"><a href="a2">国创</a></li>
+			<li class="a2"><a href="a2">音乐</a></li>
+			<li class="a2"><a href="a2">舞蹈</a></li>
+			<li class="a2"><a href="a2">放映厅</a></li>
+			<li class="a2"><a href="a2">小黑屋</a></li>
+		</ul>
+	</div>
+
+</body>
+</html>

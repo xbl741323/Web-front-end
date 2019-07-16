@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-11</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+    </style>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- 注意：在遍历对象身上的键值对的时候，除了有val和key外，还有一个索引i-->
+        <p v-for="(val,key,i) in user">值是：{{val}}---键是：{{key}}--索引是：{{i}}</p>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: ".app",
+            data: {
+                user: {
+                    id: 1,
+                    name: 'zs',
+                    gender: '男'
+                }
+            },
+            methods: {
+
+            },
+        })
+    </script>
+</body>
+
+</html>

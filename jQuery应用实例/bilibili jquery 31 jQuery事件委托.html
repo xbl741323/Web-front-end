@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>bili jQuery jQuery事件委托</title>
+	<style type="text/css">
+		body{
+			background-color: #fff;
+			height: 2000px;
+		}
+		ul{
+			list-style: none;
+		}
+	</style>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	/*
+	1、什么是事件委托
+	拜托别人帮忙做事并且将结果反馈给自己
+	*/
+	$(function(){
+		 $(".btn01").click(function(){
+		 	$("#box").append("<li>我是新的li</li>");
+		 });
+		 $("ul>li").click(function(){
+		 	alert($(this).html());
+		 });
+		 $("#box").delegate("li","click",function(){
+		 	alert($(this).html());
+		 });
+    
+	});
+</script>
+</head>
+<body>
+	<ul id="box">
+		<li>我是第1个li</li>
+        <li>我是第2个li</li>
+		<li>我是第3个li</li>
+	</ul>
+	<button class="btn01">按钮</button>
+</body>
+</html>

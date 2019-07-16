@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>remove() empty()</title>
+	<style type="text/css">
+		body{
+			background-color: #fff;
+		}
+		ul{
+			list-style: none;
+		}
+		#box{
+			width: 120px;
+			height: 120px;
+			background-color: lightyellow;
+		}
+		li{
+			width: 40px;
+			height: 20px;
+			background-color: lightgray;
+			margin-bottom: 10px;
+			text-align: center;
+			line-height: 20px;
+		}	
+	</style>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#btn").click(function(){
+			$("#box").remove();
+		});
+		$("#btn1").click(function(){
+			$("#t1").remove();
+		});
+		$("#btn2").click(function(){
+			$("#box").empty();
+		});
+		$("#btn3").click(function(){
+			$("li").remove(".th");
+		});
+		
+
+	});
+
+</script>
+</head>
+<body>
+	<button id="btn">remove id="box"的div及其子元素</button>
+	<button id="btn1">remove id="t1"的div及其子元素</button>
+	<button id="btn2">empty id="box"的子元素</button>
+	<button id="btn3">remove class="th"的li</button>
+	<div id="box">
+		<ul id="t1">
+			<li>1</li>
+			<li class="th">3</li>
+			<li class="th">5</li>
+		</ul>
+	</div>
+	
+	
+	
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>stop</title>
+	<style type="text/css">
+		body{
+			background-color: #fff;
+		}
+		#top{
+			width: 200px;
+			height: 20px;
+			background-color: gray;
+			text-align: center;
+			line-height: 20px;
+			cursor: pointer;
+		}
+		#aim{
+			width: 200px;
+			height: 200px;
+			background-color: gray;
+			opacity: 0.5;
+			display: none;
+		}				
+	</style>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#top").click(function(){
+			$("#aim").slideToggle(5000);
+		});
+		$("#stop").click(function(){
+			$("#aim").stop();
+		});
+		
+
+	});
+
+</script>
+</head>
+<body>
+	<div id="top">down/up</div>
+	<div id="aim"></div>
+	<button id="stop">停止动画</button>
+	
+	
+</body>
+</html>

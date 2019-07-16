@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-3</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+    </style>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <input type="button" value="浪起来" @click="lang">
+        <input type="button" value="低调" @click="calm">
+        <p>{{ msg }}</p>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            //注意：在VM实例中，想调用自己data上的数据，要以this.属性名和this.方法名的方式来调用，这里的this代表的是new出来的VM实例
+            //注意：VM实例中，会监听自己data中数据的变化，并会实时同步变化到页面上去[程序员，只需要关心数据的变化，不需要考虑如何重新渲染DOM页面]
+            el: ".app",
+            data: {
+                msg: "不要猥琐发育，浪起来~",
+                timr: null
+            },
+            methods: {
+                lang() {
+                    clearInterval(this.timr)
+                    this.timr = setInterval(() => {
+                        var start = this.msg.substring(0, 1)
+                        var end = this.msg.substring(1)
+                        this.msg = end + start
+                    }, 500);
+
+                },
+                calm() {
+                    clearInterval(this.timr)
+                }
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

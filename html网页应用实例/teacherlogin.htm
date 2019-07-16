@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>用户登录</title>
+	<style>
+		body{
+			font-size:16px;
+			background: url("images/k.jpeg");
+			background-repeat:no-repeat;
+		}
+		#reg{
+
+			width: 400px;			
+			height: 240px;
+			margin: 200px auto;
+			padding-top: 20px;
+			padding-left: 20px;
+			padding-right: 20px;
+			font-size: 18px;
+			background: white;
+
+		}
+		#reg input{
+			display:block;
+			height: 30px;
+			width: 300px;
+			margin-top:20px;
+			margin-bottom:30px;
+			margin-left: 40px;
+			border: 1px solid #ccc;		
+		}
+		#reg button{
+			height: 40px;
+			width: 300px;
+			margin-left: 40px;
+			outline: none;
+		    border: none;
+		    cursor: pointer;
+			background: #0aa1ed;
+			font-size: 23px;
+		}
+		#reg a:link,a:visited{
+			text-decoration:none;  /*超链接无下划线*/
+			color: black;
+		}
+		#reg a:hover{
+ 			text-decoration:underline;  /*鼠标放上去有下划线*/
+ 			color:#0aa1ed;
+		}
+		#tip{
+			float: right;
+			font-size: 18px;
+			
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="reg">
+	<span>登录</span>    <sapn id="tip"><a href="register.htm">没有账号 >> 请注册</a></sapn>
+	<form>
+	<input type="text" id="username" name="username" placeholder="姓名" />
+	<input type="password" id="password" name="password" placeholder="密码"/>
+	<button type="submit">登录</button>
+	</form>
+	</div>	
+</body>
+</html>

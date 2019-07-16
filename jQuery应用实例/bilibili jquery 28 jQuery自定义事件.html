@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>bili jQuery jQuery自定义事件</title>
+	<style type="text/css">
+		body{
+			background-color: #fff;
+			height: 2000px;
+		}
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.father{
+			width: 200px;
+			height: 200px;
+			background-color: lightgray;
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			background-color: lightblue;
+		}
+	</style>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	/*
+	  想要自定义事件，需要满足两个条件
+	  1、事件必须是通过on绑定的
+	  2、事件必须通过trigger（）来触发
+	*/
+	$(function(){
+		  $(".son").on("myClick",function(){
+		  	alert("myclcick");
+		  });
+		  $(".son").trigger("myClick");
+       
+    
+	});
+</script>
+</head>
+<body>
+	<div class="father">
+	      <div class="son"></div>
+	</div>
+  <a href="https://www.bilibili.com/"><span>bilibili弹幕网</span></a>
+  <form action="https://www.bilibili.com/">
+  	     <input type="text" name="" value="">
+  	     <input type="submit" name="" value="提交">
+  </form>
+	
+</body>
+</html>

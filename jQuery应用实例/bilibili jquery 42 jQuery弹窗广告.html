@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>bili jQuery jQuery弹窗广告</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+            height: 4000px;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul {
+            list-style: none;
+        }
+        .dg{
+            position: fixed;
+            right: 0px;
+            bottom: 0px;
+            display: none;
+        }
+        .dg span{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: 0px;
+            top: 0px;
+            color: black;
+            cursor: pointer;
+            text-align: center;
+            line-height: 20px;
+        }
+    </style>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+    <script src="/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+		/*
+		
+		*/
+        $(function () {
+            $(".dg span").click(function(){
+                $(".dg").remove();
+            });
+            // $(".dg").slideDown(1000,function(){
+            //      $(".dg").fadeOut(1000,function(){
+            //         $(".dg").fadeIn(1000);
+            //      });
+            // });
+            /*
+            嵌套的阅读性较差，所以这里采用链式方法的使用
+            */
+            $(".dg").stop().slideDown(1000).fadeOut(1000).fadeIn(1000);
+
+        });
+    </script>
+</head>
+<div class="dg">
+    <img src="images/b1.jpg" alt="" width="400px" height="225px">
+    <span>x</span>
+</div>
+
+<body>
+
+
+</body>
+
+</html>

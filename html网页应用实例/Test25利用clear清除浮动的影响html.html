@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>利用clear清除浮动的影响</title>
+	<style type="text/css">
+		body{
+             background-color: white;
+		    }
+		    .x,.x1{
+		    	width: 1000px;
+		    	/*height: 400px;*/
+		    	background-color: lightyellow;
+		    	border: 2px solid;
+		    }
+		    .x div{
+		    	float: left;
+		    	width: 200px;
+		    	height: 200px;
+		    	margin-left: 10px;
+		    	background-color: lightblue;
+		    }
+		    .x1 div{
+		    	float: left;
+		    	width: 200px;
+		    	height: 200px;
+		    	margin-left: 10px;
+		    	background-color: lightblue;
+		    }
+		    .x1{
+		    	clear: left;
+		    }
+
+
+	</style>
+</head>
+<body>
+	<div class="x">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<div class="x1">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+
+</body>
+</html>

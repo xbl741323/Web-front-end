@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>bili jQuery jQuery事件绑定</title>
+	<style type="text/css">
+		body{
+			background-color: #fff;
+			height: 2000px;
+		}
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+	</style>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	/*
+         eventName(fn);
+         编码效率高/部分js事件不能添加
+         on(eventName,fn);
+         编码效率低/所有js事件都能添加
+         注意：
+               可以添加多个相同或者不同的时事件，不会覆盖
+
+	*/
+	$(function(){
+            $("button").click(function(){
+            	// alert("你好");
+            });
+            $("button").on("click",function(){
+            	alert("nihao");
+            });
+            $("button").mouseleave("click",function(){
+            	alert("leave");
+            });
+            $("button").mouseenter("click",function(){
+            	alert("enter");
+            });
+
+       
+    
+	});
+</script>
+</head>
+<body>
+	<button>按钮</button>
+	
+</body>
+</html>

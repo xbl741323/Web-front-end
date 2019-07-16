@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>用户注册</title>
+	<style type="text/css">
+		body{
+			
+			order:solid 1px;
+			border-color: transparent;
+			width: 100%;
+			height: 1080px;
+			background: url("images/y.jpg") ;
+			background-repeat:no-repeat;
+			background-size: 100% 100%; 
+		}
+		#reg{
+			/*border: 1px solid white;*/
+			background: white;
+			width: 450px;
+			height: 350px;
+			padding-left: 80px;
+
+			margin:100px auto;
+		}
+		#reg>input{
+			width:240px;
+			height: 30px;
+			margin-left: 20px;
+			margin-top:20px;
+
+		}
+		#sex{
+			margin-top:10px;
+		}
+		#reg button{
+			
+			width: 260px;
+			height: 40px;
+			margin-top: 20px;
+			margin-left: 40px;
+			outline: none;
+		    border: none;
+		    background: #0aa1ed;
+		    font-size: 23px;
+			cursor:pointer;
+
+		}
+		
+
+	</style>
+</head>
+<body>
+	<div id="reg">
+		用户姓名：<input type="text" id="username"/><br/>
+		密　　码：<input type="password" id="password" /><br/>
+		密码确认：<input type="password" id="passowrd2"/><br/>
+		<div id="sex">
+		性别： <input type="radio" id="sex" name="sex" checked="true" />男
+		       <input type="radio" id="sex" name="sex"/>女<br/>
+		</div>
+		电子邮箱：<input type="text" id="email"/><br/>
+		<button type="submit">注册</button>
+
+	</div>
+	
+</body>
+</html>

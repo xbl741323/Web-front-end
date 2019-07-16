@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>bili jQuery jQuery 无限循环滚动</title>
+    <style type="text/css">
+        body {
+            background-color: black;
+            height: 4000px;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul {
+            list-style: none;
+        }
+        div{
+            width: 600px;
+            height: 160px;
+            border: 1px solid;
+            margin: 300px auto;
+            overflow: hidden;
+        }
+        div ul{
+            width: 1800px;
+            height: 160px;
+            background-color: black;
+        }
+        div ul li{
+            float: left;
+        }
+    </style>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+    <script src="/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+		/*
+       
+		*/
+        $(function () {
+            var offset = 0;
+            var timer;
+            function autoPlay(){
+               timer =  setInterval(function(){
+                offset += -10;
+                if(offset <= -1200){
+                       offset = 0;
+                  };
+                  $("ul").css({
+                      marginLeft:offset
+                  });
+            },50);
+            };
+            autoPlay();
+            $("li").hover(function(){
+                clearInterval(timer);
+                $(this).siblings().stop();
+                $(this).siblings().fadeTo(500,0.5);
+            },function(){
+                autoPlay();
+                $(this).siblings().fadeTo(500,1);
+            });
+                  
+            });
+    </script>
+</head>
+<div>
+    <ul>
+        <li><img src="images/b1.jpg" alt="" width="300px" height="160px"></li>
+        <li><img src="images/b2.jpg" alt="" width="300px" height="160px"></li>
+        <li><img src="images/b3.jpg" alt="" width="300px" height="160px"></li>
+        <li><img src="images/b4.jpg" alt="" width="300px" height="160px"></li>
+        <li><img src="images/b1.jpg" alt="" width="300px" height="160px"></li>
+        <li><img src="images/b2.jpg" alt="" width="300px" height="160px"></li>
+    </ul>
+</div>
+
+
+<body>
+
+
+</body>
+
+</html>

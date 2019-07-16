@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>商城分类页面</title>
+	<style type="text/css">
+		body{
+			background: white;
+			height: 1980px;
+		}
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		ul{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+			color: #fff;
+			outline: none;
+		}
+		input{
+			outline: none;
+		}
+		.head{
+			width: 1903px;
+			height: 40px;
+			background-color: #333;
+			font-family: '宋体';
+		}
+		.head_le{
+			float: left;
+			width: 92px;
+			height: 40px;
+			margin-left: 145px;
+			
+			line-height: 40px;
+			color: #fff;
+			font-size: 12px;
+			text-align: center;
+			/*background-color: lightyellow;*/
+		}
+		.head_le li{
+			cursor: pointer;
+            float: left;
+		}
+		.head_le .left{
+			width: 24px;
+			height: 40px;
+		}
+		.head_le .right{
+			width: 48px;
+			height: 40px;
+			margin-left: 20px;
+		}
+		.head_le li a:hover{
+			color: #999;
+		}
+		.head_ri{
+			float: right;
+			width: 300px;
+			height: 40px;
+			margin-left: 145px;
+			margin-right: 92px;
+			line-height: 40px;
+			color: #fff;
+			font-size: 12px;
+			text-align: center;
+		/*	background-color: lightyellow;*/
+		}
+		.head_ri .user{
+			float: left;
+			width: 120px;
+			height: 40px;
+		}
+		.head_ri li{
+			float: left;
+			width: 60px;
+			height: 40px;
+		}
+		.head_ri li a:hover{
+			color: #999;
+		}
+		.logo{
+			width: 98px;
+			height: 168px;
+			margin: 0px auto;
+			background: url(https://www.yougou.com/template/common/images/logo.png) no-repeat center;
+		}
+        .nav{
+        	width: 1190px;
+        	height: 50px;
+        	margin: 0px auto;
+        	/*background-color: lightgray;*/
+        }
+        .nav .dc{
+        	float: left;
+            width: 930px;
+            height: 50px;
+          /*  background-color: pink;*/
+        }
+        .nav .dc li{
+        	float: left;
+        	width: 40px;
+        	height: 25px;
+        	margin-top: 13px;
+        	margin-right: 70px;
+        	/*background-color: lightgray;*/
+        	font-weight: bold;
+            color: #333;
+            line-height: 25px;
+            text-align: center;
+            font-size: 20px;
+            cursor: pointer;
+        }
+         .nav .dc li:hover{
+         	border-bottom: 2px solid #333;
+         }
+         .nav .dc .first{
+        	margin-left: 15px;
+        }
+         .nav .dc li a{
+         	 color: #333;
+         }
+        .search{
+        	float: right;
+        	width: 180px;
+        	height: 25px;
+        	/*background-color: lightyellow;*/
+        	margin-top: 15px;
+        }
+        .search .input{
+        	width: 180px;
+            height: 22px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 2px;
+            position: relative;
+        }
+        .search .input input{
+        	overflow: hidden;
+        	float: left;
+        	width: 160px;
+        	height: 20px;
+        	border: none;
+        }
+         .search .input .button{
+         	float: right;
+         	width: 15px;
+         	height: 16px;
+         	background: url(images/bg.png);
+         	background-position: -177px -10px;
+         	cursor: pointer;
+         	margin-right: 1px;
+         }
+         .gang{
+         	width: 1903px;
+         	height: 1px;
+         	border-bottom: 1px solid #eee;
+         }
+         .main{
+         	width: 1190px;
+         	height: 1300px;
+         	margin: 0px auto;
+         	/*background-color: lightgray;*/
+         }
+          .main .des{
+          	margin: 30px 0 20px;
+            font-size: 12px;
+            color: #333;
+            font-weight: bold;
+          }
+          .main .tp{
+          	width: 1190px;
+          	height: 1400px;
+          	/*background-color: pink;*/
+          }
+          .main .tp .tp_01{
+          	float: left;
+          	width: 180px;
+          	height: 800px;
+          	/*background-color: lightyellow;*/
+          }
+          .main .tp .tp_01 .count{
+          	color: #666;
+            font-size: 12px;
+            margin-top: 45px;
+          }
+          .main .tp .tp_01 a{
+          	color: #333;
+          }
+          .main .tp .tp_01 .class{
+          	width: 180px;
+          	height: 489px;
+          	/*background-color: pink;*/
+          	margin-top: 25px;
+          }
+          .main .tp .tp_01 .class li{
+          	width: 180px;
+          	height: 18px;
+          	margin-top: 15px;
+          	/*background-color: lightblue;*/
+          	font-size: 12px;
+          	color: #333;
+          }
+           .main .tp .tp_01 .class li .tbg{
+            width: 6px;
+            height: 10px;
+            background: url(https://pcs1.ygimg.cn/template/common/images/css_sprites.png) -212px -124px;
+            margin-right: 9px;
+            float: left;
+            margin-top: 3px;
+           }
+           .main .tp .tp_01 .class li .tdc{
+           	float: left;
+           	width: 26px;
+           	height: 18px;
+           	color: #333;
+           	/*font-size: 12px;*/
+           	text-align: left;
+           	font-weight: bold;
+           }
+          .main .tp .tp_02{
+          	float: left;
+          	width: 1010px;
+          	height: 1400px;
+          	/*background-color: lightblue;*/
+          }
+           .main .tp .tp_02 .title{
+           	float: left;
+           	width: 1010px;
+          	height: 51px;
+          	/*background-color: pink;*/
+          	margin-bottom: 30px;
+          	border-bottom: 1px solid #eee
+
+           }
+           .main .tp .tp_02 .title .new{
+           	font-weight: bold;
+           	text-decoration: underline;
+           }
+           .main .tp .tp_02 .title li{
+              float: left;
+              font-size: 14px;
+              width: 29px;
+              height: 19px;
+              margin: 15px 30px 11px;
+              line-height: 19px;
+              text-align: center;
+            }
+            .main .tp .tp_02 .title .fy{
+             float: right;
+             width: 180px;
+             height: 30px;
+            /* background-color: pink;*/
+             margin-right: 0px;
+             margin-top: 20px;
+             }
+           .main .tp .tp_02 .title .fy a{
+           	color: #999;
+           }
+           .main .tp .tp_02 .title .fy div{
+            width: 45px;
+            height: 30px;
+           	float: left;
+           	font-size: 12px;
+           	color: #999;
+           }
+            .main .tp .tp_02 .title .fy .gang{
+            	width: 10px;
+            }
+            .main .tp .tp_02 .title .fy .gang1{
+            	width: 25px;
+            }
+           .main .tp .tp_02 .main_tp{
+           	float: left;
+           	width: 1010px;
+          	height: 1300px;
+          /*	background-color: lightblue;*/
+           }
+            .main .tp .tp_02 .main_tp li{
+           	float: left;
+           	width: 230px;
+          	height: 400px;
+          	margin: 10px;
+          /*	background-color: lightgray;*/
+           }
+           .main .tp .tp_02 .main_tp li:hover{
+           	box-shadow: 0px 15px 30px rgba(0,0,0,0.1);
+           	transform: translate3d(0px,-2px,0px);
+           }
+           .main .tp .tp_02 .main_tp li .im{
+           	width: 230px;
+           	height: 230px;
+           	margin-top: 33px;
+            margin-bottom: 33px;
+            background-color: #fff;
+           }
+           .main .tp .tp_02 .main_tp li .dec{
+           	width: 210px;
+           	height: 45px;
+            margin: 15px 10px 15px;
+            background-color: #fff;
+            font-size: 12px;
+            text-align: center;
+            color: #333;
+           }
+           .main .tp .tp_02 .main_tp li .price{
+           	width: 40px;
+           	height: 24px;
+            margin: 10px auto 10px;
+            background-color: #fff;
+           }
+           .main .tp .tp_02 .main_tp li .price .yu{
+           	float: left;
+           	width: 10px;
+           	height: 23px;
+           	font-size: 12px;
+           	line-height: 23px;
+           	text-align: center;
+           }
+           .main .tp .tp_02 .main_tp li .price .pr{
+           	float: left;
+            width: 30px;
+           	height: 23px;
+           	font-size: 16px;
+           	line-height: 23px;
+           	font-weight: bold;
+           	text-align: center;
+           }
+           .main .tp .tp_02 .main_tp li .price a{
+           	color: #333;
+           }
+           .foot01{
+			width: 1903px;
+			height: 322px;
+			background-color: #333;
+			margin-top: 250px;
+		}
+		.foot01 .main{
+			width: 1226px;
+			height: 272px;
+			/*background-color: pink;*/
+			margin: 0px auto;
+		}
+		.foot01 .main .main01{
+			float: left;
+			width: 1226px;
+			height: 80px;
+			/*background-color: lightyellow;*/
+			border-bottom: 1px solid #e0e0e0;
+		}
+		.foot01 .main .main01 .main01_01{
+			float: left;
+			width: 1226px;
+			height: 25px;
+			/*background-color: lightblue;*/
+			margin: 0px auto;
+			margin-top: 30px;
+		}
+		.foot01 .main .main01 .main01_01 li{
+			cursor: pointer;
+		    float: left;
+            width: 19.8%;
+            height: 25px;
+            border-left: 1px solid #e0e0e0;
+            font-size: 16px;
+            line-height: 25px;
+            text-align: center;
+            color: #fff;
+            transition: color .2s;
+		}
+		.foot01 .main .main01 .main01_01 li:hover{
+			color: #fff;
+		}
+		.foot01 .main .main02{
+			margin-top: 40px;
+			float: left;
+			width: 1226px;
+			height: 192px;
+			b/*ackground-color: pink;*/
+		}
+		.foot01 .main .main02 dl{
+			float: left;
+			width: 160px;
+			height: 112px;
+		}
+		.foot01 .main .main02 dl dt{
+			width: 160px;
+			height: 17.5px;
+			margin: -1px 0 26px;
+            font-size: 14px;
+            line-height: 1.25;
+            color: #fff;
+		}
+		.foot01 .main .main02 dl dd{
+			width: 160px;
+			height: 18px;
+			margin: 10px 0 0;
+            font-size: 12px;
+            color: #757575;
+            cursor: pointer;
+		}
+		.foot01 .main .main02 dl dd:hover{
+			color: #fff;
+		}
+		.foot01 .main .main02 .last{
+			float: right;
+			width: 252px;
+			height: 112px;
+            border-left: 1px solid #e0e0e0;
+           /* background-color: pink;*/
+		}
+		.foot01 .main .main02 .last .dc01{
+			width: 251px;
+			height: 22px;
+			margin: 0 0 5px;
+            font-size: 22px;
+            line-height: 1;
+            color: #fff;
+            text-align: center;
+		}
+		.foot01 .main .main02 .last .dc02{
+			width: 251px;
+			height: 36px;
+			margin: 0 0 16px;
+            font-size: 12px;
+            text-align: center;
+            color: #616161;
+		}
+		.foot01 .main .main02 .last .dc03{
+			width: 120px;
+			height: 30px;
+			border: 1px solid;
+			border-color: #fff;
+            background: #fff;
+            color: #333;
+            font-size: 12px;
+            line-height: 30px;
+            text-align: center;
+            margin: 0px auto;
+            cursor: pointer;
+            transition: all 0.3s;
+		}
+		.foot01 .main .main02 .last .dc03:hover{
+			background-color: #333;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="head">
+		<div class="head_le">
+			<ul>
+				<li class="left"><a href="">关注</a></li>
+				<li class="right"><a href="">下载APP</a></li>
+			</ul>
+		</div>
+		<div class="head_ri">
+			<ul>
+				<li class="user">您好,zddsssds <a href="">[退出]</a></li>
+				<li><a href="file:///C:/Users/%E6%BD%87%E5%B0%8F%E7%99%BD/Desktop/Jspstudy/%E7%BD%91%E9%A1%B5%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/Test%E5%88%B6%E4%BD%9C%E6%B3%A8%E5%86%8C%E9%A1%B5%E9%9D%A2.html">注册</a></li>
+				<li><a href="">收藏</a></li>
+				<li><a href="">购物袋</a></li>
+				<li><a href="">公告</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="logo"></div>
+	<div class="nav">
+		<div class="dc">
+			<ul>
+				<li class="first"><a href="file:///C:/Users/%E6%BD%87%E5%B0%8F%E7%99%BD/Desktop/Jspstudy/%E7%BD%91%E9%A1%B5%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/Test%E5%88%B6%E4%BD%9C%E5%95%86%E5%9F%8E%E9%A6%96%E9%A1%B5.html">首页</a></li>
+				<li><a href="">女鞋</a></li>
+				<li><a href="">男鞋</a></li>
+				<li><a href="">运动</a></li>
+				<li><a href="">户外</a></li>
+				<li><a href="">儿童</a></li>
+				<li><a href="">箱包</a></li>
+			</ul>
+		</div>
+		<div class="search">
+			<div class="input">
+				<input type="text" name="">
+				<div class="button"></div>
+			</div>
+		</div>
+	</div>
+	<div class="gang"></div>
+	<div class="main">
+		<div class="des">首页>运动</div>
+		<div class="tp">
+			<div class="tp_01">
+				<div class="count">共<span><a href="">12</a></span>个结果</div>
+				<div class="class">
+					<ul>
+						<li>
+							<div class="tbg"></div>
+							<div class="tdc">品牌</div>
+						</li>
+						<li>
+							<div class="tbg"></div>
+							<div class="tdc">品类</div>
+						</li>
+						<li>
+							<div class="tbg"></div>
+							<div class="tdc">价格</div>
+						</li>
+						<li>
+							<div class="tbg"></div>
+							<div class="tdc">尺码</div>
+						</li>
+						<li>
+							<div class="tbg"></div>
+							<div class="tdc">颜色</div>
+						</li>
+						<li>
+							<div class="tbg"></div>
+							<div class="tdc">季节</div>
+						</li>
+						<li>
+							<div class="tbg"></div>
+							<div class="tdc">风格</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<form>
+			<div class="tp_02">
+				<div class="title">
+					<ul>
+						<li>新品</li>
+						<li class="new">热销</li>
+						<li>推荐</li>
+						<li>价格</li>
+						<li>折扣</li>
+						<li class="fy">
+							<div class="gang"><a href="">1</a></div>
+							<div class="gang">-</div>
+							<div class="gang1"><a href="">2</a>页</div>
+							<div class="gang">/</div>
+							<div><a href="">上一页</a></div>
+							<div class="gang">></div>
+							<div><a href="">下一页</a></div>
+							<div class="gang">></div>
+						</li>
+					</ul>
+				</div>
+			    <div class="main_tp">
+			    	<ul>
+			    		<li>
+			    			<div class="im"><a href=""><img src="https://i1.ygimg.cn/pics/adidas/2016/100370348/100370348_01_mb.jpg?5" width="230px" height="230px"></a></div>
+			    			<div class="dec">adidas阿迪达斯2019新款中性训练系列挎包AJ4232</div>
+			    			<div class="price">
+			    				<div class="yu">¥</div>
+			    				<div class="pr"><a href="">235</a></div>
+			    			</div>
+			    		</li>
+			    		<li>
+			    			<div class="im"><a href=""><img src="https://i1.ygimg.cn/pics/nike/2016/100416708/100416708_06_mb.jpg?18" width="230px" height="230px"></a></div>
+			    			<div class="dec">adidas阿迪达斯2019新款中性训练系列挎包AJ4232</div>
+			    			<div class="price">
+			    				<div class="yu">¥</div>
+			    				<div class="pr"><a href="">235</a></div>
+			    			</div>
+			    		</li>
+			    		<li>
+			    			<div class="im"><a href=""><img src="https://i2.ygimg.cn/pics/adidas/2019/101184037/101184037_01_mb.jpg?3" width="230px" height="230px"></a></div>
+			    			<div class="dec">adidas阿迪达斯2019新款中性训练系列挎包AJ4232</div>
+			    			<div class="price">
+			    				<div class="yu">¥</div>
+			    				<div class="pr"><a href="">235</a></div>
+			    			</div>
+			    		</li>
+			    		<li>
+			    			<div class="im"><a href=""><img src="https://i1.ygimg.cn/pics/nike/2018/100980460/100980460_06_mb.jpg?6" width="230px" height="230px"></a></div>
+			    			<div class="dec">adidas阿迪达斯2019新款中性训练系列挎包AJ4232</div>
+			    			<div class="price">
+			    				<div class="yu">¥</div>
+			    				<div class="pr"><a href="">235</a></div>
+			    			</div>
+			    		</li>
+			    		<li>
+			    			<div class="im"><a href=""><img src="https://i2.ygimg.cn/pics/nike/2018/100699539/100699539_06_mb.jpg?6" width="230px" height="230px"></a></div>
+			    			<div class="dec">adidas阿迪达斯2019新款中性训练系列挎包AJ4232</div>
+			    			<div class="price">
+			    				<div class="yu">¥</div>
+			    				<div class="pr"><a href="">235</a></div>
+			    			</div>
+			    		</li>
+			    		<li>
+			    			<div class="im"><a href=""><img src="https://i1.ygimg.cn/pics/nike/2018/100916520/100916520_06_mb.jpg?4" width="230px" height="230px"></a></div>
+			    			<div class="dec">adidas阿迪达斯2019新款中性训练系列挎包AJ4232</div>
+			    			<div class="price">
+			    				<div class="yu">¥</div>
+			    				<div class="pr"><a href="">235</a></div>
+			    			</div>
+			    		</li>
+			    		<li>
+			    			<div class="im"><a href=""><img src="https://i1.ygimg.cn/pics/adidasneo/2019/101178900/101178900_01_mb.jpg?3" width="230px" height="230px"></a></div>
+			    			<div class="dec">adidas阿迪达斯2019新款中性训练系列挎包AJ4232</div>
+			    			<div class="price">
+			    				<div class="yu">¥</div>
+			    				<div class="pr"><a href="">235</a></div>
+			    			</div>
+			    		</li>
+			    		<li>
+			    			<div class="im"><a href=""><img src="https://i2.ygimg.cn/pics/adidasclassic/2016/100363757/100363757_06_mb.jpg?9" width="230px" height="230px"></a></div>
+			    			<div class="dec">adidas阿迪达斯2019新款中性训练系列挎包AJ4232</div>
+			    			<div class="price">
+			    				<div class="yu">¥</div>
+			    				<div class="pr"><a href="">235</a></div>
+			    			</div>
+			    		</li>
+			    		<li>
+			    			<div class="im"><a href=""><img src="https://i2.ygimg.cn/pics/nike/2016/100406189/100406189_06_mb.jpg?8" width="230px" height="230px"></a></div>
+			    			<div class="dec">adidas阿迪达斯2019新款中性训练系列挎包AJ4232</div>
+			    			<div class="price">
+			    				<div class="yu">¥</div>
+			    				<div class="pr"><a href="">235</a></div>
+			    			</div>
+			    		</li>
+			    		<li>
+			    			<div class="im"><a href=""><img src="https://i1.ygimg.cn/pics/nike/2019/101182252/101182252_06_mb.jpg?3" width="230px" height="230px"></a></div>
+			    			<div class="dec">adidas阿迪达斯2019新款中性训练系列挎包AJ4232</div>
+			    			<div class="price">
+			    				<div class="yu">¥</div>
+			    				<div class="pr"><a href="">235</a></div>
+			    			</div>
+			    		</li>
+			    		<li>
+			    			<div class="im"><a href=""><img src="https://i2.ygimg.cn/pics/adidas/2017/100506923/100506923_01_mb.jpg?6" width="230px" height="230px"></a></div>
+			    			<div class="dec">adidas阿迪达斯2019新款中性训练系列挎包AJ4232</div>
+			    			<div class="price">
+			    				<div class="yu">¥</div>
+			    				<div class="pr"><a href="">235</a></div>
+			    			</div>
+			    		</li>
+			    		<li>
+			    			<div class="im"><a href=""><img src="https://i2.ygimg.cn/pics/adidas/2017/100506927/100506927_01_mb.jpg?6" width="230px" height="230px"></a></div>
+			    			<div class="dec">adidas阿迪达斯2019新款中性训练系列挎包AJ4232</div>
+			    			<div class="price">
+			    				<div class="yu">¥</div>
+			    				<div class="pr"><a href="">235</a></div>
+			    			</div>
+			    		</li>
+			    	</ul>
+			    </div>
+			</div>
+			</form>
+		</div>
+	</div>
+	<div class="foot01">
+		<div class="main">
+			<div class="main01">
+				<div class="main01_01">
+					<ul>
+						<li>预约维修服务</li>
+						<li>7天无理由退货</li>
+						<li>15天免费换货</li>
+						<li>满150元包邮</li>
+						<li>520余家售后网点</li>
+					</ul>
+				</div>
+			</div>
+			<div class="main02">
+				<dl>
+					<dt>帮助中心</dt>
+					<dd>账户管理</dd>
+					<dd>购物指南</dd>
+					<dd>订单操作</dd>
+				</dl>
+				<dl>
+					<dt>服务支持</dt>
+					<dd>账户管理</dd>
+					<dd>购物指南</dd>
+					<dd>订单操作</dd>
+				</dl>
+				<dl>
+					<dt>线下门店</dt>
+					<dd>账户管理</dd>
+					<dd>购物指南</dd>
+					<dd>订单操作</dd>
+				</dl>
+				<dl>
+					<dt>关于优购</dt>
+					<dd>账户管理</dd>
+					<dd>购物指南</dd>
+					<dd>订单操作</dd>
+				</dl>
+				<dl>
+					<dt>关注我们</dt>
+					<dd>账户管理</dd>
+					<dd>购物指南</dd>
+					<dd>订单操作</dd>
+				</dl>
+				<dl>
+					<dt>特色服务</dt>
+					<dd>账户管理</dd>
+					<dd>购物指南</dd>
+					<dd>订单操作</dd>
+				</dl>
+				<dl class="last">
+					<div class="dc01">400-100-5678</div>
+					<div class="dc02">	
+                     周一至周日 8:00-18:00<br>
+                     （仅收市话费）
+					</div>
+					<div class="dc03">联系客服</div>
+				</dl>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

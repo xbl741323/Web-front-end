@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>测试表单</title>
+	<style type="text/css">
+		body{
+			background-color: lightyellow;
+			margin: 100px;
+		    }
+	</style>
+</head>
+<body>
+	<form>
+		<p>
+			姓名：<input type="text" name="" value="姓名"><br>
+		</p>
+		<p>
+			密码：<input type="password" name="" value="密码"><br>
+		</p>
+		<p>
+			性别：
+			<input type="radio" name="sex" id="boy"><label for="boy">男</label>
+			<input type="radio" name="sex" id="girl"><label for="girl">女</label>
+			<input type="radio" name="sex" id="secret"><label for="secret">保密</label>
+		</p>
+		<p>
+		所在城市：
+			<select>
+				<option>北京</option>
+				<option>上海</option>
+				<option>广州</option>
+				<option>南京</option>
+				<option>武汉</option>
+				<option>安徽</option>
+			</select>
+		</p>
+		<p>
+		兴趣爱好：
+			<input type="checkbox" name="hobby">电影
+			<input type="checkbox" name="hobby">动漫
+			<input type="checkbox" name="hobby">篮球
+			<input type="checkbox" name="hobby">唱歌
+			<input type="checkbox" name="hobby">跳舞
+			<input type="checkbox" name="hobby">敲代码
+			<input type="checkbox" name="hobby">其它
+		</p>
+		<p>
+		个人简介：
+		    <textarea rows="10" cols="30">默认文本</textarea>
+		</p>
+			<input type="submit" name="" value="提交">
+			<input type="button" name="" value="默认">
+			<input type="reset" name="" value="重置">
+			<button type="submit">登录</button>
+		</p>
+	</form>
+
+</body>
+</html>

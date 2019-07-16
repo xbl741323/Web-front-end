@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-26</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+
+        .t1 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+    <script src="vue.js"></script>
+    <link rel="stylesheet" href="animate.css">
+    <!-- 入场：bounceIn  离场：bounceOut-->
+</head>
+
+<body>
+    <div class="app">
+        <input type="button" value="按钮" @click="toggle">
+        <!-- 需求：点击按钮，让h3显示，再点击，让h3隐藏-->
+        <!-- 使用:duration="毫秒值"来统一设置入场和离场时候的动画时长-->
+        <!-- <transition enter-active-class="animated bounceInDown" leave-active-class="animated bounceOut" :duration="9000">
+            <h3 v-if="flag">这是一个h3</h3>
+        </transition>
+        <transition enter-active-class="animated flip" leave-active-class="animated rotateOut" :duration="9000">
+            <div class="t1" v-if="flag"></div>
+        </transition> -->
+
+        <!-- 使用:duration={enter:1000,leave:4000}来分别设置入场和离场的动画时长-->
+
+        <transition enter-active-class="animated bounceInDown" leave-active-class="animated bounceOut" :duration={enter:1000,leave:4000}>
+                <h3 v-if="flag">这是一个h3</h3>
+            </transition>
+            <transition enter-active-class="animated flip" leave-active-class="animated rotateOut" :duration="9000">
+                <div class="t1" v-if="flag"></div>
+            </transition>
+    </div>
+
+
+    <script>
+        var vm = new Vue({
+            el: ".app",
+            data: {
+                flag: false
+            },
+            methods: {
+                toggle() {
+                    this.flag = !this.flag;
+                }
+            },
+        })
+    </script>
+
+</body>
+
+</html>

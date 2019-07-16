@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>bili jQuery jQuery事件移除</title>
+	<style type="text/css">
+		body{
+			background-color: #fff;
+			height: 2000px;
+		}
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+	</style>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	/*
+        off()
+        可以移除事件
+        1、不传参数移除所有事件
+        2、传一个参数，移除指定事件所有方法
+        3、传两个参数，移除指定事件的指定方法
+
+	*/
+	$(function(){
+		     function test01(){
+		     	alert("test01");
+		     };
+		     function test02(){
+		     	alert("test02");
+		     };
+            // $("button").click(function(){
+            // 	// alert("你好");
+            // });
+            // $("button").on("click",function(){
+            // 	alert("nihao");
+            // });
+            // $("button").mouseleave("click",function(){
+            // 	alert("leave");
+            // });
+            // $("button").mouseenter("click",function(){
+            // 	alert("enter");
+            // });
+            // $("button").off();
+            $("button").click(test01);
+            $("button").click(test02);
+            $("button").off("mouseenter");
+            $("button").off("click",test01);
+
+       
+    
+	});
+</script>
+</head>
+<body>
+	<button>按钮</button>
+	
+</body>
+</html>

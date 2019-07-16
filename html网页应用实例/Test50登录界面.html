@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>文字换图片</title>
+	<style type="text/css">
+		body{
+			 width: 1903px;
+		    }
+		   *{
+		   	padding: 0px;
+		   	margin: 0px;
+		   }
+		   ul{
+		   	list-style: none;
+		   }
+		   .main{
+		   	overflow: hidden;
+		   	width: 1920px;
+		   	height: 975px;
+		   	background: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559382153987&di=72e82891a08ed2cd101045a370511783&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201304%2F30%2F20130430232947_EBc2j.jpeg") center no-repeat;
+		    background-size: 100% 100%; 
+			  border-bottom: 1px solid;
+        color: rgba(0, 0, 0, 1);
+		   }
+		   .login{
+		   	width: 400px;
+		   	height: 250px;
+		   	margin: 300px auto ;
+        border: 1px solid  rgba(219, 212, 212, 0.2);
+			  background-color: rgba(26, 16, 24, 0.2);
+		   }
+		   li{
+		   	width: 320px;
+		   	height: 30px;
+		   	margin:30px auto;
+           /* background-color: pink;*/
+            font-size: 14px;
+            text-align: left;
+            line-height: 30px;
+            font-style: italic ;
+		   }
+		  li .x1{
+		  	float: right;
+		  	display: block;
+		  	width: 250px;
+		  	height: 28px;
+		  	margin-right: 25px;
+		  	font-style: italic ;
+			color: rgb(12, 1, 1);
+			opacity: 0.5;
+		  }
+		  .x2{
+		  	display: block;
+		  	width: 50px;
+		  	height: 25px;
+		  	float: left;
+		  	margin-left: 120px;
+		  	background-color: rgba(29, 27, 27, 0.2);
+		  	font-style: italic ;
+			border: 1px solid rgba(230, 225, 225,0.1)
+		  }
+		  .x3{
+		  	float: left;
+		  	margin-left: 50px;
+		  }
+		  .top{
+			  text-align: center;
+			  font-size: 18px;
+		  }
+	</style>
+</head>
+<body>
+	<div class="main">
+		<form class="login">
+			<ul>
+				<li class="top">优购后台管理系统</li>
+				<li>姓名：<input class="x1" type="text" name="" value="" placeholder="用户名"></li>
+				<li>密码：<input class="x1 " type="text" name="" value="" placeholder="密码"></li>
+			</ul>
+			<input class="x2" type="submit" name="" value="登录">
+			<input class="x2 x3" type="submit" name="" value="注册">
+		</form>
+		</div>
+</body>
+</html>

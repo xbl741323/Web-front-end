@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>bili 内容选择器</title>
+	<style type="text/css">
+		body{
+			background-color: #fff;
+		}
+		div{
+		    width: 100px;
+		    height: 100px;
+		    background-color: lightgray;margin-bottom: 10px;
+		}
+	</style>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+      var $div = $("div:empty");
+      var $div1 = $("div:parent");
+      var $div2 = $("div:contains('我是div')");
+      var $div3 = $("div:has('span')");
+      $("#btn").click(function(){
+          $div.css({backgroundColor:"pink"});
+      });
+      $("#btn1").click(function(){
+      	$div1.css({backgroundColor:"pink"});
+      });
+      $("#btn2").click(function(){
+      	$div2.css({backgroundColor:"pink"});
+      });
+      $("#btn3").click(function(){
+      	$div3.css({backgroundColor:"pink"});
+      });
+    
+	});
+</script>
+</head>
+<body>
+	<div></div>
+	<div>我是div</div>
+	<div>这里有内容,我是div</div>
+	<div><p></p></div>
+	<div><span></span></div>
+	<button id="btn">:empty</button>
+	<button id="btn1">:parent</button>
+	<button id="btn2">:contains(text)</button>
+	<button id="btn3">:has(selector)</button>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>设置 text() html() val() attr() 值</title>
+	<style type="text/css">
+		body{
+			background-color: #fff;
+		}
+		
+	</style>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#btn").click(function(){
+			$("p").text("我是一段新文字");
+			$("#aim").html("<i>你也好呀~</i>");
+			$("#int").val("是姓名呀~");
+			$("a").attr("href","https://www.baidu.com/");
+			$("a").text("百度首页");
+			$("img").attr("src","images/2.png");
+		});
+		
+
+	});
+
+</script>
+</head>
+<body>
+	<p>这是一段文字</p>
+	<div id="aim"><p>你好呀</p></div>
+	<input id="int" type="text" name="" value="姓名">
+	<a href="https://www.bilibili.com/">bilibili首页</a>
+	<button id="btn">修改信息按钮</button>
+	<img src="images/1.jpg">
+	
+	
+</body>
+</html>

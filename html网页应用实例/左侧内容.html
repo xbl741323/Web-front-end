@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>左侧部分</title>
+	<style type="text/css">
+		body {
+			background-color: #2f2f31;
+		}
+
+		a {
+			text-decoration: none;
+			color: #aeb2b7;
+		}
+
+		ul {
+			list-style: none;
+		}
+
+		.box li {
+			background-color: rgb(37, 35, 35);
+			font-size: 16px;
+			margin-top: 20px;
+			text-align: center;
+			border-radius: 5px;
+			margin-left: -20px;
+		}
+
+		.box2 {
+			background-color: rgb(17, 16, 16);
+			text-align: center;
+			display: none;
+		}
+
+		.box2 li {
+			text-indent: -20px;
+			background-color: rgb(17, 16, 16);
+			line-height: 20px;
+			padding: 5px;
+			font-size: 14px;
+			text-align: center;
+		}
+		.box3{
+			display: none;
+		}
+	</style>
+	<script src="/jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$(".box a").click(function () {
+				$(this).siblings(".box2").slideToggle(1000);
+				// $(this).find(".sub").slideToggle(1000);
+                $(this).parent("li").siblings().find(".box2").slideUp(1000);
+                // $(this).find("span").toggleClass("current");
+                // $(this).siblings().find("span").removeClass("current");
+			});
+			$(".sp").click(function(){
+				$(".box3").slideToggle(1000);
+			});
+			$(".box3").click(function(event){
+			event.stopPropagation();
+		});
+			
+		});
+	</script>
+</head>
+
+<body>
+	<ul type="none" class="box">
+		<li>
+			<a href="用户列表.html" target="body">用户管理
+				<ul class="box2">
+					<li><a href="用户列表.html" target="body">用户列表</a></li>
+					<li><a href="主题二.html" target="body">主题二</a></li>
+					<li><a href="主题三.html" target="body">主题三</a></li>
+				</ul>
+			</a>
+		</li>
+		<li>
+			<a href="主题一.html" target="body">商品管理
+				<ul class="box2">
+					<li><a href="女鞋.html" target="body" class="sp">商品列表
+						<ul class="box3">
+							<li><a href="女鞋.html" target="body">女鞋</a></li>
+							<li><a href="男鞋.html" target="body">男鞋</a></li>
+							<li><a href="运动.html" target="body">运动</a></li>
+							<li><a href="户外.html" target="body">户外</a></li>
+							<li><a href="儿童.html" target="body">儿童</a></li>
+							<li><a href="箱包.html" target="body">箱包</a></li>
+						</ul>
+					</a></li>
+					<li><a href="主题二.html" target="body">主题二</a></li>
+					<li><a href="主题三.html" target="body">主题三</a></li>
+				</ul>
+			</a>
+		</li>
+		<li>
+			<a href="订单列表.html" target="body">订单管理
+				<ul class="box2">
+					<li><a href="订单列表.html" target="body">订单列表</a></li>
+					<li><a href="主题二.html" target="body">主题二</a></li>
+					<li><a href="主题三.html" target="body">主题三</a></li>
+				</ul>
+			</a>
+		</li>
+		<li>
+			<a href="主题一.html" target="body">内容管理
+				<ul class="box2">
+					<li><a href="主题一.html" target="body">主题一</a></li>
+					<li><a href="主题二.html" target="body">主题二</a></li>
+					<li><a href="主题三.html" target="body">主题三</a></li>
+				</ul>
+			</a>
+		</li>
+		<li>
+			<a href="主题一.html" target="body">网站首页
+				<ul class="box2">
+					<li><a href="主题一.html" target="body">主题一</a></li>
+					<li><a href="主题二.html" target="body">主题二</a></li>
+					<li><a href="主题三.html" target="body">主题三</a></li>
+				</ul>
+			</a>
+		</li>
+		<li>
+			<a href="主题一.html" target="body">账号管理
+				<ul class="box2">
+					<li><a href="主题一.html" target="body">主题一</a></li>
+					<li><a href="主题二.html" target="body">主题二</a></li>
+					<li><a href="主题三.html" target="body">主题三</a></li>
+				</ul>
+			</a>
+		</li>
+	</ul>
+</body>
+
+</html>

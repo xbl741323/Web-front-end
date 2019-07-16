@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>width() height() innerWidth() innerHeight() outerWidth() outerHeight</title>
+	<style type="text/css">
+		body{
+			background-color: #fff;
+		}
+		ul{
+			list-style: none;
+		}
+	    .t1{
+	    	width: 100px;
+	    	height: 100px;
+	    	background-color: lightblue;
+	    	padding:10px;
+	    	border: 5px solid gray;
+	    	margin: 10px;
+	    }
+	</style>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#btn1").click(function(){
+           alert("width:"+$(".t1").width()+"height:"+$(".t1").height());
+		});
+		$("#btn2").click(function(){
+		   alert("width:"+$(".t1").innerWidth()+"height:"+$(".t1").innerHeight());
+		});
+		$("#btn3").click(function(){
+		   alert("width:"+$(".t1").outerWidth()+"height:"+$(".t1").outerHeight());
+		});
+		$("#btn4").click(function(){
+		   alert("width:"+$(".t1").outerWidth(true)+"height:"+$(".t1").outerHeight(true));
+		});
+		$("#btn5").click(function(){
+		   $(".t1").width(200).height(200);
+		});
+		$("#btn6").click(function(){
+		   alert("window：width"+$(window).width()+"window:height"+$(window).height()+"document:width"+$(document).width()+"document:height"+$(document).height());
+		});
+		
+
+	});
+</script>
+</head>
+<body>
+	<div class="t1"></div>
+	<button id="btn1">width() height()</button>
+	<button id="btn2">innerWidth() innerHeight()</button>
+	<button id="btn3">outerWidth() outerHeight()</button>
+	<button id="btn4">outerWidth(true) outerHeight(true)</button>
+	<button id="btn5">改变宽度和高度</button>	
+	<button id="btn6">获取window和document宽度和高度数值</button>
+</body>
+</html>

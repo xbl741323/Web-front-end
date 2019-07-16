@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-22</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+
+        .top {
+            height: 50px;
+            border-bottom: 1px solid;
+            margin-bottom: 30px;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        table,
+        th,
+        td {
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            width: 300px;
+            text-align: center;
+            color: blueviolet;
+            font-size: 13px;
+        }
+
+        .title {
+            background-color: blueviolet;
+            color: #fff;
+            height: 30px;
+            text-indent: 2em;
+            line-height: 30px;
+            margin-bottom: 10px;
+        }
+
+        label {
+            color: blueviolet;
+            font-size: 13px;
+        }
+
+        input {
+            border: 1px solid;
+            border-color: blueviolet;
+            color: blueviolet;
+        }
+
+        .button {
+            background-color: blueviolet;
+            color: #fff;
+            padding: 2px 4px 2px;
+            border-radius: 5px;
+
+        }
+    </style>
+    <script src="vue.js"></script>
+    <script src="vue-resource-1.5.0.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <div class="title">添加品牌</div>
+        <div class="top">
+            <label for="">name:
+                <input type="text" v-model="name">
+            </label>
+            <label for="">
+                <input type="button" value="添加" @click="add" class="button">
+            </label>
+        </div>
+        <table border="1px">
+            <thead>
+                <th>id</th>
+                <th>品牌名称</th>
+                <th>添加时间</th>
+                <th>操作</th>
+            </thead>
+            <tbody v-for="item in list" :key="item.id">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.ctime}}</td>
+                <td><a href="" @click.prevent="del(item.id)">删除</a></td>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        //如果我们通过全局配置了，请求的数据接口根域名，则，每次单独发起http请求的时候，请求
+        //的url地址，应该以相对路径，前面不能带/，否则不会启用根路径做拼接；
+        Vue.http.options.root = 'https://4cd5dddd-21c4-49d7-939b-5cf759a7914f.mock.pstmn.io/';
+        //全局启用emulateJSON选项
+        Vue.http.options.emulateJSON = true;
+
+        var vm = new Vue({
+            el: ".app",
+            data: {
+                name: "",
+                list: [//存放所有品牌列表的位置
+                    { id: 1, name: "宝马", ctime: new Date() },
+                    { id: 2, name: "奥迪", ctime: new Date() },
+                    { id: 3, name: "悍马", ctime: new Date() },
+                ]
+            },
+            created() {//当vm实例的data和methods初始化完毕后，vm实例会自动执行created这个生命周期函数
+                this.getAllList()
+            },
+            methods: {
+                getAllList() {//获取所有的品牌列表
+                    //分析：
+                    //1、由于已经导入了Vue-resource包，所以，可以通过 this.$http来发起数据请求
+                    //2、根据接口api文档，知道，获取列表的时候，应该发起一个get请求
+                    //3、this.$http.get('url').then(function(result){})
+                    //4、当通过then指定回调函数之后，在回调函数中，可以拿到数据库服务器返回的result
+                    //5、先判断result.status是否等于0，如果等于0，就成功了，可以把result.message赋
+                    //值给this.list,如果不等于0，可以弹框提醒，获取数据失败！
+
+                    this.$http.get('product').then(function (result) {
+                        //注意：通过$http获取的数据，都在result.body中
+                        var result = result.body;
+                        if (result.status === 0) {
+                            //成功了
+                            console.log(result)
+                            this.list = result.message;
+                        } else {
+                            //失败了
+                            alert("获取数据失败！")
+                        }
+                    })
+
+                },
+                add() {//添加品牌列表到服务器
+                    //分析：
+                    //1.通过查看数据api接口，发现要发送一个post请求，this.$http.post
+                    //2.this.$http.post()中接收三个参数；
+                    //     2.1第一个参数：要请求的url地址
+                    //     2.2第二个参数：要提交给服务器的数据，要以对象形式提交给服务器{name:this.name}
+                    //     2.3第三个参数：是一个配置对象，要以哪种表单数据类型提交过去，{
+                    //emulateJSON：true},以普通表单格式，将数据提交给服务器 application/x-www-form-urlencoded
+                    //3.再post方法中，使用.then来设置成功的回调函数，如果想要拿到成功的结果，需要result.body
+                    var postData = { name: this.name };
+                    // var options = { emulateJSON: true };
+                    this.$http.post('addproduct', postData, ).then(result => {
+                        if (result.body.status === 0) {
+                            //成功了！
+                            //添加完成之后，只需要手动，再调用一下 this.getAllList()就能刷新一下品牌列表了
+                            console.log(result.body)
+                            this.getAllList()
+                            this.name = "";
+                        } else {
+                            //失败了
+                            alert("添加失败！")
+                        }
+                    })
+                },
+                del(id) {//删除品牌
+                this.$http.get('delproduct' + id).then(result => {
+                    if (result.body.status === 0) {
+                        //删除成功！
+                        this.getAllList();
+                    } else {
+                        //删除失败！
+                        alert("删除失败！");
+                    }
+                })
+            }
+
+            },
+            
+        })
+    </script>
+
+</body>
+
+</html>

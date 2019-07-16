@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>商城订单页面</title>
+	<style type="text/css">
+		body{
+			background: white;
+			/*height: 1980px;*/
+		}
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		ul{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+			color: #fff;
+			outline: none;
+		}
+		input{
+			outline: none;
+		}
+		.head{
+			width: 1903px;
+			height: 40px;
+			background-color: #333;
+			font-family: '宋体';
+		}
+		.head_le{
+			float: left;
+			width: 92px;
+			height: 40px;
+			margin-left: 145px;	
+			line-height: 40px;
+			color: #fff;
+			font-size: 12px;
+			text-align: center;
+			/*background-color: lightyellow;*/
+		}
+		.head_le li{
+			cursor: pointer;
+            float: left;
+		}
+		.head_le .left{
+			width: 24px;
+			height: 40px;
+		}
+		.head_le .right{
+			width: 48px;
+			height: 40px;
+			margin-left: 20px;
+		}
+		.head_le li a:hover{
+			color: #999;
+		}
+		.head_ri{
+			float: right;
+			width: 300px;
+			height: 40px;
+			margin-left: 145px;
+			margin-right: 92px;
+			line-height: 40px;
+			color: #fff;
+			font-size: 12px;
+			text-align: center;
+		/*	background-color: lightyellow;*/
+		}
+		.head_ri li{
+			float: left;
+			width: 60px;
+			height: 40px;
+		}
+		.head_ri li a:hover{
+			color: #999;
+		}
+		.cart{
+            width: 990px;
+            height: 50px;
+            margin:15px auto 0px;
+           /* background-color: lightblue;*/
+		}
+		.cart .logo{
+			float: left;
+            width: 355px;
+            height: 50px;
+            margin-right: 35px;
+            background-color: lightblue;
+            background: url(https://pcs2.ygimg.cn/template/common/images/logo.jpg?bf701d76899056f1c76928124aa7f2a7) no-repeat left top;
+		}
+		.cart .des{
+			float: left;
+			width: 600px;
+			height: 20px;
+			margin-top: 20px;
+			/*background-color: lightblue;*/
+		}
+		.cart .des li{
+			float: left;
+			width: 200px;
+			height: 20px;
+			color: #666;
+            background: #e8e8e8;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            position: relative;
+		}
+		.cart .des .new{
+			color: #fff;
+            background: #333;
+		}
+		.order{
+			/*background-color: lightyellow;*/
+			width: 990px;
+			height: 160px;
+			margin: 30px auto;
+			border-bottom: 1px solid #eee;
+		}
+		.order .top{
+			width: 990px;
+			height: 23px;
+			/*background-color: lightblue;*/
+			border-bottom: 1px solid #eee;
+			margin-bottom: 15px;
+		}
+		.order .top .top_1{
+			float: left;
+            width: 140px;
+            height: 23px;
+           /* background-color: lightyellow;*/
+            text-align: left;
+            line-height: 23px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #666;
+		}
+		.order .top .top_2{
+            float: left;
+            margin-left: 20px;
+            width: 70px;
+            height: 23px;
+           /* background-color: lightyellow;*/
+            font-size: 12px;
+            text-align: center;
+            line-height: 20px;
+            color: #666;
+		}
+		.order .top .top_2 a{
+			text-decoration: underline;
+			color: #666;
+		}
+		.order .info{
+			width: 990px;
+			height: 200px;
+			/*background-color: lightyellow;*/
+		}
+		.order .info li{
+			float: left;
+			width: 880px;
+			height: 32px;
+			/*background-color: lightblue;*/
+			margin-bottom: 5px;
+			font-size: 12px;
+			line-height: 32px;
+		}
+		.order .info li div{
+			width: 80px;
+			height: 32px;
+			float: left;
+			text-align: center;
+		}
+		.order .info li .t1{
+			width: 150px;
+			height: 32px;
+			float: left;
+			text-align: left;
+			margin-left: 10px;
+		}
+		.order .info li input{
+			float: left;
+			display: block;
+			width: 250px;
+			height: 22px;
+			margin-top: 5px;
+			border: 1px solid #d4d4d4
+		}
+		.ts{
+			width: 990px;
+			height: 32px;
+			font-size: 14px;
+			text-align: left;
+			line-height: 32px;
+			/*background-color: lightyellow;*/
+			margin-bottom: 0px;
+			margin: 0px auto;
+			font-weight: bold;
+			color: #666;
+		}
+		.car{
+			width: 940px;
+			/*height: 310px;*/
+			margin: 30px auto 10px;
+			margin-top: 5px;
+			/*background-color: lightblue;*/
+			border: 2px solid #eee;
+		}
+		.car .con{
+			width: 940px;
+			/*height: 249px;*/
+			/*background-color: lightyellow;*/
+
+		}
+		.car .con .class{
+			width: 940px;
+			height: 43px;
+			/*background-color: lightblue;*/
+            border-bottom: 2px solid #eee;
+		}
+		.car .con .class li{
+			float: left;
+			width: 114px;
+			height: 43px;
+			/*background-color: lightblue;*/
+			text-align: center;
+			color: #aaa;
+			line-height: 43px;
+			font-size: 12px;
+		}
+		.car .con .class .class_01{
+			width: 60px;
+			/*background-color: pink;*/
+		}
+		.car .con .class .class_02{
+			width: 359px;
+			/*background-color: gray;*/
+		}
+		.car .con .thing{
+			width: 940px;
+			height: 103px;
+			margin-top: 5px;
+			/*background-color: pink;*/
+			border-bottom: 2px solid #eee;
+		}
+		.car .con .thing li{
+            float: left;
+			width: 114px;
+			height: 103px;
+			/*background-color: lightblue;*/
+			text-align: center;
+			color: #333;
+			font-size: 12px;
+			line-height: 103px;
+		}
+		.car .con  a{
+			color: #333;
+		}
+		.car .con .thing .thing_01{
+			width: 16px;
+			height: 103px;
+			margin: 0px 10px;
+            /*background-color: lightblue;*/
+		}
+		.car .con .thing .thing_02{
+			width: 72px;
+			height: 72px;
+			margin-top: 15px;
+			margin-right: 9px;
+			border: 1px solid #eee;
+            /*background-color: lightblue;*/
+		}
+		.car .con .thing .thing_03{
+			width: 300px;
+			height: 103px;
+            /*background-color: lightgray;*/
+		}
+
+		.car .zon{
+			width: 942px;
+			height: 54px;
+			background-color: #eee;
+		}
+		.car .zon .zon_01{
+			float: left;
+			width: 72px;
+			height: 20px;
+			margin-top: 17px;
+			margin-left: 20px;
+			background-color: #333;
+			font-size: 12px;
+			color: #fff;
+			text-align: center;
+			line-height: 20px;
+		}
+		.car .zon .zon_02{
+			float: right;
+			width: 189px;
+			height: 54px;
+			background-color: #333;
+			font-size: 14px;
+			color: #fff;
+			text-align: center;
+			line-height: 54px;
+		}
+		.car .zon .zon_03{
+			float: right;
+			width: 180px;
+			height: 54px;
+			margin-right: 50px;
+			text-align: center;
+			line-height: 54px;
+			font-size: 14px;
+			color: #333;
+			font-weight: bold;
+		}
+		.car .zon .zon_03 a{
+			color: #333;
+		}
+		.foot01{
+			width: 1903px;
+			height: 322px;
+			background-color: #333;
+			margin-top: 200px;
+		}
+		.foot01 .main{
+			width: 1226px;
+			height: 272px;
+			/*background-color: pink;*/
+			margin: 0px auto;
+		}
+		.foot01 .main .main01{
+			float: left;
+			width: 1226px;
+			height: 80px;
+			/*background-color: lightyellow;*/
+			border-bottom: 1px solid #e0e0e0;
+		}
+		.foot01 .main .main01 .main01_01{
+			float: left;
+			width: 1226px;
+			height: 25px;
+			/*background-color: lightblue;*/
+			margin: 0px auto;
+			margin-top: 30px;
+		}
+		.foot01 .main .main01 .main01_01 li{
+			cursor: pointer;
+		    float: left;
+            width: 19.8%;
+            height: 25px;
+            border-left: 1px solid #e0e0e0;
+            font-size: 16px;
+            line-height: 25px;
+            text-align: center;
+            color: #fff;
+            transition: color .2s;
+		}
+		.foot01 .main .main01 .main01_01 li:hover{
+			color: #fff;
+		}
+		.foot01 .main .main02{
+			margin-top: 40px;
+			float: left;
+			width: 1226px;
+			height: 192px;
+			b/*ackground-color: pink;*/
+		}
+		.foot01 .main .main02 dl{
+			float: left;
+			width: 160px;
+			height: 112px;
+		}
+		.foot01 .main .main02 dl dt{
+			width: 160px;
+			height: 17.5px;
+			margin: -1px 0 26px;
+            font-size: 14px;
+            line-height: 1.25;
+            color: #fff;
+		}
+		.foot01 .main .main02 dl dd{
+			width: 160px;
+			height: 18px;
+			margin: 10px 0 0;
+            font-size: 12px;
+            color: #757575;
+            cursor: pointer;
+		}
+		.foot01 .main .main02 dl dd:hover{
+			color: #fff;
+		}
+		.foot01 .main .main02 .last{
+			float: right;
+			width: 252px;
+			height: 112px;
+            border-left: 1px solid #e0e0e0;
+           /* background-color: pink;*/
+		}
+		.foot01 .main .main02 .last .dc01{
+			width: 251px;
+			height: 22px;
+			margin: 0 0 5px;
+            font-size: 22px;
+            line-height: 1;
+            color: #fff;
+            text-align: center;
+		}
+		.foot01 .main .main02 .last .dc02{
+			width: 251px;
+			height: 36px;
+			margin: 0 0 16px;
+            font-size: 12px;
+            text-align: center;
+            color: #616161;
+		}
+		.foot01 .main .main02 .last .dc03{
+			width: 120px;
+			height: 30px;
+			border: 1px solid;
+			border-color: #fff;
+            background: #fff;
+            color: #333;
+            font-size: 12px;
+            line-height: 30px;
+            text-align: center;
+            margin: 0px auto;
+            cursor: pointer;
+            transition: all 0.3s;
+		}
+		.foot01 .main .main02 .last .dc03:hover{
+			background-color: #333;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="head">
+		<div class="head_le">
+			<ul>
+				<li class="left"><a href="">关注</a></li>
+				<li class="right"><a href="">下载APP</a></li>
+			</ul>
+		</div>
+		<div class="head_ri">
+			<ul>
+				<li><a href="">登录</a></li>
+				<li><a href="">注册</a></li>
+				<li><a href="">收藏</a></li>
+				<li><a href="">购物袋</a></li>
+				<li><a href="">公告</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="cart">
+		<div class="logo"></div>
+		<div class="des">
+			<ul>
+				<li>我的购物车></li>
+				<li class="new">提交订单中心></li>
+				<li>成功提交订单></li>
+			</ul>
+		</div>
+	</div>
+	<div class="order">
+		<div class="top">
+			<div class="top_1">请填写您的收货地址</div>
+			<div class="top_2"><a href="">返回购物车</a></div>
+		</div>
+		<div class="info">
+			<ul>
+				<li>
+					<div>收货人姓名*</div><input type="" name=""><div class="t1">(请输入收货人姓名)</div>
+				</li>
+				<li>
+					<div>收货人地址*</div><input type="" name=""><div class="t1">(请输入详细收货地址)</div>
+				</li>
+				<li>
+					<div>收货人手机*</div><input type="" name=""><div class="t1">(请输入收货人手机号)</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="ts">请确认订单信息</div>
+	<div class="car">
+		<div class="con">
+			<div class="class">
+				<ul>
+					<li class="class_01"></li>
+					<li class="class_02">商品名称</li>
+					<li>颜色尺码</li>
+					<li>单价</li>
+					<li>数量</li>
+					<li>小计(元)</li>
+				</ul>
+			</div>
+			<div class="thing">
+				<ul>
+					<li class="thing_01">
+					</li>
+					<li class="thing_02"><img src="https://i2.ygimg.cn/pics/adidas/2016/100370348/100370348_01_t.jpg?5" width="60px" height="60px"></li>
+					<li class="thing_03">adidas阿迪达斯2019新款中性训练系列挎包<a href="">AJ4232</a></li>
+					<li>黑色/F</li>
+					<li><a href="">63</a></li>
+					<li><a href="">5</a></li>
+					<li><a href="">63</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="zon">
+			<div class="zon_01"><a href="file:///C:/Users/%E6%BD%87%E5%B0%8F%E7%99%BD/Desktop/Jspstudy/%E7%BD%91%E9%A1%B5%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/Test%E5%88%B6%E4%BD%9C%E5%95%86%E5%9F%8E%E9%A6%96%E9%A1%B5.html">返回首页</a></div>
+			<div class="zon_01"><a href="">返回购物车</a></div>
+			<div class="zon_02"><a href="">确认，提交订单</a></div>
+			<div class="zon_03">应付金额：<a href="">1000000</a>元</div>
+		</div>
+	</div>
+	<div class="foot01">
+		<div class="main">
+			<div class="main01">
+				<div class="main01_01">
+					<ul>
+						<li>预约维修服务</li>
+						<li>7天无理由退货</li>
+						<li>15天免费换货</li>
+						<li>满150元包邮</li>
+						<li>520余家售后网点</li>
+					</ul>
+				</div>
+			</div>
+			<div class="main02">
+				<dl>
+					<dt>帮助中心</dt>
+					<dd>账户管理</dd>
+					<dd>购物指南</dd>
+					<dd>订单操作</dd>
+				</dl>
+				<dl>
+					<dt>服务支持</dt>
+					<dd>账户管理</dd>
+					<dd>购物指南</dd>
+					<dd>订单操作</dd>
+				</dl>
+				<dl>
+					<dt>线下门店</dt>
+					<dd>账户管理</dd>
+					<dd>购物指南</dd>
+					<dd>订单操作</dd>
+				</dl>
+				<dl>
+					<dt>关于优购</dt>
+					<dd>账户管理</dd>
+					<dd>购物指南</dd>
+					<dd>订单操作</dd>
+				</dl>
+				<dl>
+					<dt>关注我们</dt>
+					<dd>账户管理</dd>
+					<dd>购物指南</dd>
+					<dd>订单操作</dd>
+				</dl>
+				<dl>
+					<dt>特色服务</dt>
+					<dd>账户管理</dd>
+					<dd>购物指南</dd>
+					<dd>订单操作</dd>
+				</dl>
+				<dl class="last">
+					<div class="dc01">400-100-5678</div>
+					<div class="dc02">	
+                     周一至周日 8:00-18:00<br>
+                     （仅收市话费）
+					</div>
+					<div class="dc03">联系客服</div>
+				</dl>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

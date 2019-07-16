@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>bili jQuery prop方法</title>
+	<style type="text/css">
+		body{
+			background-color: #fff;
+		}
+	</style>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+      /*
+      1、prop方法
+      特点和attr方法一致
+      2、removeeProp方法
+      特点和removeAtr方法一致
+      注意点：
+      prop方法不仅可以操作属性还可以操作属性节点
+      官方建议：在操作属性节点时，对有true和false属性如checked,selected,disbaled时用prop()其它的用attr()
+      */
+     $("span").eq(0).prop("demo","bb");
+     $("span").eq(1).prop("demo","bb");
+     $("span").removeProp("demo");
+     // alert($("span").prop("class"));
+     $("span").prop("class","op");
+    // alert($("input").prop("checked"));返回true
+    // alert($("input").attr("checked"));返回checked
+    
+	});
+</script>
+</head>
+<body>
+	<span class="span1" name="zs"></span>
+	<span class="span2" name="ls"></span>
+	<input type="checkbox" name="" checked>
+</body>
+</html>

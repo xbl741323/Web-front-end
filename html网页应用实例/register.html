@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head >
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>用户注册</title>
+	<style type="text/css">
+		body{
+			border:solid 1px;
+			border-color: transparent;
+			width: 100%;
+			height: 1080px;
+			background: url("images/y.jpg") ;
+			background-repeat:no-repeat;
+			background-size: 100% 100%; 
+		}
+		#reg{
+			/*border: 1px solid white;*/
+			background: ;
+			width: 450px;
+			height: 330px;
+			padding-left: 80px;
+			margin:100px auto;
+		}
+		#reg>input{
+			width:240px;
+			height: 30px;
+			margin-left: 20px;
+			margin-top:20px;
+
+		}
+		#sex{
+			margin-top:10px;
+		}
+		#reg button{
+			
+			width: 245px;
+			height: 40px;
+			margin-top: 20px;
+			margin-left: 100px;
+			outline: none;
+		    border: none;
+		    background: silver;
+		    font-size: 23px;
+			cursor:pointer;
+
+		}
+		
+
+	</style>
+</head>
+<body >
+	<div id="reg">
+		<b><i>用户姓名</i></b>：<input type="test" id="username" /><br/>
+		<b><i>密　　码</i></b>：<input type="password" id="password" /><br/>
+		<b><i>密码确认</i></b>：<input type="password" id="passowrd2"/><br/>
+		<div id="sex">
+		<b><i>性别</i></b>： <input type="radio" id="sex" name="sex" checked="true" />男
+				     <input type="radio" id="sex" name="sex"/>女<br/>
+		</div>
+		<b><i>电子邮箱</i></b>：<input type="text" id="email" name="email"/><br>
+	<button type="submit">注册</button>
+	</div>
+	
+</body>
+</html>

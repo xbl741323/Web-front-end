@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>制作轮播图</title>
+<style type="text/css">
+     body{
+     	background-color: gray;
+     }
+     *{
+     	margin: 0px;
+     	padding: 0px;
+     }
+     ul{
+     	list-style: none;
+     }
+     .all{
+        width: 800px;
+        height: 400px;
+        background-color: #fff;
+        margin: 100px auto;
+        overflow: hidden;
+        position: relative;
+     }
+     .all .img{
+     	width: 400px;
+     	height: 200px;
+     	background-color: lightblue;
+     	margin: 100px 200px;
+     }
+     .all .img li{
+     	display: none;
+     }
+     .all .img .new{
+     	display: block;
+     }
+     .left{
+     	position: absolute;
+     	width: 30px;
+     	height: 50px;
+     	background-color: gray;
+     	top: 180px;
+     	left: 100px;
+     	font-size: 25px;
+     	color: #333;
+     	text-align: center;
+     	line-height: 50px;
+     	background-color: rgba(0,0,0,0.2);
+     	cursor: pointer;
+     }
+     .right{
+     	position: absolute;
+     	width: 30px;
+     	height: 50px;
+     	background-color: gray;
+     	top: 180px;
+     	right: 100px;
+     	font-size: 25px;
+     	color: #333;
+     	text-align: center;
+     	line-height: 50px;
+     	background-color: rgba(0,0,0,0.2);
+     	cursor: pointer;
+     }
+</style>
+<script type="text/javascript">
+    window.onload = function(){      
+      var newimg = document.getElementById("newimg");
+      var imgArr = ["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg","images/5.jpg"];
+      var index = 0;
+       setInterval(function(){
+        /*
+        实现图片自动轮播功能
+         */
+            newimg.src = imgArr[index++];
+            index = index%imgArr.length;
+
+       },2000);
+
+    };
+</script>
+</head>
+<body>
+     <div class="all">
+            <div class="img">
+                  <ul>
+                      <li class="new"><img id="newimg" src="images/1.jpg" alt="" width="400px" height="200px"></li>
+                      <li><img src="images/2.jpg" alt="" width="400px" height="200px"></li>
+                      <li><img src="images/3.jpg" alt="" width="400px" height="200px"></li>
+                      <li><img src="images/4.jpg" alt="" width="400px" height="200px"></li>
+                      <li><img src="images/5.jpg" alt="" width="400px" height="200px"></li>
+                  </ul>
+            </div>
+            <span class="left"><</span>
+            <span class="right">></span>
+     </div>
+</body>
+</html>

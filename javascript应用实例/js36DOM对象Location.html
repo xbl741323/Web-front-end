@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>BOM对象Location</title>
+	<style type="text/css">
+		body{
+			background-color: lightyellow;
+		}
+	</style>
+	<script src="jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+	    window.onload = function(){
+	    var btn = document.querySelector(".btn");
+	    btn.onclick = function(){
+	    	// location = "https://www.bilibili.com/";
+	    	// location.assign("https://www.bilibili.com/");
+	    	// location.reload(true);
+	    	//reload()类似于刷新的功能，加true会清除inpiut里的内容
+	    	// location.replace("https://www.bilibili.com/");
+	    	//repalce()作用类似与assign(),不过它不会生成历史纪录，不能返回
+	    	//assign()作用和location相似，可以生成历史记录
+	    	prompt();
+	    };
+	    	
+	};
+	</script>
+</head>
+<body>
+	<button class="btn">按钮</button>
+	<input type="text" name="">
+	
+</body>
+</html>

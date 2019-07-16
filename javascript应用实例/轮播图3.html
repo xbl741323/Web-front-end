@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>制作轮播图(随老师)</title>
+<style type="text/css">
+     body{
+     	background-color: #fff;
+     }
+     *{
+     	margin: 0px;
+     	padding: 0px;
+     }
+     ul{
+     	list-style: none;
+     }
+     .all{
+        width: 620px;
+        height: 300px;
+        margin: 200px auto;
+        padding: 10px 0px;
+        background-color: greenyellow;
+        position: relative;
+        overflow: hidden;
+     }
+     .img{
+        width: 620px;
+        height: 300px;
+     }
+     .all .img ul{
+       /* width: 3100px;*/
+        height: 300px;
+        position: absolute;
+        left: 0px;
+     }
+    .all .img li{
+        float: left;
+        width: 600px;
+        height: 300px;
+        margin: 0 10px;
+      }
+      .all .spa{
+        position: absolute;
+        width: 150px;
+        height: 15px;
+        /*background-color: lightgray;*/
+        bottom: 25px;
+        left: 235px;
+      }
+      .all .spa a{
+        float: left;
+        width: 15px;
+        height: 15px;
+        margin-right: 15px;
+        background-color: red;
+        opacity: 0.5;
+      }
+      .all .spa a:hover{
+        background-color: black;
+      }
+</style>
+<script type="text/javascript" src="js/tools.js"></script>
+<script type="text/javascript">
+    window.onload = function(){
+       var imgList = document.getElementById("imgList");  
+       var imgArr = document.querySelectorAll(".all .img li img");
+       var spa = document.querySelector(".spa");
+       var aArr = document.querySelectorAll(".all .spa a");
+       imgList.style.width = 620*imgArr.length+"px";
+       spa.style.width = 30*aArr.length+"px";
+       spa.style.left = (620-spa.clientWidth)/2+"px";
+       var index = 0;
+       aArr[index].style.backgroundColor = "black";
+       for(var i=0;i<aArr.length;i++){
+        aArr[i].num= i;
+           aArr[i].onclick = function(){
+            // alert(this.num);
+            index = this.num;
+            imgList.style.left = (-620)*(index) + "px";
+            // aArr[this.num].style.backgroundColor = "black";
+            setAll();
+           };
+       };
+
+        setInterval(function(){      
+           setAll();
+        },2500);
+
+        setInterval(function(){
+         imgList.style.left = (-620)*(index) + "px";
+         index++;
+         index = (index)%imgArr.length;
+       },2500);
+
+
+       function setAll(){
+        for(var i=0;i<aArr.length;i++){
+              aArr[i].style.backgroundColor = "";  
+        };
+        aArr[index].style.backgroundColor = "black";
+       };
+       // alert(getStyle(imgList,"width"));
+       
+    };
+</script>
+</head>
+<body>
+     <div class="all">
+            <div class="img">
+                  <ul id="imgList">
+                      <li><img src="images/1.jpg" width="600px" height="300px"></li>
+                      <li><img src="images/2.jpg" width="600px" height="300px"></li>
+                      <li><img src="images/3.jpg" width="600px" height="300px"></li>
+                      <li><img src="images/4.jpg" width="600px" height="300px"></li>
+                      <li><img src="images/5.jpg" width="600px" height="300px"></li>
+                  </ul>
+            </div>
+            <div class="spa">
+               <a href="javascript:;"></a>
+               <a href="javascript:;"></a>
+               <a href="javascript:;"></a>
+               <a href="javascript:;"></a>
+               <a href="javascript:;"></a>
+            </div>
+     </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>测试border-style</title>
+	<style type="text/css">
+		body{
+			background-color: white;
+		}
+		p{
+			width: 400px;
+			height: 50px;
+			color: red;
+			border: 10px solid white;
+			border-color: blue red yellow pink;
+			background-color: lightyellow;
+		}
+		.solid{
+			border-style: solid;
+		}
+		.dashed{
+			border-style: dashed;
+		}
+		.dotted{
+			border-style: dotted;
+		}
+		.double{
+			border-style: double;
+		}
+		.groove{
+			border-style: groove;
+		}
+		.ridge{
+			border-style: ridge;
+		}
+		.inset{
+			border-style: inset;
+		}
+		.outset{
+			border-style: outset;
+		}
+		.max{
+			border-style: outset double dashed solid;
+		}
+		div{
+			width: 400px;
+			height: 50px;
+			color: red;
+			/*border: 10px solid white;*/
+			/*border-color: blue red yellow pink;*/
+			background-color: lightyellow;
+			border-top: 10px solid red;
+			border-right: 10px dashed lightblue;
+			border-bottom: 10px inset yellow;
+			border-left: 10px double pink;
+
+		}
+
+	</style>
+</head>
+<body>
+	<p class="solid">实线</p>
+	<p class="dashed">虚线</p>
+	<p class="dotted">点虚线</p>
+	<p class="double">双线条</p>
+	<p class="groove">边框凹陷</p>
+	<p class="ridge">边框凸陷</p>
+	<p class="inset">内容区域凹陷效果</p>
+	<p class="outset">内容区域凸陷效果</p>
+	<p class="max">混合效果</p>
+	<div>按照方向分类</div>
+</body>
+</html>

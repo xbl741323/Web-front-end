@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>bili jQuery jQuery事件命名空间面试题</title>
+	<style type="text/css">
+		body{
+			background-color: #fff;
+			height: 2000px;
+		}
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.father{
+			width: 200px;
+			height: 200px;
+			background-color: lightgray;
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			background-color: lightblue;
+		}
+	</style>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	/*
+	  利用trigger触发子元素带命名空间的事件，那么其父元素带相同命名空间的事件也会被触发，而父元素没有命名空间的事件不会触发
+
+	  利用trigger触发子元素不带命名空间的事件，那么子元素所有相同类型的事件，和父元素所有相同类型的事件都会被触发
+	*/
+	$(function(){
+		  $(".father").on("click",function(){
+		  	alert("father click");
+		  });
+		 $(".father").on("click.ls",function(){
+		  	alert("father click.ls");
+		  });
+		  $(".son").on("click.ls",function(){
+		  	alert("ls");
+		  });
+		 // $(".son").trigger("click.ls");
+		 $(".son").trigger("click");
+    
+	});
+</script>
+</head>
+<body>
+	<div class="father">
+	      <div class="son"></div>
+	</div>
+  <a href="https://www.bilibili.com/"><span>bilibili弹幕网</span></a>
+  <form action="https://www.bilibili.com/">
+  	     <input type="text" name="" value="">
+  	     <input type="submit" name="" value="提交">
+  </form>
+	
+</body>
+</html>

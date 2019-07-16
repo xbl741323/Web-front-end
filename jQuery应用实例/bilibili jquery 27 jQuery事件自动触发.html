@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>bili jQuery jQuery事件自动触发</title>
+	<style type="text/css">
+		body{
+			background-color: #fff;
+			height: 2000px;
+		}
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.father{
+			width: 200px;
+			height: 200px;
+			background-color: lightgray;
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			background-color: lightblue;
+		}
+	</style>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	/*
+	  trigger()可以用于事件自动触发,并且可以用于子元素触发父元素的冒泡
+      triggerHandler()也可以用于事件自动触发，不过不能用于子元素触发父元素的冒泡
+	*/
+	$(function(){
+		$(".son").click(function(event){
+			alert("son");
+			// return false;
+			// event.stopPropagation();
+		});
+		    
+		$(".father").click(function(){
+			alert("father");
+		});
+		// $(".father").trigger("click");
+		// $(".father").triggerHandler("click");
+		// $(".son").trigger("click");
+		// // $(".son").triggerHandler("click");
+		//     $("a").click(function(event){
+		//     	alert("niaho");
+		//     	// return false;
+		//     	// event.preventDefault();
+		//     });
+		   $("input[type='submit']").click(function(){
+		   	    alert("submit");
+		   });
+		   /*
+               这里用trigger自动触发事件，会发生默认行为
+               这里用triggerHandler自动触发事件，不会发生默认行为
+		   */
+		   // $("input[type='submit']").trigger("click");
+		   // $("input[type='submit']").triggerHandler("click");
+
+		   $("a").click(function(){
+		     	alert("a");
+		   });
+		   /*
+              这里都没有跳转，因为a标签特殊吧，要改的话，在a标签中添加span
+		   */
+		   // $("a").trigger("click");
+		   // $("a").triggerHandler("click");
+		   $("span").trigger("click");
+
+       
+    
+	});
+</script>
+</head>
+<body>
+	<div class="father">
+	      <div class="son"></div>
+	</div>
+  <a href="https://www.bilibili.com/"><span>bilibili弹幕网</span></a>
+  <form action="https://www.bilibili.com/">
+  	     <input type="text" name="" value="">
+  	     <input type="submit" name="" value="提交">
+  </form>
+	
+</body>
+</html>

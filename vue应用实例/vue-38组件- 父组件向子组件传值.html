@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-38</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+    </style>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- 父组件可以在引用子组件的时候，通过属性绑定{v-bind:}的形式,把需要传递给子组件的数据，以属性绑定的形式，传递到子组件内部，供子组件使用-->
+        <mycom1 v-bind:parentmsg="msg"></mycom1>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: ".app",
+            data: {
+                msg: '这是父组件中的数据'
+            },
+            methods: {
+
+            },
+            components: {
+                //结论：经过演示发现，子组件中，默认无法访问父组件中的data中的数据和methods中的方法
+                mycom1: {
+                    data() {//注意：子组件中的data数据，不是通过父组件传递过来的，而是子组件自身私有的，比如：子组件通过ajax请求回来的数据，都可以放在data中
+                        //data中的数据都是可读可写的
+                        return {
+                            title: '123',
+                            content: '456'
+                        }
+                    },
+                    template: '<h3 @click="">这是子组件--{{parentmsg}}{{title}}</h3>',
+                    //注意：组件中的props中的数据，都是通过父组件传递给子组件的
+                    //注意：props中的数据都是只读的，无法重新赋值
+                    props: ['parentmsg'],//把父组件中传递过来的parentmsg属性，先在props数组中，定义一下，这样才能使用这个数据
+                    // methods: {
+                    //     change() {
+                    //         this.parentmsg = '被修改了'
+                    //     }
+                    // },这样写有问题
+                }
+            },
+        })
+    </script>
+
+</body>
+
+</html>

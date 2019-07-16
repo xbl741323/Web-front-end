@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>做一个三角形小案例</title>
+	<style type="text/css">
+		body{
+			background: white;
+			background: url(images/login2.jpg);
+		}
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		ul{
+			list-style: none;
+		}
+		.main{
+			width: 400px;
+			height: 400px;
+            margin: 100px auto;
+            border: 1px solid rgba(0,0,0,0.3)
+		}
+		li{
+			float: left;
+			width: 300px;
+			height: 25px;
+		/*	background-color: lightblue;*/
+			margin-top: 25px;
+			margin-left: 50px;
+			font-style: italic;
+			font-size: 14px;
+			line-height: 25px;
+		}
+		.title{
+			text-align: center;
+		}
+		.x1{
+			float: left;
+			width: 50px;
+			height: 25px;
+			text-align: center;
+			font-style: italic;
+			font-size: 14px;
+			line-height: 25px;
+		}
+		input{
+			float: left;
+			display: block;
+			width: 200px;
+			height: 20px;
+		}
+		.x2{
+			float: left;
+			width: 300px;
+			height: 20px;
+			text-align: center;
+			font-style: italic;
+			font-size: 14px;
+			line-height: 25px;
+			/*background-color: pink;*/
+			margin-top: 30px;
+			margin-left: 30px;
+		}
+		.x3{
+			float: left;
+			width: 50px;
+			height: 20px;
+			margin-left: 50px;
+		}
+		.x4{
+			display: block;
+			width: 100px;
+			height: 20px;
+			background-color: rgba(255,255,255,0.3);
+		}
+		.back{
+			width: 100px;
+			height: 20px;
+			/*background-color: lightblue;*/
+			float: right;
+			text-align: center;
+			font-style: italic;
+			font-size: 14px;
+			line-height: 20px;
+		}
+		a{
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		 <form action="xbl.student.servlet.UpdateStudentServlet">
+		 <ul>
+		 	<li class="title">学生信息修改页面</li>
+		 	<li><div class="x1">学号：</div><input type="text" name="" value=""></li>
+		 	<li><div class="x1">姓名：</div><input type="text" name="" value=""></li>
+		 	<li><div class="x1">年龄：</div><input type="text" name="" value=""></li>
+		 	<li><div class="x1">地址：</div><input type="text" name="" value=""></li>
+		 </ul>
+		 <div class="x2">
+		 	<div class="x3"><input class="x4" type="submit" name="" value="修改信息"></div>
+		 	<div class="back"><a href="">返回首页</a></div>
+		 </div>
+		</form>
+	</div>
+	
+</body>
+</html>

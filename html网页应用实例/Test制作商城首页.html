@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>商城首页</title>
+	<style type="text/css">
+		body {
+			background: white;
+			height: 1980px;
+		}
+
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+
+		ul {
+			list-style: none;
+		}
+
+		a {
+			text-decoration: none;
+			color: #fff;
+			outline: none;
+		}
+
+		input {
+			outline: none;
+		}
+
+		.head {
+			width: 1903px;
+			height: 40px;
+			background-color: #333;
+			font-family: '宋体';
+		}
+
+		.head_le {
+			float: left;
+			width: 92px;
+			height: 40px;
+			margin-left: 145px;
+			line-height: 40px;
+			color: #fff;
+			font-size: 12px;
+			text-align: center;
+			/*background-color: lightyellow;*/
+		}
+
+		.head_le li {
+			cursor: pointer;
+			float: left;
+		}
+
+		.head_le .left {
+			width: 24px;
+			height: 40px;
+		}
+
+		.head_le .right {
+			width: 48px;
+			height: 40px;
+			margin-left: 20px;
+		}
+
+		.head_le li a:hover {
+			color: #999;
+		}
+
+		.head_ri {
+			float: right;
+			width: 300px;
+			height: 40px;
+			margin-left: 145px;
+			margin-right: 92px;
+			line-height: 40px;
+			color: #fff;
+			font-size: 12px;
+			text-align: center;
+			/*	background-color: lightyellow;*/
+		}
+
+		.head_ri li {
+			float: left;
+			width: 60px;
+			height: 40px;
+		}
+
+		.head_ri .user {
+			float: left;
+			width: 120px;
+			height: 40px;
+		}
+
+		.head_ri li a:hover {
+			color: #999;
+		}
+
+		.logo {
+			width: 98px;
+			height: 168px;
+			margin: 0px auto;
+			background: url(https://www.yougou.com/template/common/images/logo.png) no-repeat center;
+		}
+
+		.nav {
+			width: 1190px;
+			height: 50px;
+			margin: 0px auto;
+			/*background-color: lightgray;*/
+		}
+
+		.nav .dc {
+			float: left;
+			width: 930px;
+			height: 50px;
+			/*  background-color: pink;*/
+		}
+
+		.nav .dc li {
+			float: left;
+			width: 40px;
+			height: 25px;
+			margin-top: 13px;
+			margin-right: 70px;
+			/*background-color: lightgray;*/
+			font-weight: bold;
+			color: #333;
+			line-height: 25px;
+			text-align: center;
+			font-size: 18px;
+			cursor: pointer;
+		}
+
+		.nav .dc li:hover {
+			border-bottom: 2px solid #333;
+		}
+
+		.nav .dc .first {
+			margin-left: 15px;
+		}
+
+		.nav .dc li a {
+			color: #333;
+		}
+
+		.search {
+			float: right;
+			width: 180px;
+			height: 25px;
+			/*background-color: lightyellow;*/
+			margin-top: 15px;
+		}
+
+		.search .input {
+			width: 180px;
+			height: 22px;
+			border-bottom: 1px solid #333;
+			padding-bottom: 2px;
+			position: relative;
+		}
+
+		.search .input input {
+			overflow: hidden;
+			float: left;
+			width: 160px;
+			height: 20px;
+			border: none;
+		}
+
+		.search .input .button {
+			float: right;
+			width: 15px;
+			height: 16px;
+			/*background: url(images/bg.png);
+         	background-position: -177px -10px;*/
+			cursor: pointer;
+			margin-right: 1px;
+		}
+
+		.main_bg {
+			position: relative;
+			width: 1903px;
+			height: 550px;
+		}
+
+		.main_bg li {
+			display: none;
+			width: 1903px;
+			height: 550px;
+		}
+
+		.main_bg .new {
+			display: block;
+			width: 1903px;
+			height: 550px;
+		}
+
+		.main_bg .attach {
+			position: absolute;
+			width: 180px;
+			height: 6px;
+			/*   	background-color: lightyellow;*/
+			right: 400px;
+			top: 530px;
+		}
+
+		.main_bg .attach li {
+			display: block;
+			float: left;
+			width: 25px;
+			height: 6px;
+			margin-right: 6px;
+			background-color: #000;
+			transition: transform 0.3s;
+			cursor: pointer;
+		}
+
+		.main_bg .attach li:hover {
+			background: #fff;
+			background-color: rgba(255, 255, 255, 0.5);
+		}
+
+		.main_bg .attach .new {
+			width: 25px;
+			background: #000;
+			/*background-color: rgba(255,255,255,0.5);*/
+		}
+
+		.introduce {
+			position: relative;
+			width: 1190px;
+			height: 112px;
+			margin: 66px auto;
+			/*background-color: lightgray;*/
+		}
+
+		.introduce .introduce_01 {
+			width: 1190px;
+			height: 63px;
+			/*	background-color: lightblue;*/
+			margin: 0px auto;
+			font-size: 42px;
+			font-weight: 600;
+			color: #333;
+			text-align: center;
+			line-height: 63px;
+		}
+
+		.introduce .introduce_02 {
+			width: 1190px;
+			height: 24px;
+			margin: 25px auto 40px;
+			font-size: 16px;
+			color: #666;
+			text-align: center;
+			line-height: 24px;
+			/* background-color: lightgray;*/
+		}
+
+		.introduce .introduce_02 li {
+			width: 40px;
+			height: 19px;
+			margin: 0px auto;
+			float: left;
+			padding-bottom: 0px;
+			line-height: 19px;
+			border-bottom: 1px solid;
+		}
+
+		.introduce .introduce_02 .new {
+			width: 50px;
+			height: 19px;
+			margin: 0px auto;
+			margin-left: 540px;
+			margin-right: 20px;
+			border-bottom: none;
+		}
+
+		.introduce .introduce_02 li a {
+			color: #666;
+		}
+
+		.introduce_tp {
+			position: relative;
+			width: 1190px;
+			height: 415px;
+			/*   background: lightgray;*/
+			margin: 0px auto;
+		}
+
+		.introduce_tp .tp {
+			width: 920px;
+			height: 415px;
+			margin: 0px auto;
+			/*	background-color: lightyellow;*/
+		}
+
+		.introduce_tp .tp li {
+			float: left;
+			display: none;
+			height: 406px;
+			width: 210px;
+			background-color: #fff;
+			font-size: 12px;
+			color: #333;
+			text-align: center;
+			margin: 0px 10px;
+			transition: transform 0.3;
+		}
+
+		.introduce_tp .tp .new:hover {
+			box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+			transform: translate3d(0px, -2px, 0px);
+		}
+
+		.introduce_tp .tp .new {
+			display: block;
+			/* background-color: pink; */
+		}
+
+		.introduce_tp .tp .new .new_dc1 {
+			float: left;
+			width: 210px;
+			height: 210px;
+			margin: 30px 0px;
+		}
+
+		.introduce_tp .tp .new .new_dc2 {
+			float: left;
+			width: 54px;
+			height: 24px;
+			margin: 15px auto 0px;
+			margin-left: 78px;
+			/*	background-color: lightblue;*/
+		}
+
+		.introduce_tp .tp .new .new_dc3 {
+			float: left;
+			width: 210px;
+			height: 18px;
+			margin-top: 10px;
+			/*ckground-color: lightgray;*/
+			font-size: 12px;
+			color: #333;
+			text-align: center;
+			line-height: 18px;
+		}
+
+		.introduce_tp .tp .new .new_dc4 {
+			float: left;
+			width: 210px;
+			height: 24px;
+			margin: 15px auto 10px;
+			/* 	background-color: lightgray;*/
+			font-size: 16px;
+			font-weight: bold;
+			color: #333;
+			text-align: center;
+			line-height: 24px;
+		}
+
+		.introduce_tp .left {
+			cursor: pointer;
+			position: absolute;
+			width: 12px;
+			height: 32px;
+			background: url(https://pcs2.ygimg.cn/template/common/images/sf-ico.png) no-repeat 0 -71px;
+			left: 0px;
+			bottom: 60%;
+		}
+
+		.introduce_tp .right {
+			cursor: pointer;
+			position: absolute;
+			width: 12px;
+			height: 32px;
+			background: url(https://pcs2.ygimg.cn/template/common/images/sf-ico.png) no-repeat -13px -71px;
+			right: 0px;
+			bottom: 60%;
+		}
+
+		.foot01 {
+			width: 1903px;
+			height: 322px;
+			background-color: #333;
+			margin-top: 200px;
+		}
+
+		.foot01 .main {
+			width: 1226px;
+			height: 272px;
+			/*background-color: pink;*/
+			margin: 0px auto;
+		}
+
+		.foot01 .main .main01 {
+			float: left;
+			width: 1226px;
+			height: 80px;
+			/*background-color: lightyellow;*/
+			border-bottom: 1px solid #e0e0e0;
+		}
+
+		.foot01 .main .main01 .main01_01 {
+			float: left;
+			width: 1226px;
+			height: 25px;
+			/*background-color: lightblue;*/
+			margin: 0px auto;
+			margin-top: 30px;
+		}
+
+		.foot01 .main .main01 .main01_01 li {
+			cursor: pointer;
+			float: left;
+			width: 19.8%;
+			height: 25px;
+			border-left: 1px solid #e0e0e0;
+			font-size: 16px;
+			line-height: 25px;
+			text-align: center;
+			color: #fff;
+			transition: color .2s;
+		}
+
+		.foot01 .main .main01 .main01_01 li:hover {
+			color: #fff;
+		}
+
+		.foot01 .main .main02 {
+			margin-top: 40px;
+			float: left;
+			width: 1226px;
+			height: 192px;
+			/*background-color: pink;*/
+		}
+
+		.foot01 .main .main02 dl {
+			float: left;
+			width: 160px;
+			height: 112px;
+		}
+
+		.foot01 .main .main02 dl dt {
+			width: 160px;
+			height: 17.5px;
+			margin: -1px 0 26px;
+			font-size: 14px;
+			line-height: 1.25;
+			color: #fff;
+		}
+
+		.foot01 .main .main02 dl dd {
+			width: 160px;
+			height: 18px;
+			margin: 10px 0 0;
+			font-size: 12px;
+			color: #757575;
+			cursor: pointer;
+		}
+
+		.foot01 .main .main02 dl dd:hover {
+			color: #fff;
+		}
+
+		.foot01 .main .main02 .last {
+			float: right;
+			width: 252px;
+			height: 112px;
+			border-left: 1px solid #e0e0e0;
+			/* background-color: pink;*/
+		}
+
+		.foot01 .main .main02 .last .dc01 {
+			width: 251px;
+			height: 22px;
+			margin: 0 0 5px;
+			font-size: 22px;
+			line-height: 1;
+			color: #fff;
+			text-align: center;
+		}
+
+		.foot01 .main .main02 .last .dc02 {
+			width: 251px;
+			height: 36px;
+			margin: 0 0 16px;
+			font-size: 12px;
+			text-align: center;
+			color: #616161;
+		}
+
+		.foot01 .main .main02 .last .dc03 {
+			width: 120px;
+			height: 30px;
+			border: 1px solid;
+			border-color: #fff;
+			background: #fff;
+			color: #333;
+			font-size: 12px;
+			line-height: 30px;
+			text-align: center;
+			margin: 0px auto;
+			cursor: pointer;
+			transition: all 0.3s;
+		}
+
+		.foot01 .main .main02 .last .dc03:hover {
+			background-color: #333;
+			color: #fff;
+		}
+	</style>
+	</script>
+	<script type="text/javascript">
+		window.onload = function () {
+			var t1 = document.getElementById("t1");
+			var t2 = document.getElementById("t2");
+			var t3 = document.getElementById("t3");
+			var t4 = document.getElementById("t4");
+			var t5 = document.getElementById("t5");
+
+			var img = document.getElementById("new").getElementsByTagName("img")[0];
+			t1.onclick = function () {
+				img.src = "images/01.jpg";
+			};
+			t2.onclick = function () {
+				img.src = "images/02.jpg";
+			};
+			t3.onclick = function () {
+				img.src = "images/03.jpg";
+			};
+			t4.onclick = function () {
+				img.src = "images/04.jpg";
+			};
+			t5.onclick = function () {
+				img.src = "images/05.jpg";
+			};
+			var imgtimr;
+			var newimg = document.getElementById("newimg");
+			var imgArr = ["https://i2.ygimg.cn/pics/shop/cms/home/2019/03/11/63920190311T161423.jpg",
+				"https://i2.ygimg.cn/pics/shop/cms/home/2019/03/29/84420190329T112325.jpg",
+				"https://i2.ygimg.cn/pics/shop/cms/home/2019/03/29/20120190329T112500.jpg",
+				"https://i2.ygimg.cn/pics/shop/cms/home/2019/03/05/57020190305T141346.jpg",
+				"https://i2.ygimg.cn/pics/shop/cms/home/2019/03/11/86820190311T161321.jpg"];
+			var index = 0;
+			//开启之前我们先关闭上一个定时器，就不会导致开启多个定时器
+			clearInterval(imgtimr);
+			imgtimr = setInterval(function () {
+				newimg.src = imgArr[index++];
+				index = index % imgArr.length;
+			}, 2500);
+			var left_101 = document.getElementById("left_101");
+			var right_101 = document.getElementById("right_101");
+			var left_201 = document.getElementById("left_201");
+			var right_201 = document.getElementById("right_201");
+			var left_301 = document.getElementById("left_301");
+			var right_301 = document.getElementById("right_301");
+			var first = document.querySelectorAll(".introduce_tp .tp li");
+			left_101.onclick = function () {
+				for (var i = 0; i <= 3; i++) {
+					first[i].className = "new";
+				};
+				for (var i = 4; i <= 7; i++) {
+					first[i].className = "";
+				};
+			};
+			right_101.onclick = function () {
+				for (var i = 0; i <= 3; i++) {
+					first[i].className = "";
+				};
+				for (var i = 4; i <= 7; i++) {
+					first[i].className = "new";
+				};
+			};
+			left_201.onclick = function () {
+				for (var i = 8; i < 11; i++) {
+					first[i].className = "new";
+				};
+				for (var i = 12; i < 15; i++) {
+					first[i].className = "";
+				};
+			};
+			right_201.onclick = function () {
+				for (var i = 8; i < 11; i++) {
+					first[i].className = "";
+				};
+				for (var i = 12; i < 15; i++) {
+					first[i].className = "new";
+				};
+			};
+			left_301.onclick = function () {
+				for (var i = 16; i < 19; i++) {
+					first[i].className = "new";
+				};
+				for (var i = 20; i < 23; i++) {
+					first[i].className = "";
+				};
+			};
+			right_301.onclick = function () {
+				for (var i = 16; i < 19; i++) {
+					first[i].className = "";
+				};
+				for (var i = 20; i < 23; i++) {
+					first[i].className = "new";
+				};
+			};
+		};
+	</script>
+</head>
+
+<body>
+	<div class="head">
+		<div class="head_le">
+			<ul>
+				<li class="left"><a href="">关注</a></li>
+				<li class="right"><a href="">下载APP</a></li>
+			</ul>
+		</div>
+		<div class="head_ri">
+			<ul>
+				<li class="user">您好,zddsssds <a href="">[退出]</a></li>
+				<!-- <li><a href="file:///C:/Users/%E6%BD%87%E5%B0%8F%E7%99%BD/Desktop/Jspstudy/%E7%BD%91%E9%A1%B5%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/Test%E5%88%B6%E4%BD%9C%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2.html">登录</a></li> -->
+				<li><a
+						href="file:///C:/Users/%E6%BD%87%E5%B0%8F%E7%99%BD/Desktop/Jspstudy/%E7%BD%91%E9%A1%B5%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/Test%E5%88%B6%E4%BD%9C%E6%B3%A8%E5%86%8C%E9%A1%B5%E9%9D%A2.html">注册</a>
+				</li>
+				<li><a href="">收藏</a></li>
+				<li><a href="">购物袋</a></li>
+				<li><a href="">公告</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="logo"></div>
+	<div class="nav">
+		<div class="dc">
+			<ul>
+				<li class="first"><a href="">首页</a></li>
+				<li><a
+						href="file:///C:/Users/%E6%BD%87%E5%B0%8F%E7%99%BD/Desktop/Jspstudy/%E7%BD%91%E9%A1%B5%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/Test%E5%88%B6%E4%BD%9C%E5%95%86%E5%9F%8E%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2.html">女鞋</a>
+				</li>
+				<li><a
+						href="file:///C:/Users/%E6%BD%87%E5%B0%8F%E7%99%BD/Desktop/Jspstudy/%E7%BD%91%E9%A1%B5%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/Test%E5%88%B6%E4%BD%9C%E5%95%86%E5%9F%8E%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2.html">男鞋</a>
+				</li>
+				<li><a
+						href="file:///C:/Users/%E6%BD%87%E5%B0%8F%E7%99%BD/Desktop/Jspstudy/%E7%BD%91%E9%A1%B5%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/Test%E5%88%B6%E4%BD%9C%E5%95%86%E5%9F%8E%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2.html">运动</a>
+				</li>
+				<li><a
+						href="file:///C:/Users/%E6%BD%87%E5%B0%8F%E7%99%BD/Desktop/Jspstudy/%E7%BD%91%E9%A1%B5%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/Test%E5%88%B6%E4%BD%9C%E5%95%86%E5%9F%8E%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2.html">户外</a>
+				</li>
+				<li><a
+						href="file:///C:/Users/%E6%BD%87%E5%B0%8F%E7%99%BD/Desktop/Jspstudy/%E7%BD%91%E9%A1%B5%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/Test%E5%88%B6%E4%BD%9C%E5%95%86%E5%9F%8E%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2.html">儿童</a>
+				</li>
+				<li><a
+						href="file:///C:/Users/%E6%BD%87%E5%B0%8F%E7%99%BD/Desktop/Jspstudy/%E7%BD%91%E9%A1%B5%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/Test%E5%88%B6%E4%BD%9C%E5%95%86%E5%9F%8E%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2.html">箱包</a>
+				</li>
+			</ul>
+		</div>
+		<div class="search">
+			<div class="input">
+				<input type="text" name="">
+				<div class="button"><img src="images/bg1.png"></div>
+			</div>
+		</div>
+	</div>
+	<div class="main_bg">
+		<ul>
+			<li class="new" id="new"><a href=""><img id="newimg"
+						src="https://i2.ygimg.cn/pics/shop/cms/home/2019/03/11/63920190311T161423.jpg" width="1903px"></a></li>
+			<li><a href=""><img src="https://i2.ygimg.cn/pics/shop/cms/home/2019/03/29/84420190329T112325.jpg"
+						width="1903px"></a></li>
+			<li><a href=""><img src="https://i2.ygimg.cn/pics/shop/cms/home/2019/03/29/20120190329T112500.jpg"
+						width="1903px"></a></li>
+			<li><a href=""><img src="https://i2.ygimg.cn/pics/shop/cms/home/2019/03/05/57020190305T141346.jpg"
+						width="1903px"></a></li>
+			<li><a href=""><img src="https://i2.ygimg.cn/pics/shop/cms/home/2019/03/11/86820190311T161321.jpg"
+						width="1903px"></a></li>
+		</ul>
+		<div class="attach">
+			<ul>
+				<li class="new" id="t1"></li>
+				<li id="t2"></li>
+				<li id="t3"></li>
+				<li id="t4"></li>
+				<li id="t5"></li>
+			</ul>
+		</div>
+	</div>
+	<div class="introduce">
+		<div class="introduce_01">新品推荐</div>
+		<div class="introduce_02">
+			<ul>
+				<li class="new"><a href="">男女鞋</a></li>
+				<li><a href="">运动</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="introduce_tp">
+		<div class="tp">
+			<ul>
+				<li class="new">
+					<div class="new_dc1"><a href=""><img
+								src="https://i1.ygimg.cn/pics/adidas/2019/101183441/101183441_01_mb.jpg?3" width="210px"
+								height="210px"></a></div>
+					<div class="new_dc2"><a href=""><img src="https://i1.ygimg.cn/pics/brandlogo/brandlogforcms/blackL-adidas.png"
+								width="54px" height="24px"></a></div>
+					<div class="new_dc3">T恤</div>
+					<div class="new_dc4">￥129</div>
+				</li>
+				<li class="new">
+					<div class="new_dc1"><a href=""><img src="https://i2.ygimg.cn/pics/nike/2019/101204351/101204351_01_mb.jpg?3"
+								width="210px" height="210px"></a></div>
+					<div class="new_dc2"><a href=""><img src="https://i1.ygimg.cn/pics/brandlogo/brandlogforcms/blackL-nike.png"
+								width="54px" height="24px"></a></div>
+					<div class="new_dc3">T恤</div>
+					<div class="new_dc4">￥159</div>
+				</li>
+				<li class="new">
+					<div class="new_dc1"><a href=""><img
+								src="https://i1.ygimg.cn/pics/adidasclassic/2019/101206004/101206004_01_mb.jpg?4" width="210px"
+								height="210px"></a></div>
+					<div class="new_dc2"><a href=""><img
+								src="https://i1.ygimg.cn/pics/brandlogo/brandlogforcms/blackL-adidasoriginals.png" width="54px"
+								height="24px"></a></div>
+					<div class="new_dc3">T恤</div>
+					<div class="new_dc4">￥309</div>
+				</li>
+				<li class="new">
+					<div class="new_dc1"><a href=""><img
+								src="https://i2.ygimg.cn/pics/adidasneo/2019/101192327/101192327_01_mb.jpg?3" width="210px"
+								height="210px"></a></div>
+					<div class="new_dc2"><a href=""><img
+								src="https://i1.ygimg.cn/pics/brandlogo/brandlogforcms/blackL-adidasneo.png" width="54px"
+								height="24px"></a></div>
+					<div class="new_dc3">休闲鞋</div>
+					<div class="new_dc4">￥409</div>
+				</li>
+				<li>
+					<div class="new_dc1"><a href=""><img src="https://i1.ygimg.cn/pics/puma/2019/101197471/101197471_01_mb.jpg?4"
+								width="210px" height="210px"></a></div>
+					<div class="new_dc2"><a href=""><img src="https://i1.ygimg.cn/pics/brandlogo/brandlogforcms/blackL-puma.png"
+								width="54px" height="24px"></a></div>
+					<div class="new_dc3">T恤</div>
+					<div class="new_dc4">￥289</div>
+				</li>
+				<li>
+					<div class="new_dc1"><a href=""><img
+								src="https://i2.ygimg.cn/pics/converse/2019/101199045/101199045_01_mb.jpg?3" width="210px"
+								height="210px"></a></div>
+					<div class="new_dc2"><a href=""><img
+								src="https://i1.ygimg.cn/pics/brandlogo/brandlogforcms/blackL-converse.png" width="54px"
+								height="24px"></a></div>
+					<div class="new_dc3">T恤</div>
+					<div class="new_dc4">￥249</div>
+				</li>
+				<li>
+					<div class="new_dc1"><a href=""><img
+								src="https://i1.ygimg.cn/pics/onitsukatiger/2019/101197864/101197864_01_mb.jpg?2" width="210px"
+								height="210px"></a></div>
+					<div class="new_dc2"><a href=""><img
+								src="https://i1.ygimg.cn/pics/brandlogo/brandlogforcms/blackL-onitsukatiger.png" width="54px"
+								height="24px"></a></div>
+					<div class="new_dc3">T恤</div>
+					<div class="new_dc4">￥189</div>
+				</li>
+				<li>
+					<div class="new_dc1"><a href=""><img
+								src="https://i1.ygimg.cn/pics/skechers/2018/101021690/101021690_01_mb.jpg?2" width="210px"
+								height="210px"></a></div>
+					<div class="new_dc2"><a href=""><img
+								src="https://i1.ygimg.cn/pics/brandlogo/brandlogforcms/blackL-skechers.png" width="54px"
+								height="24px"></a></div>
+					<div class="new_dc3">T恤</div>
+					<div class="new_dc4">￥289</div>
+				</li>
+			</ul>
+		</div>
+		<div class="left" id="left_101"></div>
+		<div class="right" id="right_101"></div>
+	</div>
+	<div class="introduce">
+		<div class="introduce_01">热卖专区</div>
+		<div class="introduce_02">
+			<ul>
+				<li class="new"><a href="">男女鞋</a></li>
+				<li><a href="">运动</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="introduce_tp">
+		<div class="tp">
+			<ul>
+				<li class="new">
+					<div class="new_dc1"><a href=""><img src="https://i1.ygimg.cn/pics/puma/2019/101197471/101197471_01_mb.jpg?4"
+								width="210px" height="210px"></a></div>
+					<div class="new_dc2"><a href=""><img src="https://i1.ygimg.cn/pics/brandlogo/brandlogforcms/blackL-puma.png"
+								width="54px" height="24px"></a></div>
+					<div class="new_dc3">长裤</div>
+					<div class="new_dc4">￥289</div>
+				</li>
+				<li class="new">
+					<div class="new_dc1"><a href=""><img
+								src="https://i2.ygimg.cn/pics/converse/2019/101199045/101199045_01_mb.jpg?3" width="210px"
+								height="210px"></a></div>
+					<div class="new_dc2"><a href=""><img
+								src="https://i1.ygimg.cn/pics/brandlogo/brandlogforcms/blackL-converse.png" width="54px"
+								height="24px"></a></div>
+					<div class="new_dc3">T恤</div>
+					<div class="new_dc4">￥249</div>
+				</li>
+				<li class="new">
+					<div class="new_dc1"><a href=""><img
+								src="https://i1.ygimg.cn/pics/onitsukatiger/2019/101197864/101197864_01_mb.jpg?2" width="210px"
+								height="210px"></a></div>
+					<div class="new_dc2"><a href=""><img
+								src="https://i1.ygimg.cn/pics/brandlogo/brandlogforcms/blackL-onitsukatiger.png" width="54px"
+								height="24px"></a></div>
+					<div class="new_dc3">T恤</div>
+					<div class="new_dc4">￥189</div>
+				</li>
+				<li class="new">
+					<div class="new_dc1"><a href=""><img
+								src="https://i1.ygimg.cn/pics/skechers/2018/101021690/101021690_01_mb.jpg?2" width="210px"
+								height="210px"></a></div>
+					<div class="new_dc2"><a href=""><img
+								src="https://i1.ygimg.cn/pics/brandlogo/brandlogforcms/blackL-skechers.png" width="54px"
+								height="24px"></a></div>
+					<div class="new_dc3">休闲鞋</div>
+					<div class="new_dc4">￥289</div>
+				</li>
+				<li>
+					<div class="new_dc1"><a href=""><img
+								src="https://i1.ygimg.cn/pics/adidas/2019/101183441/101183441_01_mb.jpg?3" width="210px"
+								height="210px"></a></div>
+					<div class="new_dc2"><a href=""><img src="https://i1.ygimg.cn/pics/brandlogo/brandlogforcms/blackL-adidas.png"
+								width="54px" height="24px"></a></div>
+					<div class="new_dc3">T恤</div>
+					<div class="new_dc4">￥129</div>
+				</li>
+				<li>
+					<div class="new_dc1"><a href=""><img src="https://i2.ygimg.cn/pics/nike/2019/101204351/101204351_01_mb.jpg?3"
+								width="210px" height="210px"></a></div>
+					<div class="new_dc2"><a href=""><img src="https://i1.ygimg.cn/pics/brandlogo/brandlogforcms/blackL-nike.png"
+								width="54px" height="24px"></a></div>
+					<div class="new_dc3">T恤</div>
+					<div class="new_dc4">￥159</div>
+				</li>
+				<li>
+					<div class="new_dc1"><a href=""><img
+								src="https://i1.ygimg.cn/pics/adidasclassic/2019/101206004/101206004_01_mb.jpg?4" width="210px"
+								height="210px"></a></div>
+					<div class="new_dc2"><a href=""><img
+								src="https://i1.ygimg.cn/pics/brandlogo/brandlogforcms/blackL-adidasoriginals.png" width="54px"
+								height="24px"></a></div>
+					<div class="new_dc3">T恤</div>
+					<div class="new_dc4">￥309</div>
+				</li>
+				<li>
+					<div class="new_dc1"><a href=""><img
+								src="https://i2.ygimg.cn/pics/adidasneo/2019/101192327/101192327_01_mb.jpg?3" width="210px"
+								height="210px"></a></div>
+					<div class="new_dc2"><a href=""><img
+								src="https://i1.ygimg.cn/pics/brandlogo/brandlogforcms/blackL-adidasneo.png" width="54px"
+								height="24px"></a></div>
+					<div class="new_dc3">T恤</div>
+					<div class="new_dc4">￥409</div>
+				</li>
+			</ul>
+		</div>
+		<div class="left" id="left_201"></div>
+		<div class="right" id="right_201"></div>
+	</div>
+	<div class="introduce">
+		<div class="introduce_01">鞋类专区</div>
+		<div class="introduce_02">
+			<ul>
+				<li class="new"><a href="">男女鞋</a></li>
+				<li><a href="">运动</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="introduce_tp">
+		<div class="tp">
+			<ul>
+				<li class="new">
+					<div class="new_dc1"><a href=""><img
+								src="https://i1.ygimg.cn/pics/belle/2019/101193726/101193726_01_mb.jpg?14" width="210px"
+								height="210px"></a></div>
+					<div class="new_dc2"><a href=""><img
+								src="https://i1.ygimg.cn/pics/brandlogo/brandlogforcms/blackL-joypeace.png" width="54px"
+								height="24px"></a></div>
+					<div class="new_dc3">运动鞋</div>
+					<div class="new_dc4">￥289</div>
+				</li>
+				<li class="new">
+					<div class="new_dc1"><a href=""><img
+								src="https://i1.ygimg.cn/pics/teenmix/2019/101194294/101194294_01_mb.jpg?11" width="210px"
+								height="210px"></a></div>
+					<div class="new_dc2"><a href=""><img src="https://i1.ygimg.cn/pics/brandlogo/brandlogforcms/blackL-bata.png"
+								width="54px" height="24px"></a></div>
+					<div class="new_dc3">运动鞋</div>
+					<div class="new_dc4">￥459</div>
+				</li>
+				<li class="new">
+					<div class="new_dc1"><a href=""><img
+								src="https://i2.ygimg.cn/pics/teenmix/2019/101195230/101195230_01_mb.jpg?4" width="210px"
+								height="210px"></a></div>
+					<div class="new_dc2"><a href=""><img src="https://i1.ygimg.cn/pics/brandlogo/brandlogforcms/blackL-senda.png"
+								width="54px" height="24px"></a></div>
+					<div class="new_dc3">纯凉鞋</div>
+					<div class="new_dc4">￥689</div>
+				</li>
+				<li class="new">
+					<div class="new_dc1"><a href=""><img src="https://i2.ygimg.cn/pics/basto/2019/101198196/101198196_01_mb.jpg?3"
+								width="210px" height="210px"></a></div>
+					<div class="new_dc2"><a href=""><img src="https://i1.ygimg.cn/pics/brandlogo/brandlogforcms/blackL-basto.png"
+								width="54px" height="24px"></a></div>
+					<div class="new_dc3">纯凉鞋</div>
+					<div class="new_dc4">￥489</div>
+				</li>
+				<li>
+					<div class="new_dc1"><a href=""><img
+								src="https://i1.ygimg.cn/pics/adidas/2019/101183441/101183441_01_mb.jpg?3" width="210px"
+								height="210px"></a></div>
+					<div class="new_dc2"><a href=""><img src="https://i1.ygimg.cn/pics/brandlogo/brandlogforcms/blackL-adidas.png"
+								width="54px" height="24px"></a></div>
+					<div class="new_dc3">T恤</div>
+					<div class="new_dc4">￥129</div>
+				</li>
+				<li>
+					<div class="new_dc1"><a href=""><img src="https://i2.ygimg.cn/pics/nike/2019/101204351/101204351_01_mb.jpg?3"
+								width="210px" height="210px"></a></div>
+					<div class="new_dc2"><a href=""><img src="https://i1.ygimg.cn/pics/brandlogo/brandlogforcms/blackL-nike.png"
+								width="54px" height="24px"></a></div>
+					<div class="new_dc3">T恤</div>
+					<div class="new_dc4">￥159</div>
+				</li>
+				<li>
+					<div class="new_dc1"><a href=""><img
+								src="https://i1.ygimg.cn/pics/adidasclassic/2019/101206004/101206004_01_mb.jpg?4" width="210px"
+								height="210px"></a></div>
+					<div class="new_dc2"><a href=""><img
+								src="https://i1.ygimg.cn/pics/brandlogo/brandlogforcms/blackL-adidasoriginals.png" width="54px"
+								height="24px"></a></div>
+					<div class="new_dc3">T恤</div>
+					<div class="new_dc4">￥309</div>
+				</li>
+				<li>
+					<div class="new_dc1"><a href=""><img
+								src="https://i2.ygimg.cn/pics/adidasneo/2019/101192327/101192327_01_mb.jpg?3" width="210px"
+								height="210px"></a></div>
+					<div class="new_dc2"><a href=""><img
+								src="https://i1.ygimg.cn/pics/brandlogo/brandlogforcms/blackL-adidasneo.png" width="54px"
+								height="24px"></a></div>
+					<div class="new_dc3">T恤</div>
+					<div class="new_dc4">￥409</div>
+				</li>
+			</ul>
+		</div>
+		<div class="left" id="left_301"></div>
+		<div class="right" id="right_301"></div>
+	</div>
+	<div class="foot01">
+		<div class="main">
+			<div class="main01">
+				<div class="main01_01">
+					<ul>
+						<li>预约维修服务</li>
+						<li>7天无理由退货</li>
+						<li>15天免费换货</li>
+						<li>满150元包邮</li>
+						<li>520余家售后网点</li>
+					</ul>
+				</div>
+			</div>
+			<div class="main02">
+				<dl>
+					<dt>帮助中心</dt>
+					<dd>账户管理</dd>
+					<dd>购物指南</dd>
+					<dd>订单操作</dd>
+				</dl>
+				<dl>
+					<dt>服务支持</dt>
+					<dd>账户管理</dd>
+					<dd>购物指南</dd>
+					<dd>订单操作</dd>
+				</dl>
+				<dl>
+					<dt>线下门店</dt>
+					<dd>账户管理</dd>
+					<dd>购物指南</dd>
+					<dd>订单操作</dd>
+				</dl>
+				<dl>
+					<dt>关于优购</dt>
+					<dd>账户管理</dd>
+					<dd>购物指南</dd>
+					<dd>订单操作</dd>
+				</dl>
+				<dl>
+					<dt>关注我们</dt>
+					<dd>账户管理</dd>
+					<dd>购物指南</dd>
+					<dd>订单操作</dd>
+				</dl>
+				<dl>
+					<dt>特色服务</dt>
+					<dd>账户管理</dd>
+					<dd>购物指南</dd>
+					<dd>订单操作</dd>
+				</dl>
+				<dl class="last">
+					<div class="dc01">400-100-5678</div>
+					<div class="dc02">
+						周一至周日 8:00-18:00<br>
+						（仅收市话费）
+					</div>
+					<div class="dc03">联系客服</div>
+				</dl>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

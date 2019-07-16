@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>测试margin塌陷</title>
+	<style type="text/css">
+		body{
+			background: lightyellow;
+		}
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		div{
+			float: left;
+			width: 200px;
+			height: 200px;
+			background-color: lightblue;
+
+		}
+		.box1{
+			margin: 50px 50px;
+		}
+		.box2{
+			margin: 50px 0px;
+		}
+
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	
+	
+</body>
+</html>

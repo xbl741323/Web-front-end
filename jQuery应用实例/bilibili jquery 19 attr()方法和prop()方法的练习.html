@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>bili jQuery attr()方法和prop()方法的练习</title>
+	<style type="text/css">
+		body{
+			background-color: #fff;
+		}
+	</style>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+      $("button").click(function(){
+         var ve = $("input")[0].value;
+         $("img").prop("src",ve); 
+
+
+
+      });
+    
+	});
+</script>
+</head>
+<body>
+	<input type="text" name="" value="">
+	<button>改变图片地址</button><br>
+	<img src="images/1.jpg">
+</body>
+</html>

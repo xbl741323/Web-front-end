@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>parent() parents() parentsUntil()</title>
+	<style type="text/css">
+		body{
+			background-color: #fff;
+		}
+		ul{
+			list-style: none;
+		}
+	    .box{
+	    	width: 400px;
+	    	height: 400px;
+	    	background-color: lightyellow;
+	    }
+	    ul{
+	    	width: 300px;
+	    	height: 300px;
+	    	background-color: lightblue;
+	    }
+	    li{
+	    	float: left;
+	    	width: 200px;
+	    	height: 50px;
+	    	margin-bottom: 20px;
+	    	background-color: lightgray;
+	    }
+	    .t1{
+	    	width: 100px;
+	    	height: 20px;
+	    	background-color: pink;
+	    }
+	</style>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#btn1").click(function(){
+             $(".t1").parent().css({"border":"2px solid red"});
+		});
+		$("#btn2").click(function(){
+             $(".t1").parents().css({"border":"2px solid red"});
+		});
+		$("#btn3").click(function(){
+             $(".t1").parents("li").css({"border":"2px solid red"});
+		});
+		$("#btn4").click(function(){
+             $(".t1").parentsUntil(".box").css({"border":"2px solid red"});
+		});
+
+	});
+</script>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li></li>
+			<li class="t2"><div class="t1"></div></li>
+			<li></li>
+		</ul>
+	</div>
+	<button id="btn1">返回.t1直接父元素</button>
+	<button id="btn2">返回.t1的所有父元素</button>
+	<button id="btn3">返回.t1的所有li父元素</button>
+	<button id="btn4">返回.t1和.box之间的父元素</button>
+	
+</body>
+</html>

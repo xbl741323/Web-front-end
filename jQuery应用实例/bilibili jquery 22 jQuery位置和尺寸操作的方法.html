@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>bili jQuery jQuery位置和尺寸操作的方法</title>
+	<style type="text/css">
+		body{
+			background-color: #fff;
+		}
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.father{
+	    	width: 200px;
+	    	height: 200px;
+	    	background-color: lightgray;
+	    	border: 50px solid black;
+	    	position: relative;
+	    	margin-left: 50px;
+	    }
+	    .son{
+	    	width: 100px;
+	    	height: 100px;
+	    	background-color: pink;
+	    	position: absolute;
+	    	top: 50px;
+	    	left: 50px;
+	    }
+	</style>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	/*
+           offset()
+           获得或设置距离页面的相应偏移量
+
+           position()
+           只能获得距离相对父定位元素的相应偏移量，不能设置
+
+
+
+	*/
+	$(function(){
+       $(".btn1").click(function(){
+       	var width = $(".father").width();
+       	// alert(width);
+       	var offset = $(".son").offset().left;
+       	// alert(offset);
+       	var position = $(".son").position().left;
+       	alert(position);
+       });
+       $(".btn2").click(function(){
+       // 	$(".son").offset({left:10});
+       // $(".son").position({left:1000});
+       $(".son").css({left:"10px"});
+       });
+
+       
+    
+	});
+</script>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+	<button class="btn1">获得样式</button>
+	<button class="btn2">设置样式</button>
+</body>
+</html>

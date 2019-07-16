@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>利用绝对定位制作轮播图</title>
+	<style type="text/css">
+		body{
+             background-color: white;
+		    }
+
+	</style>
+	<script type="text/javascript">
+		function change(){
+		 var x = document.getElementById("message");
+		x.src="网页应用实例/images/x.jpg";
+
+		}
+		function change01(){
+		 var x = document.getElementById("message");
+		x.src="网页应用实例/images/x.png";
+
+		}
+	</script>
+</head>
+<body>
+	<img src="网页应用实例/images/n.jpg" id="message">
+	<input type="submit" name="" value="上一张" onclick="change()">
+	<input type="submit" name="" value="下一张" onclick="change01()">
+
+	
+</body>
+</html>

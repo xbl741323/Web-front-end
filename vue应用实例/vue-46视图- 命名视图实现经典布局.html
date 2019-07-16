@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-46</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+
+        .header {
+            background-color: orange;
+            height: 100px;
+        }
+
+        .container {
+            display: flex;
+            height: 875px;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .left {
+            background-color: lightblue;
+            flex: 1;
+        }
+
+        .main {
+            background-color: lightpink;
+            flex: 4;
+        }
+    </style>
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <router-view></router-view>
+        <div class="container">
+            <router-view name="left"></router-view>
+            <router-view name="main"></router-view>
+        </div>
+    </div>
+    <script>
+        var header = {
+            template: '<h3 class="header">header头部区域</h3>'
+        }
+        var leftBox = {
+            template: '<h3 class="left">leftBox侧边栏区域</h3>'
+        }
+        var mainBox = {
+            template: '<h3 class="main">mainBox主体区域</h3>'
+        }
+
+        var router = new VueRouter({
+            routes: [
+                // { path: '/', component: header },
+                // { path: '/left', component: leftBox },
+                // { path: '/main', component: mainBox }
+                {
+                    path: '/', components: {
+                        'default': header,
+                        'left': leftBox,
+                        'main': mainBox
+                    }
+                }
+            ]
+        })
+
+        var vm = new Vue({
+            el: ".app",
+            data: {
+
+            },
+            methods: {
+
+            },
+            router
+        })
+    </script>
+
+</body>
+
+</html>

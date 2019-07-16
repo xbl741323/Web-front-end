@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>测试表格</title>
+	<style type="text/css">
+	body{
+		background-color: white;
+	    }
+	th,td{
+		width: 100px;
+	}
+	table{
+		border-collapse: collapse;
+	}
+		
+	</style>
+</head>
+<body>
+	<table border="1">
+		<tr>
+		    <th>1</th>
+		    <th>2</th>
+		    <th>3</th>
+		    <th>4</th>
+		</tr>
+		<tr>
+			<td>第一行第一列</td>
+			<td>第一行第二列</td>
+			<td>第一行第三列</td>
+			<td>第一行第四列</td>
+		</tr>
+		<tr>
+			<td>第二行第一列</td>
+			<td>第二行第二列</td>
+			<td>第二行第三列</td>
+			<td>第二行第四列</td>
+		</tr>
+		<tr>
+			<td>第三行第一列</td>
+			<td>第三行第二列</td>
+			<td>第三行第三列</td>
+			<td>第三行第四列</td>
+		</tr>
+	</table>
+	<table border="1">
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td rowspan="2">6</td>
+			<td colspan="2">7</td>
+			<td colspan="2">8</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>10</td>
+			<td rowspan="2">11</td>
+			<td>12</td>
+		</tr>
+		<tr>
+			<td colspan="2">13</td>
+			<td>14</td>
+			<td>15</td>
+		</tr>
+	</table>
+	<table border="1">
+		<tr>
+			<td colspan="2">1</td>
+			<td>2</td>
+			<td rowspan="2">3</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td rowspan="2">6</td>
+			<td>7</td>
+			<td>8</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>10</td>
+			<td colspan="2">11</td>
+		</tr>
+	</table>
+
+	<table border="1">
+		<caption>演员简介</caption>	
+		<thead>
+			<tr>
+			<th>演员</th>
+			<th>类型</th>
+			<th>作品</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr>
+			<td>史泰龙</td>
+			<td>动作片</td>
+			<td>《第一滴血》</td>
+		</tr>
+		<tr>
+			<td>周星驰</td>
+			<td>戏剧片</td>
+			<td>《大话西游》</td>
+		</tr>
+		<tr>
+			<td>桥本爱</td>
+			<td>治愈片</td>
+			<td>《小森林》</td>
+		</tr>
+		</tbody>
+	</table>
+
+	<table border="1">
+		<caption>各地区固定资产投资情况</caption>
+		<thead>
+			<tr>
+			<th rowspan="2">地区</th>
+			<th colspan="2">按总量分</th>
+			<th colspan="2">按比重分</th>
+		</tr>
+		<tr>
+			<th>自动累计（亿元）</th>
+			<th>比去年同期增长（%）</th>
+			<th>自动累计（%）</th>
+			<th>去年同期（%）</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr>
+			<td>全国</td>
+			<td>187670.90</td>
+			<td>9.6</td>
+			<td>100.0</td>
+			<td>100.0</td>
+		</tr>
+		<tr>
+			<td>东部地区</td>
+			<td>84509.91</td>
+			<td>10.9</td>
+			<td>45.0</td>
+			<td>44.5</td>
+		</tr>
+		<tr>
+			<td>北京市</td>
+			<td>2200.84</td>
+			<td>7.0</td>
+			<td>1.2</td>
+			<td>1.2</td>
+		</tr>
+		<tr>
+			<td>天津市</td>
+			<td>5151.20</td>
+			<td>10.5</td>
+			<td>2.7</td>
+			<td>2.7</td>
+		</tr>
+		<tr>
+			<td>河北市</td>
+			<td>9745.35</td>
+			<td>11.0</td>
+			<td>5.2</td>
+			<td>5.1</td>
+
+		</tr>
+		</tbody>
+		<br>
+		
+	</table>
+	<table border="1">
+		<caption>耕地保有量表格</caption>
+		<thead>
+		<tr>
+			<th rowspan="3">地区</th>
+			<th rowspan="2" colspan="2">2005年耕地秒面积</th>
+			<th colspan="4">耕地保有量</th>
+			<th rowspan="2" colspan="2">基本农田保护面积</th>
+		</tr>
+		<tr>
+			<th colspan="2">2010年</th>
+			<th colspan="2">2020年</th>
+		</tr>
+		<tr>
+			<th>万公顷</th>
+			<th>万亩</th>
+			<th>万公顷</th>
+			<th>万亩</th>
+			<th>万公顷</th>
+			<th>万亩</th>
+			<th>万公顷</th>
+			<th>万亩</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>北京</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+		</tr>
+		<tr>
+			<td>北京</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+		</tr>
+		<tr>
+			<td>北京</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+		</tr>
+		<tr>
+			<td>北京</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+		</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>

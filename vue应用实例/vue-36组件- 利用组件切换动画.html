@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-36</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+
+        .v-enter,
+        .v-leave-to {
+            opacity: 0;
+            transform: translateX(300px);
+        }
+
+        .v-enter-active,
+        .v-leave-active {
+            transition: all 0.5s ease;
+        }
+    </style>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <div>
+            <a href="" @click.prevent="comName='login'">登陆</a>
+            <a href="" @click.prevent="comName='register'">注册</a>
+            <a href="" @click.prevent="comName='test1'">test1</a>
+            <a href="" @click.prevent="comName='test2'">test2</a>
+            <a href="" @click.prevent="comName='test3'">test3</a>
+            <!-- 通过mode属性，设置组件切换时的模式-->
+            <transition mode="out-in">
+                <component :is="comName"></component>
+            </transition>
+
+        </div>
+    </div>
+    <script>
+        //组件名称是字符串
+        Vue.component('login', {
+            template: '<h3>登陆组件</h3>'
+        })
+        Vue.component('register', {
+            template: '<h3>注册组件</h3>'
+        })
+        Vue.component('test1', {
+            template: '<h3>test1组件</h3>'
+        })
+        Vue.component('test2', {
+            template: '<h3>test2组件</h3>'
+        })
+        Vue.component('test3', {
+            template: '<h3>test3组件</h3>'
+        })
+        var vm = new Vue({
+            el: ".app",
+            data: {
+                comName: 'login'//当前component中:is绑定的组件的名称，这里是变量,默认显示是login
+            },
+            methods: {
+                toggle() {
+
+                }
+            },
+        })
+    </script>
+
+</body>
+
+</html>

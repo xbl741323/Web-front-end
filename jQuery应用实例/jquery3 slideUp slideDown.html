@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>slideUp/Down</title>
+	<style type="text/css">
+		body{
+			background-color: lightyellow;
+		}
+		p{
+			width: 200px;
+			height: 200px;
+			/*display: none;*/
+			background-color: lightblue;
+		}
+	</style>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+    $(".x1").click(function(){
+         $("p").slideUp();
+    });
+    $(".x2").click(function(){
+    	 $("p").slideDown(3000,function(){
+    	 	alert("显示完毕");
+    	 });
+    });
+    $(".x3").click(function(){
+    	 $("p").slideToggle();
+    });
+    $(".x4").click(function(){
+    	 $("p").slideDown(3000);
+    });
+    $(".x5").click(function(){
+    	 $("p").slideUp(3000);
+    });
+
+	});
+
+</script>
+</head>
+<body>
+	<div><p>这是一段雯文字~</p></div>
+	<button class="x1">向上隐藏</button>
+	<button class="x2">向下显示</button>
+	<button class="x3">隐藏/显示</button>
+	<button class="x5">向上隐藏延迟3000</button>
+	<button class="x4">向下显示延迟3000</button>
+</body>
+</html>

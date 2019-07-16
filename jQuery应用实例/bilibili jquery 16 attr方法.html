@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>bili jQuery attr方法</title>
+	<style type="text/css">
+		body{
+			background-color: #fff;
+		}
+	</style>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+      /*
+      1、attr(name|pro|key.val|fn);
+      作用:获取或者设置属性节点的值
+      可以传递一个参数，也可以传递两个参数
+      前者是获取属性的值，后者是设置属性的值
+         注意点：
+         如果是获取：无论找到多少个元素，都只会返回第一个元素指定的元素节点的值
+         如果是设置：找到多少个元素就会设置多少个元素
+         如果是设置：如果设置的属性节点不存在，那么系统会自动增加
+
+       2、removeAttr()
+       用于删除属性节点
+      */
+      // var t1 = $("span").attr("name");
+      // alert(t1);
+      // $("span").attr("class","tt");
+      $("span").removeAttr("class name");
+    
+    
+	});
+</script>
+</head>
+<body>
+	<span class="span1" name="zs"></span>
+	<span class="span2" name="ls"></span>
+	
+</body>
+</html>

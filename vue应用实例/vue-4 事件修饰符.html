@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-4</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+
+        .inner {
+            background-color: lightblue;
+            height: 300px;
+        }
+    </style>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- .stop可以阻止事件冒泡 -->
+        <!-- <div class="inner" @click="way1">
+            <input type="button" value="按钮" @click.stop="way2">
+        </div> -->
+        <!-- 使用.capture可以实现捕获触发事件的机制，即将事件由外到内执行 -->
+        <!-- <div class="inner" @click.capture="way1">
+            <input type="button" value="按钮" @click.stop="way2">
+        </div>
+        <a href="https://www.bilibili.com/" @click.prevent="way3">哔哩哔哩弹幕网</a> -->
+        <!-- .prevent可以阻止默认事件 -->
+
+        <!-- 使用.self实现只有点击自身元素时，才会触发事件函数-->
+        <!-- .once只触发一次事件处理函数，这里.once与.prevent先后顺序对结果没有影响-->
+    
+        <div class="inner" @click.self="way1">
+                <input type="button" value="按钮" @click="way2">
+            </div>
+            <a href="https://www.bilibili.com/" @click.prevent.once="way3">哔哩哔哩弹幕网</a>
+            <!-- 注意：虽然.self和.stop都能阻止事件的冒泡，但是同一功能实现下.stop只需要对子元素设置一次即可，而.self可能需要设置多个才能阻止冒泡-->
+    </div>
+    <script>
+        var vm = new Vue({
+            el: ".app",
+            data: {
+
+            },
+            methods: {
+                way1() {
+                    alert("way1");
+                },
+                way2() {
+                    alert("way2");
+                },
+                way3() {
+                    alert("即将进入b站");
+                },
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

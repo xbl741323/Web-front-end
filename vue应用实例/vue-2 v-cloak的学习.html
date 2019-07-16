@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-2</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div class="app">
+        <!-- 使用 v-cloak 可以解决插值表达式的闪烁问题 -->
+        <p v-cloak>-------{{ msg }}--------</p>
+        <h4 v-text="msg">-----</h4>
+        <!-- 默认v-text是没有闪烁问题的 -->
+        <!-- v-text会覆盖元素中原本的内容，但是插值表达式，只会替换自己的占位符，不会覆盖整个元素内容-->
+        <div>{{ msg2 }}</div>
+        <div v-text="msg2"></div>
+        <div v-html="msg2"></div>
+        <!-- v-html可以将标签功能实现化，即将内容以html的形式输出-->
+
+        <input type="button" v-bind:value="value" :title="mytitle+'123'" v-on:click="show">
+        <!-- v-bind是vue中用于提供绑定属性的指令,v-bind可以省略，留一个：即可-->
+        <!-- v-bind中可以写合法的js表达式 -->
+        <!-- v-on 用于绑定事件，缩写是@-->
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: ".app",
+            data: {
+                msg: "123",
+                msg2: '<h1>我是H1</h1>',
+                mytitle: "这是新的tilte",
+                value: "submit"
+            },
+            methods: {
+                show:function(){
+                    alert("hello")
+                }
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

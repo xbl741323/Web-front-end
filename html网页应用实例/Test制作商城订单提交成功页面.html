@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>商城订单提交成功页面</title>
+	<style type="text/css">
+		body{
+			background: white;
+			/*height: 1980px;*/
+		}
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		ul{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+			color: #fff;
+			outline: none;
+		}
+		table,th,td{
+			border-collapse: collapse;
+		}
+		input{
+			outline: none;
+		}
+		.head{
+			width: 1903px;
+			height: 40px;
+			background-color: #333;
+			font-family: '宋体';
+		}
+		.head_le{
+			float: left;
+			width: 92px;
+			height: 40px;
+			margin-left: 145px;	
+			line-height: 40px;
+			color: #fff;
+			font-size: 12px;
+			text-align: center;
+			/*background-color: lightyellow;*/
+		}
+		.head_le li{
+			cursor: pointer;
+            float: left;
+		}
+		.head_le .left{
+			width: 24px;
+			height: 40px;
+		}
+		.head_le .right{
+			width: 48px;
+			height: 40px;
+			margin-left: 20px;
+		}
+		.head_le li a:hover{
+			color: #999;
+		}
+		.head_ri{
+			float: right;
+			width: 300px;
+			height: 40px;
+			margin-left: 145px;
+			margin-right: 92px;
+			line-height: 40px;
+			color: #fff;
+			font-size: 12px;
+			text-align: center;
+		/*	background-color: lightyellow;*/
+		}
+		.head_ri .user{
+			float: left;
+			width: 120px;
+			height: 40px;
+		}
+		.head_ri li{
+			float: left;
+			width: 60px;
+			height: 40px;
+		}
+		.head_ri li a:hover{
+			color: #999;
+		}
+		.cart{
+            width: 990px;
+            height: 50px;
+            margin:15px auto 0px;
+           /* background-color: lightblue;*/
+		}
+		.cart .logo{
+			float: left;
+            width: 355px;
+            height: 50px;
+            margin-right: 35px;
+            background-color: lightblue;
+            background: url(https://pcs2.ygimg.cn/template/common/images/logo.jpg?bf701d76899056f1c76928124aa7f2a7) no-repeat left top;
+		}
+		.cart .des{
+			float: right;
+			width: 328px;
+			height: 20px;
+			/*background-color: lightyellow;*/
+			margin-top: 20px;
+		}
+		.cart .des li{
+			float: left;
+			font-size: 12px;
+			text-align: center;
+			color: #666;
+			line-height: 16px;
+		}
+		.cart .des .fi{
+			width: 60px;
+			height: 16px;
+			/*background-color: pink;*/
+		}
+		.cart .des .tu01,.tu02,.tu03{
+			width: 16px;
+			height: 16px;
+			/*background-color: lightblue;*/
+			margin-left: 10px;
+		}
+		.cart .des .de{
+			width: 63px;
+			height: 16px;
+			/*background-color: pink;*/
+		}
+		.cart .des .tu01{
+			background: url(images/tu01.png) no-repeat;
+			background-position: 0px 0px;
+		}
+		.cart .des .tu02{
+			background: url(images/tu01.png) no-repeat;
+			background-position: 0px -18px;
+		}
+		.cart .des .tu03{
+			background: url(images/tu01.png) no-repeat;
+			background-position: 0px -38px;
+		}
+        .pay{
+        	width: 990px;
+        	height: 786px;
+        	/*background-color: lightyellow;*/
+        	margin: 10px auto;
+        }
+        .pay .pay_info{
+            width: 990px;
+            height: 153px;
+            background-color: #fafafa;
+            border-bottom: 4px solid #626262;
+        }
+         .pay .pay_info .info_01{
+         	width: 990px;
+         	height: 36px;
+         	/*background-color: pink;*/
+         	padding-top: 25px;
+         }
+         .pay .pay_info .info_01 li{
+         	float: left;
+         }
+           .pay .pay_info .info_01 .gou{
+            width: 45px;
+            height: 36px;
+            background: url(https://pcs2.ygimg.cn/template/common/images/sucess_icon.png) no-repeat center; 
+         }
+           .pay .pay_info .info_01 .dc1{
+            width: 224px;
+            height: 36px;
+            line-height: 36px;
+            color: #4d4d4d;
+         	font-size: 16px;
+         	font-weight: bold;
+        }
+           .pay .pay_info .info_01 .dc2{
+            width: 200px;
+            height: 36px;
+            line-height: 36px;
+            color: #4d4d4d;
+         	font-size: 12px;
+         	margin-left: 15px;
+         	/*background-color: yellow;*/
+        }
+           .pay .pay_info .info_01 .dc3{
+            width: 152px;
+            height: 36px;
+            line-height: 36px;
+            color: #4d4d4d;
+         	font-size: 12px;
+         	margin-left: 25px;
+        }
+          .pay .pay_info .info_02{
+         	width: 942px;
+         	height: 48px;
+         	/*background-color: pink;*/
+         	margin-top: 15px;
+         	margin-left: 45px;
+         }
+           .pay .pay_info .info_02 li{
+           	width: 500px;
+           	height: 24px;
+            font-size: 12px;
+            text-align: left;
+            line-height: 24px;
+         }
+          .pay .pay_for{
+            width: 965px;
+            height: 608px;
+            /*background-color: pink;*/
+            margin-top: 25px;
+            margin-left: 25px;
+        }
+         .pay .pay_for li{
+         	width: 965px;
+         	height: 20px;
+         	font-size: 14px;
+         	text-align: left;
+         	margin-top: 20px;
+         	line-height: 20px;
+         	color: #666;
+         }
+         .pay .pay_for .ma{
+         	width: 316px;
+         	height: 62px;
+         	/*background-color: pink;*/
+         }
+         .pay .pay_for .ma .td1{
+            width: 106px;
+            height: 18px;
+            color: #333;
+            font-size: 12px;
+            line-height: 18px;
+            text-align: center;
+         }
+         .pay .pay_for .ma .td2{
+         	position: relative;
+            width: 142px;
+            height: 42px;
+         }
+         .pay .pay_for .ma .td2 input{
+         	position: absolute;
+         	left: 10px;
+         	top: 15px;
+         }
+         .pay .pay_for .ma .td2 img{
+         	float: left;
+         }
+          .pay .pay_for .py{
+         	width: 165px;
+         	height: 60px;
+         	/*background-color: pink;*/
+         	margin-top: 50px;
+         	text-align: center;
+         }
+         .pay .pay_for .py .py01{
+         	float: left;
+         	width: 165px;
+         	height: 45px;
+         	background-color: black;
+         	color: #fff;
+         	text-align: center;
+         	line-height: 45px;
+         	font-size: 20px;
+         	cursor: pointer;
+         }
+         .pay .pay_for .py .py02{
+         	float: left;
+         	width: 165px;
+         	height: 15px;
+         	/*background-color: pink;*/
+         	color: #666;
+         	text-align: center;
+         	line-height: 15px;
+         	font-size: 12px;
+         }
+        .pay .pay_for .zfb{
+         	position: relative;
+         	width: 235px;
+         	height: 330px;
+         	/*background-color: pink;*/
+         	margin: 0px auto;
+         	margin-top: -50px;
+         	margin-left: 400px;
+         }
+         .pay .pay_for .zfb .dc{
+          	position: absolute;
+          	height: 30px;
+          	text-align: left;
+          	font-size: 20px;
+          	line-height: 30px;
+          	/*background-color: lightblue;*/
+          	color: #666;
+            top: -60px;
+            left: 48px;
+          }
+           .pay .pay_for .zfb .ddc{
+          	position: absolute;
+          	bottom: 70px;
+          	left: 25px;
+          	font-size: 14px;
+          	color: #666;
+          }
+         .foot{
+         	width: 990px;
+         	height: 20px;
+         	/*background-color: pink;*/
+         	margin: 30px auto;
+         	text-align: center;
+         	line-height: 20px;
+         	color: #666;
+         	font-size: 12px;
+         }		
+	</style>
+</head>
+<body>
+	<div class="head">
+		<div class="head_le">
+			<ul>
+				<li class="left"><a href="">关注</a></li>
+				<li class="right"><a href="">下载APP</a></li>
+			</ul>
+		</div>
+		<div class="head_ri">
+			<ul>
+				<li class="user">您好,马钧虎 <a href="xbl.shopping.servlet.Exit">[退出]</a></li>
+				<li><a href="yg register.jsp">注册</a></li>
+				<li><a href="yg homepage.jsp">收藏</a></li>
+				<li><a href="yg homepage.jsp">购物袋</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="cart">
+		<div class="logo"></div>
+		<div class="des">
+			<ul>
+				<li class="fi">购买保障：</li>
+				<li class="tu01"></li>
+				<li class="de">100%正品</li>
+				<li class="tu02"></li>
+				<li class="de">10天退换货</li>
+				<li class="tu03"></li>
+				<li class="de">10天补差价</li>
+			</ul>
+		</div>
+	</div>
+	<div class="pay">
+		<div class="pay_info">
+			<div class="info_01">
+				<ul>
+					<li class="gou"></li>
+					<li class="dc1">订单已提交，请尽快完成支付！</li>
+					<li class="dc2">您的订单号：<strong>NA62333617809188</strong></li>
+					<li class="dc3">应付金额：<strong style="font-size: 16px">99899.00</strong> 元</li>
+				</ul>
+			</div>
+			<div class="info_02">
+				<ul>
+					<li><strong>商品名称：</strong>思加图2019夏季新款时尚平跟胶片舒适亮片女纯凉鞋M9263BL9 黑色,38</li>
+					<li><strong>收货地址：</strong>上海上海市黄浦区*大大 177****8712 （啊大大)</li>
+				</ul>
+			</div>
+		</div>
+		<div class="pay_for">
+			<ul>
+				<li>我们将为您订单的商品暂时保留1个小时，1小时之后，未支付订单将被自动取消</li>
+				<li>您当前选择的支付方式是：支付宝</li>
+				<li class="ma">
+					<table border="1px">
+						<tr>
+							<td class="td1">支持银行卡快捷</td>
+						</tr>
+						<tr>
+							<td class="td2">
+								<input type="radio" name="">
+								<img src="https://pcs2.ygimg.cn/template/common/images/banklst/bank-img13.png">
+							</td>
+						</tr>
+					</table>
+				</li>
+				<li class="py">
+					<div class="py01">立即支付</div>
+					<div class="py02">(使用支付宝账号进行支付)</div>
+				</li>
+			     <div class="zfb">
+			     	<ul>
+			     		<li class="dc">支付宝扫码支付</li>
+			     		<li class="tu"><img src="images/zfb.png"></li>
+			     		<li class="ddc">使用手机支付宝扫码完成付款</li>
+			     	</ul>
+			     </div>
+			</ul>
+		</div>
+	</div>
+
+	<div class="foot">Copyright © 2011-2014 Yougou Technology Co., Ltd. 粤ICP备09070608号-4 增值电信业务经营许可证：粤 B2-20090203</div>	
+</body>
+</html>

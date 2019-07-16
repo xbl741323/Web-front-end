@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>js操作类</title>
+	<style type="text/css">
+		body{
+			background-color: white;
+		}
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		ul{
+			list-style: none;
+		}
+		table,th,td{
+			border-collapse: collapse;
+		}
+		.all{
+			width: 1920px;
+			height: 970px;
+			/*background-color: lightblue;*/
+			/*position: relative;*/
+		}
+		.all li{
+            float: left;
+		}
+		.all .le{
+			width: 150px;
+			height: 970px;
+			background-color: pink;
+		}
+		.all .ri{
+			width: 1700px;
+			height: 970px;
+			margin-left: 50px;
+			background-color: lightgray;
+		}
+		.all .ri li{
+			float: left;
+			width: 1400px;
+			height: 900px;
+			background-color: green;
+			margin-bottom: 100px;
+			display: none;
+		}
+		.all .ri .old{
+			display: none;
+		}
+		.all .ri .ht{
+			display: block;
+		}
+		button{
+			display: block;
+			width: 120px;
+			height: 20px;
+			margin-bottom: 20px;
+		}
+		.all .ri .new{
+			display: block;
+			background-color: pink;
+		}
+	</style>
+	<script src="jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+	    window.onload = function(){
+	    var btn1 = document.getElementById("btn1");
+	    var btn2 = document.getElementById("btn2");
+	    var btn3 = document.getElementById("btn3");
+	    var y = document.getElementById("y");
+	    var d= document.getElementById("d");
+	    var ht= document.getElementById("ht");
+	    btn1.onclick = function(){
+            y.className = "old";
+            d.className = "old";
+            ht.className = "ht";
+	    };
+	    btn2.onclick = function(){
+            y.className = "new";
+            d.className = "old";
+            ht.className = "old";
+	    };
+	    btn3.onclick = function(){
+            d.className = "new";
+            y.className = "old";
+            ht.className = "old";
+	    };
+	   
+	};
+	</script>
+</head>
+<body>
+	<div class="all">
+		<ul>
+			<li class="le">
+				<button id="btn1">后台管理首页</button>
+				<button id="btn2">用户信息页面</button>
+				<button id="btn3">订单管理页面</button>
+			</li>
+			<li class="ri">
+				<ul>
+					<li class="ht" id="ht">后台管理首页</li>
+					<li id="y">
+						<table border="1px">
+							<tr>
+								<th>用户名</th>
+								<th>密码</th>
+								<th>手机号</th>
+								<th>邮箱</th>
+								<th>地址</th>
+							</tr>
+							<tr>
+								<td>马钧虎</td>
+								<td>237413</td>
+								<td>17730078715</td>
+								<td>1546766776@qq.com</td>
+								<td>蚌埠学院</td>
+							</tr>
+							<tr>
+								<td>马钧虎</td>
+								<td>237413</td>
+								<td>17730078715</td>
+								<td>1546766776@qq.com</td>
+								<td>蚌埠学院</td>
+							</tr>
+							<tr>
+								<td>马钧虎</td>
+								<td>237413</td>
+								<td>17730078715</td>
+								<td>1546766776@qq.com</td>
+								<td>蚌埠学院</td>
+							</tr>
+						</table>
+					</li>
+					<li id="d">
+						<table border="1px">
+							<tr>
+								<th>订单名</th>
+								<th>收货人姓名</th>
+								<th>收货人手机号</th>
+								<th>收货人地址</th>
+							</tr>
+							<tr>
+								<td>YG2141414</td>
+								<td>李亚春</td>
+								<td>17730078716</td>
+								<td>蚌埠学院</td>
+							</tr>
+							<tr>
+								<td>YG2141414</td>
+								<td>李亚春</td>
+								<td>17730078716</td>
+								<td>蚌埠学院</td>
+							</tr>
+							<tr>
+								<td>YG2141414</td>
+								<td>李亚春</td>
+								<td>17730078716</td>
+								<td>蚌埠学院</td>
+							</tr>
+						</table>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+	
+</body>
+</html>

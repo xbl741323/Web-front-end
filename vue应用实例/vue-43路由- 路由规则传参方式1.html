@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-43</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+    </style>
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- 如果在路由中，使用查询字符串，给路由传递参数，则不需要修改路由规则的path属性-->
+        <router-link to="/login?id=10&name=zs">登陆</router-link>
+        <router-link to="/register">注册</router-link>
+        <router-view></router-view>
+    </div>
+    <script>
+        var login = {
+            template: "<h3>登陆组件---id:{{$route.query.id}} --- name:{{$route.query.name}}</h3>",//这里的this可以省略
+            created() {//组件的生命周期，钩子函数
+                console.log(this.$route.query.id)
+            },
+        }
+        var register = {
+            template: "<h3>注册组件</h3>"
+        }
+        var router = new VueRouter({
+            routes: [
+                { path: '/', redirect: '/login' },
+                { path: '/login', component: login },
+                { path: '/register', component: register }
+            ]
+        })
+
+        var vm = new Vue({
+            el: ".app",
+            data: {
+
+            },
+            methods: {
+
+            },
+            router: router
+
+
+        })
+    </script>
+
+</body>
+
+</html>

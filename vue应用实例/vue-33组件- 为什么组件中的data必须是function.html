@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-33</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+    </style>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <mycom></mycom>
+        <mycom></mycom>
+    </div>
+    <template id="counter">
+        <div>
+            <input type="button" value="点击自加1" @click="scount">
+            <p>{{count}}</p>
+        </div>
+    </template>
+    <script>
+        // var dataObj = { count: 1 }
+        Vue.component('mycom', {
+            template: '#counter',
+            data: function () {
+                // return dataObj
+                return {count:1}//这样写，不会影响其他组件的数值
+            },
+            methods: {
+                scount() {
+                    this.count += 1;
+                }
+            },
+        })
+        var vm = new Vue({
+            el: ".app",
+            data: {
+
+            },
+            methods: {
+
+            },
+        })
+    </script>
+
+</body>
+
+</html>

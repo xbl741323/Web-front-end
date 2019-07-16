@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>制作轮播图(非自动)</title>
+<style type="text/css">
+     body{
+     	background-color: gray;
+     }
+     *{
+     	margin: 0px;
+     	padding: 0px;
+     }
+     ul{
+     	list-style: none;
+     }
+     .all{
+        width: 800px;
+        height: 400px;
+        background-color: #fff;
+        margin: 100px auto;
+        overflow: hidden;
+        position: relative;
+     }
+     .all .img{
+     	width: 400px;
+     	height: 200px;
+     	background-color: lightblue;
+     	margin: 100px 200px;
+     }
+     .all .img li{
+     	display: none;
+     }
+     .all .img .new{
+     	display: block;
+     }
+     .left{
+     	position: absolute;
+     	width: 30px;
+     	height: 50px;
+     	background-color: gray;
+     	top: 180px;
+     	left: 100px;
+     	font-size: 25px;
+     	color: #fff;
+     	text-align: center;
+     	line-height: 50px;
+     	background-color: rgba(0,0,0,0.3);
+     	cursor: pointer;
+     }
+     .right{
+     	position: absolute;
+     	width: 30px;
+     	height: 50px;
+     	background-color: gray;
+     	top: 180px;
+     	right: 100px;
+     	font-size: 25px;
+     	color: #fff;
+     	text-align: center;
+     	line-height: 50px;
+        background-color: rgba(0,0,0,0.3);
+     	cursor: pointer;
+     }
+</style>
+<script type="text/javascript">
+    window.onload = function(){      
+     var left = document.querySelector(".left");
+     var imgArr = document.getElementsByTagName("li");
+     var index = 0;
+     left.onclick = function(){
+        // imgArr[++index].className = "new";
+      //   if(index!=0){
+      //     imgArr[index].className ="";
+      //     imgArr[index-1].className ="new";
+      //     for(var i=0;i<(index-1);i++){
+      //         imgArr[i].className = "";
+      //        index--;
+     	// };
+      //   };
+        if(index==0){
+        	index = 4;
+            imgArr[index].className = "new";
+        	for(var i=0;i<index;i++){
+                imgArr[i].className = "";
+            };
+        	
+        };
+
+     };
+     var right = document.querySelector(".right");
+     right.onclick = function(){
+        if(index==4){
+             imgArr[index].className = "";
+             index = index%imgArr.length;
+             imgArr[index].className = "new";
+          //    for(var i=0;i<index;i++){
+          //     imgArr[i].className = "";
+          // };
+             
+        }else{
+             index = index%imgArr.length;
+             imgArr[++index].className = "new";
+             for(var i=0;i<index;i++){
+              imgArr[i].className = "";
+             
+        };
+     	
+     };
+
+
+    };
+};
+</script>
+</head>
+<body>
+     <div class="all">
+            <div class="img">
+                  <ul>
+                      <li class="new" id="img1"><img src="images/1.jpg" alt="" width="400px" height="200px"></li>
+                      <li id="img2"><img src="images/2.jpg" alt="" width="400px" height="200px"></li>
+                      <li id="img3"><img src="images/3.jpg" alt="" width="400px" height="200px"></li>
+                      <li id="img4"><img src="images/4.jpg" alt="" width="400px" height="200px"></li>
+                      <li id="img5"><img src="images/5.jpg" alt="" width="400px" height="200px"></li>
+                  </ul>
+            </div>
+            <span class="left"><</span>
+            <span class="right">></span>
+     </div>
+</body>
+</html>

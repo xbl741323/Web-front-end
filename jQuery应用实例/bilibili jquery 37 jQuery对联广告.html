@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>bili jQuery jQuery对联广告</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+            height: 4000px;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .left {
+            float: left;
+            position: fixed;
+            top: 200px;
+            left: 0px;
+            display: none;
+        }
+
+        .right {
+            float: right;
+            position: fixed;
+            top: 200px;
+            right: 0px;
+            display: none;
+        }
+    </style>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+    <script src="/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+		/*
+		scroll滚动事件
+		*/
+        $(function () {
+            $(window).scroll(function () {
+                var scrolltop = $("body,html").scrollTop();
+                if (scrolltop > 500) {
+                    $(".left").show(1000);
+                    $(".right").show(1000);
+                } else {
+                    $(".left").hide(1000);
+                    $(".right").hide(1000);
+                };
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <img class="left" src="/images/x1.jpg" alt="" width="260px" height="376px">
+    <img class="right" src="/images/x2.jpg" alt="" width="260px" height="376px">
+
+</body>
+
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>商城登录页面</title>
+	<style type="text/css">
+		body{
+			background: white;
+			height: 980px;
+		}
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		ul{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+			color: #fff;
+			outline: none;
+		}
+		input{
+			outline: none;
+		}
+		.head{
+			width: 1903px;
+			height: 40px;
+			background-color: #333;
+			font-family: '宋体';
+		}
+		.head_le{
+			float: left;
+			width: 92px;
+			height: 40px;
+			margin-left: 145px;
+			line-height: 40px;
+			color: #fff;
+			font-size: 12px;
+			text-align: center;
+			/*background-color: lightyellow;*/
+		}
+		.head_le li{
+			cursor: pointer;
+            float: left;
+		}
+		.head_le .left{
+			width: 24px;
+			height: 40px;
+		}
+		.head_le .right{
+			width: 48px;
+			height: 40px;
+			margin-left: 20px;
+		}
+		.head_le li a:hover{
+			color: #999;
+		}
+		.head_ri{
+			float: right;
+			width: 300px;
+			height: 40px;
+			margin-left: 145px;
+			margin-right: 92px;
+			line-height: 40px;
+			color: #fff;
+			font-size: 12px;
+			text-align: center;
+		/*	background-color: lightyellow;*/
+		}
+		.head_ri li{
+			float: left;
+			width: 60px;
+			height: 40px;
+		}
+		.head_ri li a:hover{
+			color: #999;
+		}
+		.center{
+			overflow: hidden;
+			width: 1903px;
+			height: 69px;
+		}
+		.center .dc{
+			width: 990px;
+			height: 42px;
+		/*	background-color: lightyellow;*/
+			margin: 0px auto;
+			margin-top: 13px;
+		}
+		.center .dc li{
+			float: left;
+		}
+		.center .dc .logo{
+			width: 151px;
+			height: 32px;
+			padding: 5px 30px 5px 0;
+			background-color: lightblue;
+			background: url(https://passport.yougou.com/template/common/images/usercenter/signin-register-logo.png) no-repeat;
+		    background-position: 0px 5px;
+			border-right: 1px solid #e6e6e6;
+			cursor: pointer;
+		}
+		.center .dc .text{
+			width: 90px;
+			height: 40px;
+			line-height: 40px;
+			color: #666;
+			margin-left: 30px;
+			font-size: 18px;
+		}
+		.main{
+			position: relative;
+			width: 1903px;
+			height: 553px;
+			background: url(images/loginbg.jpg);
+		}
+		.main .form{
+			position: absolute;
+			width: 375px;
+			height: 530px;
+			top: 12px;
+			left: 50%;
+			margin-left: 115px;
+			background-color: #fff;
+		}
+		.main .form .dc{
+			width: 348px;
+			height: 41px;
+			border-bottom: 1px solid #f3f3f3;
+            margin: 24px 15px 0 15px;
+          /*  background-color: lightyellow;*/
+		}
+		.main .form .dc li{
+			float: left;
+			width: 123px;
+			height: 40px;
+			background-color: #f3f3f3;
+			font-size: 12px;
+			text-align: center;
+			line-height: 40px;
+		}
+		.main .form .dc .dc1{
+			margin-left: 53px;
+			margin-right: 5px;
+			background-color: #333;
+			color: #fff;
+		}
+		.main .form .dc li a{
+			color: #666;
+		}
+		.main .form .dc .dc1 a{
+			color: #fff;
+		}
+		.main .form .input{
+			width: 348px;
+			height: 427px;
+			margin: 30px 25px 0px 25px;
+			/*background-color: lightyellow;*/
+		}
+		.main .form .input li{
+			padding-left: 8px;
+			width: 300px;
+			height: 38px;
+			border: 1px solid #e3e2e2;
+			margin-bottom: 28px;
+			margin-left: 8px;
+		}
+		.main .form .input li div{
+			float: left;
+			width: 60px;
+			height: 38px;
+			color: #000;
+			line-height: 38px;
+			text-align: left;
+			font-size: 12px;
+			margin-left: 0px;
+		}
+		.main .form .input li input{
+			float: left;
+			width: 235px;
+			height: 36px;
+			border: none;
+			color: #666;
+			font-family: tahoma,微软雅黑;
+			font-size: 12px;
+		}
+		.main .form .input .test{
+			float: left;
+			width: 200px;
+			/*background-color: gray;*/
+		}
+		.main .form .input .test input{
+			float: left;
+			width: 100px;
+		}
+		.main .form .input .yzm{
+			float: left;
+			width: 80px;
+			height: 30px;
+			background-color: gray;
+			margin-left:30px;
+			margin: 4px 10px;
+		}
+		.submit{
+			float: left;
+			width: 305px;
+			height: 38px;
+			border: none;
+			color: #fff;
+			font-size: 16px;
+			font-family: tahoma,微软雅黑;
+			background-color: #000;
+			cursor: pointer;
+		}
+		.foot{
+			width: 800px;
+			height: 20px;
+			text-align: center;
+			line-height: 20px;
+			font-size: 12px;
+			color: #333;
+			margin: 0px auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="head">
+		<div class="head_le">
+			<ul>
+				<li class="left"><a href="">关注</a></li>
+				<li class="right"><a href="">下载APP</a></li>
+			</ul>
+		</div>
+		<div class="head_ri">
+			<ul>
+				<li><a href="">登录</a></li>
+				<li><a href="file:///C:/Users/%E6%BD%87%E5%B0%8F%E7%99%BD/Desktop/Jspstudy/%E7%BD%91%E9%A1%B5%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/Test%E5%88%B6%E4%BD%9C%E6%B3%A8%E5%86%8C%E9%A1%B5%E9%9D%A2.html">注册</a></li>
+				<li><a href="">收藏</a></li>
+				<li><a href="">购物袋</a></li>
+				<li><a href="">公告</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="center">
+		<div class="dc">
+			<ul>
+				<li class="logo"></li>
+				<li class="text">新用户注册</li>
+			</ul>
+		</div>
+	</div>
+	<form action="" method="post">
+	<div class="main">
+		<div class="form">
+			<div class="dc">
+				<ul>
+					<li class="dc1"><a href="">登录</a></li>
+					<li><a href="file:///C:/Users/%E6%BD%87%E5%B0%8F%E7%99%BD/Desktop/Jspstudy/%E7%BD%91%E9%A1%B5%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/Test%E5%88%B6%E4%BD%9C%E6%B3%A8%E5%86%8C%E9%A1%B5%E9%9D%A2.html">注册</a></li>
+				</ul>
+			</div>
+			<div class="input">
+				<ul>
+					<li>
+						<div>用户名</div>
+						<input type="" name="" value="" placeholder="请输入您的用户名">
+					</li>
+					<li>
+						<div>密码</div>
+						<input type="" name="" placeholder="字母、数字、符号均可，6-25个字符以内">
+					</li>
+					<li class="test">
+						<div>验证码</div>
+						<input type="" name="" placeholder="请输入验证码">
+					</li>
+					<div class="yzm"></div>
+				</ul>
+					<input class="submit" type="submit" name="" value="点击登录">
+			</div>
+		</div>
+	</div>
+	</form>
+	<div class="foot">Copyright © 2011-2014 Yougou Technology Co., Ltd. 粤ICP备09070608号-4 增值电信业务经营许可证：粤 B2-20090203</div>
+</body>
+</html>

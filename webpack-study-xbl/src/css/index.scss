@@ -1,0 +1,19 @@
+body,html{
+    margin: 0px;
+    padding: 0px;
+    .app{
+        width: 400px;
+        height: 277px;
+        background-color: red;
+        //默认情况下，webpack无法处理css文件中的url地址，不管是图片还是字体库，只要是url地址，都处理不了
+        background: url('../images/p3.jpg') no-repeat;
+        background-size: cover;
+    }
+    .app2{
+        width: 400px;
+        height: 277px;
+        background-color: red;
+        background: url('../images2/p3.jpg') no-repeat;
+        background-size: cover;
+    }
+}

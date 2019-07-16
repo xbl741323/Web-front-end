@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>定时器的应用（一）</title>
+	<style type="text/css">
+		body{
+			background-color: lightyellow;
+		}
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		#t1{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			position: absolute;
+			left: 0px;
+		}
+	</style>
+	<script src="jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+	    window.onload = function(){
+	    	var btn1 = document.getElementById("btn1");
+	    	var btn2 = document.getElementById("btn2");
+	    	var btn3 = document.getElementById("btn3");
+	    	var btn4 = document.getElementById("btn4");
+	    	var btn5 = document.getElementById("btn5");
+	    	var t1 = document.getElementById("t1");
+	    	var dir = 0;
+	    	var timr;
+	    	btn1.onclick = function(){
+	    		dir = 37;
+	    	};
+	    	btn2.onclick = function(){
+	    		dir = 38;
+	    	};
+	    	btn3.onclick = function(){
+	    		dir = 39;
+	    	};
+	    	btn4.onclick = function(){
+	    		dir = 40;
+	    	};
+	    	btn5.onclick = function(){
+	    		dir = 0
+	    	};
+             var speed = 1;
+             timr = setInterval(function(){
+             	var oldleftvalue = parseInt(getStyle(t1,"left"));
+	    	    var newleftvalue = oldleftvalue+speed;
+           	     switch(dir){
+                 case 37: t1.style.left = t1.offsetLeft-speed+"px";
+                 break;
+                 case 38: t1.style.top = t1.offsetTop-speed+"px";
+                 break;
+                 case 39: t1.style.left = newleftvalue+"px";
+                 break;
+                 case 40: t1.style.top = t1.offsetTop+speed+"px";
+          	 };
+          // 	 if(newleftvalue>800){
+          // 	 	newleftvalue = 800;
+          // 	 };
+          
+          // if(newleftvalue == 800){
+          // 	clearInterval(timr);
+          // };
+
+           },30);
+             function getStyle(obj,name){
+             	if(window.getComputedStyle){
+                     return getComputedStyle(obj,null)[name];
+             	}else{
+                     return obj.currentStyle[name];
+             	};
+
+             };
+     
+             
+             // var w = getStyle(t1,"width");
+             // alert(w);
+
+	    	
+	    
+
+	};
+	</script>
+</head>
+<body>
+	<button id="btn1">点击向左移动</button><br><br>
+	<button id="btn2">点击向上移动</button><br><br>
+	<button id="btn3">点击向右移动</button><br><br>
+	<button id="btn4">点击向下移动</button><br><br>
+	<button id="btn5">停止移动</button><br><br>
+	<div id="t1"></div>
+   
+	
+</body>
+</html>

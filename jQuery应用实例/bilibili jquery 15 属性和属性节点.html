@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>bili 属性和属性节点</title>
+	<style type="text/css">
+		body{
+			background-color: #fff;
+		}
+	</style>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+      /*
+         1、什么是属性?
+         对象身上保存的变量
+         2、如何操作属性?
+         对象.属性名称 = 值;
+         对象.属性名称;
+         对象["属性名称"] = 值;
+         对象["属性名称"];
+         3、什么是属性节点?
+         <span name="zs"></span>
+         在编写HTML代码时，在HTML标签中添加的属性就是属性节点
+         在浏览器中找到span这个DOM元素之后，展开看到的都是属性，在attributes中保持的所有内容就是属性节点
+         4、如何操作属性节点?
+         DOM元素.setAttribute("属性名称","属性值");
+         DOM元素.getAttrinute("属性名称");
+         5、属性和属性节点有什么区别?
+         任何对象都有属性，但是只有DOM对象才有属性节点
+      */
+      /*
+      function person(){};
+      var p = new person();
+      p.name = "zs";
+      // alert(p.name);
+      p["age"] = "ls";
+      alert(p["age"]);
+      */
+      /*
+    var t1 = document.getElementsByTagName('span')[0];
+    t1.setAttribute("name","mm"); 
+    alert(t1.getAttribute("name"));
+    */
+	});
+</script>
+</head>
+<body>
+	<span name="zs"></span>
+	
+</body>
+</html>

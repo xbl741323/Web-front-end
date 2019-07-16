@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-49</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+    </style>
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <router-link to="/login">登陆</router-link>
+        <router-link to="/register">注册</router-link>
+
+        <transition mode="out-in">
+            <router-view></router-view>
+        </transition>
+    </div>
+    <script>
+        //组件的模板对象
+        var login = {
+            template: '<h3>登陆组件</h3>'
+        }
+
+        var register = {
+            template: '<h3>注册组件</h3>'
+        }
+
+        var routerObj = new VueRouter({
+            routes: [
+                { path: '/', redirect: '/login' },//这里的redirect和Node中的redirect完全是两码事
+                { path: '/login', component: login },
+                { path: '/register', component: register }
+            ],
+        })
+
+        var vm = new Vue({
+            el: ".app",
+            data: {
+
+            },
+            methods: {
+
+            },
+            router: routerObj,//将路由规则对象，注册到vm实例中，用来监听url地址的变化，然后展示对应的组件
+            watch: {
+                '$route.path': function (newVal, oldVal) {
+                    // console.log(newVal + "-" + oldVal)
+                    if (newVal === '/login') {
+                        console.log("欢迎进入登陆页面")
+                    } else {
+                        console.log("欢迎进入注册页面")
+                    }
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

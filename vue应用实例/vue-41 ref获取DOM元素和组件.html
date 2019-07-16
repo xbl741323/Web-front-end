@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-41</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+    </style>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <input type="button" value="获取元素" @click="getElement" ref="mybtn">
+        <h3 id="t1" ref="t1">哈哈哈，今天天气真好！</h3>
+        <hr>
+        <login ref="mylogin"></login>
+    </div>
+
+    <script>
+        var login = {
+            template: '<h2>这是一个登陆组件</h2>',
+            data() {
+                return {
+                    msg: "123"
+                }
+            },
+            methods: {
+                show(){
+                    console.log("调用了子组件的方法")
+                }
+            },
+        }
+        var vm = new Vue({
+            el: ".app",
+            data: {
+
+            },
+            methods: {
+                getElement() {
+                    // console.log(document.getElementById('t1').innerText)
+
+                    //ref是英文单词（reference）的缩写，指值类型和引用类型  有时候调试的时候会见到控制台报referenceError这个错误
+                    console.log(this.$refs.t1.innerText)
+                    console.log(this.$refs.mybtn.value)
+                    console.log(this.$refs.mylogin.msg)
+                    this.$refs.mylogin.show()
+                }
+            },
+            components: {
+                login
+            }
+        })
+    </script>
+
+</body>
+
+</html>

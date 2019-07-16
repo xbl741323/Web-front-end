@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-30</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+    </style>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- 注意：无论是哪种方式的组件，组件template指向的模板内容，必须有且只能有唯一的一个根元素-->
+        <mycom2></mycom2>
+    </div>
+    <script>
+      Vue.component('mycom2',{
+          template:'<div><h3>这是使用Vue.extend创建的组件</h3><span>123</span></div>'
+      })
+
+        var vm = new Vue({
+            el: ".app",
+            data: {
+               
+            },
+            methods: {
+                  
+            },
+        })
+    </script>
+
+</body>
+
+</html>

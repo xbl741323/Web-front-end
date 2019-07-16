@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-7</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .letter {
+            letter-spacing: 0.5em;
+        }
+    </style>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- 第一种使用方式：直接传递数組，注意：这里的class需要v-bind做数据绑定-->
+        <!-- 在数组中使用三元表达式-->
+        <!-- <h1 :class="['red','italic',flag?'letter':'']">這是一段文字</h1> -->
+        <!-- 在数组合中，使用对象代替三元表达式，提高可读性-->
+        <!-- <h1 :class="['red','italic',{'letter':flag}]">這是一段文字</h1> -->
+        <!-- 在为class使用v-bind绑定对象的时候，对象的属性是类名，由于对象的属性可带引号，也可不带引号，所以这里没带引号，属性的值是一个标识符-->
+        <h1 :class="classobj">這是一段文字</h1>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: ".app",
+            data: {
+                msg: "这只一段文字",
+                flag: true,
+                classobj: { red: true, italic: true, letter: true }
+            },
+            methods: {
+
+            },
+        })
+    </script>
+</body>
+
+</html>

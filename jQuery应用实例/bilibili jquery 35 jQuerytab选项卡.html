@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>bili jQuery jQuerytab选项卡</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .box {
+            width: 400px;
+            height: 300px;
+            margin: 100px auto;
+            border: 1px solid;
+        }
+
+        .box li {
+            width: 100px;
+            height: 40px;
+            background-color: orange;
+            float: left;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .nav .current {
+            background-color: lightgray;
+        }
+
+        .pic li {
+            display: none;
+        }
+
+        .pic .current {
+            display: block;
+        }
+    </style>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+    <script src="/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+		/*
+		
+		*/
+        $(function () {
+            /*
+           第一个方法有bug
+            */
+            // $(".box .nav li").hover(function () {
+            //     $(this).addClass("current");
+            //     $(".pic li").eq($(this).index()).addClass("current");
+            // }, function () {
+            //     $(this).removeClass("current");
+            //     $(".pic li").eq($(this).index()).removeClass("current");
+            // });
+
+             /*
+           第2个方法有没问题
+            */
+
+            // $(".nav li").mouseenter(function(){
+            //     $(".nav li").removeClass("current");
+            //     $(".pic li").removeClass("current");
+            //     $(this).addClass("current");
+            //     $(".pic li").eq($(this).index()).addClass("current");
+            // });
+            
+             /*
+           第3个方法没问题
+            */
+
+            $(".nav li").mouseenter(function(){
+                // $(".nav li").removeClass("current");
+                // $(".pic li").removeClass("current");
+                $(this).addClass("current");
+                $(this).siblings().removeClass("current");
+                $(".pic li").eq($(this).index()).addClass("current");
+                $(".pic li").eq($(this).index()).siblings().removeClass("current");
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <ul class="nav">
+            <li class="current">H5+C3</li>
+            <li>jQuery</li>
+            <li>java</li>
+            <li>c语言</li>
+        </ul>
+        <ul class="pic">
+            <li class="current"><img src="images/t1.jpg" alt="" width="400px" height="260px"></li>
+            <li><img src="images/t2.jpg" alt="" width="400px" height="260px"></li>
+            <li><img src="images/t3.jpg" alt="" width="400px" height="260px"></li>
+            <li><img src="images/t4.jpg" alt="" width="400px" height="260px "></li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

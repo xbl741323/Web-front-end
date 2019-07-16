@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-23</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+    </style>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <input type="button" value="按钮" @click="toggle">
+        <!-- 需求：点击按钮，让h3显示，再点击，让h3隐藏-->
+        <h3 v-if="flag">这是一个h3</h3>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: ".app",
+            data: {
+                flag: false
+            },
+            methods: {
+                  toggle(){
+                      this.flag = !this.flag;
+                  }
+            },
+        })
+    </script>
+
+</body>
+
+</html>

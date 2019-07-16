@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-6</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+    </style>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <input type="text" v-model="n1">
+        <select v-model="sel">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" v-model="n2">
+        <input type="button" value="=" @click="res">
+        <input type="text" v-model="n3">
+    </div>
+    <script>
+        var vm = new Vue({
+            el: ".app",
+            data: {
+                n1: "0",
+                n2: "0",
+                n3: "0",
+                sel: "+"
+            },
+            methods: {
+                res() {
+                    // switch (this.sel) {
+                    //     case "+":
+                    //         this.n3 = parseInt(this.n1) + parseInt(this.n2)
+                    //         break;
+                    //     case "-":
+                    //          this.n3 = parseInt(this.n1) - parseInt(this.n2)
+                    //         break;
+                    //     case "*":
+                    //          this.n3 = parseInt(this.n1) * parseInt(this.n2)
+                    //         break;
+                    //     case "/":
+                    //          this.n3 = parseInt(this.n1) / parseInt(this.n2)
+                    //         break;
+                    // }
+                    //注意：这是投机取巧的行为，正式开发中不要这样用
+                    var coder = "parseInt(this.n1)" + this.sel + "parseInt(this.n2)"
+                    this.n3 = eval(coder)
+                }
+            },
+        })
+
+
+    </script>
+
+</body>
+
+</html>

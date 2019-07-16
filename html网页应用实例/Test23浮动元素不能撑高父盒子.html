@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>浮动元素不能撑高父盒子</title>
+	<style type="text/css">
+		body{
+             background-color: white;
+		    }
+		    .x{
+		    	width: 1000px;
+		    	background-color: lightyellow;
+		    	border: 2px solid;
+		    }
+		    .x div{
+		    	float: left;
+		    	width: 200px;
+		    	height: 200px;
+		    	background-color: lightblue;
+		    }
+
+
+	</style>
+</head>
+<body>
+	<div class="x">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-31</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+    </style>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <mycom3></mycom3>
+    </div>
+    <div class="app2">
+        <mycom3></mycom3>
+        <login></login>
+    </div>
+
+    <template id="tem1">
+        <div>
+            <h3>这是使用Vue.extend创建的组件</h3>
+            <h4>好用</h4>
+        </div>
+    </template>
+
+    <template id="tem2">
+            <h2>这是私有的Vue-extend组件</h2>
+    </template>
+    <script>
+        Vue.component('mycom3', {
+            template: '#tem1'
+        })
+        var vm = new Vue({
+            el: ".app",
+            data: {
+
+            },
+            methods: {
+
+            },
+        })
+        //目前学过的vue内在
+        var vm2 = new Vue({
+            el: '.app2',
+            data: {},
+            methods: {},
+            flilters: {},
+            directives: {},
+            components: {//定义实例内部私有组件的
+                login: {
+                    template: '#tem2'
+                }
+            },
+
+            beforeCreate() { },
+            created() { },
+            beforeMount() { },
+            mounted() { },
+            beforeUpdate() { },
+            updated() { },
+            beforeDestroy() { },
+            destroyed() { },
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>js滚轮的事件</title>
+	<style type="text/css">
+		body{
+			background-color: lightyellow;
+			height: 2000px;
+		}
+		.t1{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+		}
+	</style>
+	<script src="jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+	    window.onload = function(){
+        var t1 = document.querySelector(".t1");
+        t1.onmousewheel = function(event){
+        	event = event||window.event;
+        	if(event.detail<0||event.whellDelta>0){
+               t1.style.height = t1.clientHeight - 10 +"px";
+        	}else{		
+               t1.style.height = t1.clientHeight + 10 +"px";
+        	};
+        	     // 火狐中使用这个取消默认样式
+        	     if(event.preventDefault){
+        	     	 event.preventDefault();
+        	     };
+        	      // 其他浏览器中用这个
+                  return false;
+        };
+        bind(t1,"DOMMouseScroll",t1.onmousewheel);
+
+         function bind(obj,eventStr,callback){
+        	if(obj.addEventListener){
+        	//大部分浏览器兼容的方式
+        	obj.addEventListener(eventStr,callback,false);
+            }else{
+        	//Ie8兼容的方式
+        	obj.attachEvent("on"+eventStr,function(){
+        		callback.call(obj);//用于设置this的对象
+        	});
+        };
+       };
+	    };
+	</script>
+</head>
+<body>
+	<div class="t1"></div>
+
+</body>
+</html>

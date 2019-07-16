@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>siblings() next() nextAll() nextUntil() prev() prevAll() prevUntil()</title>
+	<style type="text/css">
+		body{
+			background-color: #fff;
+		}
+		ul{
+			list-style: none;
+		}
+        h1,h2,h3,h4,h5,h6{
+        	width: 200px;
+        	height: 30px;
+        	background-color: lightyellow;
+        	margin-bottom: 20px;
+        }
+	</style>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#btn1").click(function(){
+             $("#t3").siblings().css({"border":"2px solid red"});
+		});
+		$("#btn2").click(function(){
+             $("#t3").next().css({"border":"2px solid red"});
+		});
+		$("#btn3").click(function(){
+             $("#t3").nextAll().css({"border":"2px solid red"});
+		});
+		$("#btn4").click(function(){
+             $("#t3").nextUntil("#t5").css({"border":"2px solid red"});
+		});
+		$("#btn5").click(function(){
+             $("#t3").prev().css({"border":"2px solid red"});
+		});
+		$("#btn6").click(function(){
+             $("#t3").prevAll().css({"border":"2px solid red"});
+		});
+		$("#btn7").click(function(){
+             $("#t3").prevUntil("#t5").css({"border":"2px solid red"});
+		});
+
+	});
+</script>
+</head>
+<body>
+	<h1>h1</h1>
+	<h2>h2</h2>
+	<h3 id="t3">h3</h3>
+	<h4>h4</h4>
+	<h5 id="t5">h5</h5>
+	<h6>h6</h6>
+	<button id="btn1">返回.t3所有同胞元素</button>
+	<button id="btn2">返回.t3的下一个同胞元素</button>
+	<button id="btn3">返回.t3的所有跟随的同胞元素</button>
+	<button id="btn4">返回.t3和.t5之间的同胞元素</button>
+	<button id="btn5">返回.t3的上一个同胞元素</button>
+	<button id="btn6">返回.t3的所有未跟随的同胞元素</button>
+	<button id="btn7">返回.t3和.t5之间之外的的同胞元素</button>
+	
+</body>
+</html>

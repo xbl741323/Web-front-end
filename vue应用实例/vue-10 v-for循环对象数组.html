@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-10</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+    </style>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <p>{{list[1]}}</p>
+        <!-- v-for标签可以用于循环普通数组-->
+        <p v-for="item in list">{{item}}</p>
+        <p v-for="(item,i) in list">索引值：{{i}}---每一项的值：{{item}}</p>
+        <p v-for="(user,i) in list">user的id值{{user.id}}---user的name值：{{user.name}}</p>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: ".app",
+            data: {
+                list: [
+                    { id: 1, name: "zs1" },
+                    { id: 2, name: "zs2" },
+                    { id: 3, name: "zs3" },
+                    { id: 4, name: "zs4" },
+                ]
+            },
+            methods: {
+
+            },
+        })
+    </script>
+</body>
+
+</html>

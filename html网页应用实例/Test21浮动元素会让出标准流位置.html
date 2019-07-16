@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Test21浮动元素会让出标准流位置</title>
+	<style type="text/css">
+		body{
+			background: white;
+		}
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.x{
+			width: 1000px;
+			height:800px;
+			border: 1px solid;
+			background-color: lightblue;
+		}
+		.x1{
+			float: left;
+			width: 200px;
+			height: 200px;
+			background-color: lightyellow;
+		}
+		.x2{
+			width: 400px;
+			height: 400px;
+			background-color: pink;
+		}
+
+		
+	</style>
+</head>
+<body>
+	<div class="x">
+		<div class="x1"></div>
+		<div class="x2"></div>
+		
+	</div>
+	
+	
+</body>
+</html>

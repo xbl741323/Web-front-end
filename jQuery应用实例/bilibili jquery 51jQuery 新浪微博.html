@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>bili jQuery jQuery 新浪微博</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .box {
+            width: 800px;
+            height: 800px;
+            border: 1px solid;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .box .t1 {
+            display: inline-block;
+            width: 700px;
+            height: 150px;
+            border: 1px solid orangered;
+            margin: 10px 0px 100px;
+            margin-left: 40px;
+            padding: 10px;
+        }
+
+        .btn {
+            width: 100px;
+            height: 30px;
+            display: inline-block;
+            position: absolute;
+            right: 50px;
+            top: 200px;
+            color: #fff;
+            background-color: orangered;
+            border: 1px solid orangered;
+        }
+
+        .t2 li {
+            position: relative;
+            width: 700px;
+            height: 150px;
+            padding: 10px;
+            border: 1px solid orange;
+            margin: 0px 40px;
+        }
+
+        .t2 li p {
+            width: 700px;
+            height: 100px;
+            background-color: orange;
+        }
+
+        .t2 li span {
+            width: 200px;
+            height: 20px;
+            display: inline-block;
+            position: absolute;
+            /* background-color: lightgray; */
+            margin-top: 20px;
+            color: gray;
+        }
+
+        .t2 li a {
+            cursor: pointer;
+            text-decoration: none;
+            color: gray;
+            margin-top: 15px;
+            margin-right: 20px;
+            float: right;
+            display: inline-block;
+        }
+    </style>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+    <script src="/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+		/*
+      change()方法不能实时监听
+		*/
+        $(function () {
+            // $(".t1").change(function(){
+            //     console.log($(".t1").val());
+            // });
+            $("body").delegate(".t1", "propertychange input", function () {
+                if ($(this).val().length > 0) {
+                    $(".btn").prop("disabled", false);
+                } else {
+                    $(".btn").prop("disabled", true);
+                };
+            });
+            $(".btn").click(function () {
+                var text = $(".t1").val();
+                var date = new Date();
+                $(".t2").append("<li>" + "<p>" + text + "</p>" + "<span>" + date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDay() + " "
+                    + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "</span>" + "<a href=\"javascript:;\" class=\"delete\">" + "删除" + "</a>" + "<a href=\"javascript:;\" class=\"cai\">" + "0" + "</a>" + "<a href=\"javascript:;\" class=\"ding\">" + "0" + "</a>" + "</il>");
+            });
+           
+            $("body").delegate(".delete", "click", function () {
+                $(this).parent().remove();
+            });
+            $("body").delegate(".cai", "click", function () {
+                $(this).text(parseInt($(this).text())+1);
+            });
+            $("body").delegate(".ding", "click", function () {
+                $(this).text(parseInt($(this).text())+1);
+            });
+
+
+        });
+    </script>
+</head>
+<div class="box">
+    <textarea name="" id="" cols="30" rows="10" class="t1"></textarea>
+    <button class="btn" disabled>发布</button>
+    <ul class="t2">
+        <li>
+            <p></p>
+            <span>2019-5-26 6:43:12</span>
+            <a href="javascript:;" class="delete">删除</a>
+            <a href="javascript:;" class="cai">0</a>
+            <a href="javascript:;" class="ding">0</a>
+        </li>
+    </ul>
+</div>
+
+</body>
+
+</html>

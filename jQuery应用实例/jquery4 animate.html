@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>animate</title>
+	<style type="text/css">
+		body{
+			background-color: #fff;
+		}
+		ul{
+			list-style: none;
+		}
+		li{
+			float: left;
+		}
+		.img{
+			width: 140px;
+			height: 140px;
+			position: absolute;
+			background-color: lightblue;
+			cursor: pointer;
+			margin: 200px 200px;
+		}
+		/*.t2{
+			width: 140px;
+			height: 140px;
+			position: absolute;
+			background-color: lightblue;
+			cursor: pointer;
+			left: 400px;
+			top: 400px;
+		}*/
+	</style>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+			 // t1.animate({width:"100px"},3000,function(){});
+			 // t1.animate({height:"100px",backgroundColor:"pink"},3000,function(){});
+			 // t1.animate({width:"200px"},3000,function(){});
+			 // t1.animate({height:"200px"},3000,function(){});
+		var t1 = $(".t1");
+		var t2 = $(".t2");
+		var t3 = $(".t3");
+		var t4 = $(".t4");
+		move(t1);
+		move(t2);
+		move(t3);
+		move(t4);
+		function move(obj){
+		obj.click(function(){
+			setInterval(function(){
+				// obj.animate({left:"+=100px"},1000,function(){});
+				// obj.animate({top:"+=100px"},1000,function(){});
+				// obj.animate({left:"-=100px"},1000,function(){});
+				// obj.animate({top:"-=100px"},1000,function(){});
+				obj.animate({width:"+=100px",height:"+=100px"},1000,"linear",function(){});
+				obj.animate({width:"-=100px",height:"-=100px"},1000,"linear",function(){});
+			},1000);
+		});
+		};
+
+	});
+
+</script>
+</head>
+<body>
+	<ul>
+		<li><img class="t1" src="images/1.jpg"></li>
+		<li><img class="t2" src="images/1.jpg"></li>
+		<li><img class="t3" src="images/1.jpg"></li>
+		<li><img class="t4" src="images/1.jpg"></li>
+		<li><img class="t1" src="images/1.jpg"></li>
+		<li><img class="t2" src="images/1.jpg"></li>
+		<li><img class="t3" src="images/1.jpg"></li>
+		<li><img class="t4" src="images/1.jpg"></li>
+	</ul>
+	<!-- <img class="t1" src="images/1.jpg">
+	<img class="t2" src="images/1.jpg"> -->
+	<!-- <button class="btn">心动</button> -->
+	
+</body>
+</html>

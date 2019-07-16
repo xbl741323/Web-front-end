@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>测试绝对定位-参考祖元素</title>
+	<style type="text/css">
+		body{
+             background-color: white;
+		    }
+		   *{
+		    	margin: 0px;
+		    	padding: 0px;
+		    }
+		    .box1{
+		    	width: 600px;
+		    	height: 600px;
+		    	margin: 200px 0px 0px 200px;
+		    	border: 2px solid pink;
+		    	position: relative;
+		    }
+		    .box2{
+		    	width: 400px;
+		    	height: 400px;
+		    	/*margin: 100px 100px;*/
+		    	border: 2px solid #888;
+		    	position: absolute;
+		    	top: 100px;
+		    	left: 100px;
+		    }
+		    .box3{
+		    	width: 200px;
+		    	height: 200px;
+		    	margin: 100px 100px;
+		    	border: 2px solid lightblue;
+		    }
+		    .box4{
+		    	width: 100px;
+		    	height: 100px;
+                background-color: lightyellow;
+                border: 2px solid;
+                position: absolute;
+                top: 100px;
+                left: 100px;
+		    }
+
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<div class="box2">
+			<div class="box3">
+				<div class="box4"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

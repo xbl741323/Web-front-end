@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>番剧 - 哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</title>
+	<style type="text/css">
+		body{
+			width: 1899px;
+			height: auto;
+			background: white;
+			border: 2px solid lightgray;
+		}
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.head{
+			width: 100%;
+			height: 180px;
+			background-image: url("https://i0.hdslb.com/bfs/archive/c2804b7823fc9092b56c30225fedfa0dc0833114.png");
+		}
+		.head01{
+			width: 100%;
+			height: 40px;
+			/*border: 1px solid lightyellow;*/
+			box-shadow: 0 1px 2px rgba(0,0,0,.1)
+		}
+		.head02{
+			width: 100%;
+			height: 140px;
+			/*background-color: lightyellow;*/
+		}
+		.head01_01{
+			float: left;
+			width: 500px;
+			/*height: 40px;*/
+			margin-left: 350px;
+			text-decoration: none;
+		}
+		.head01_02{
+			float: right;
+			width: 480px;
+			/*height: 40px;*/
+			margin-right: 350px;
+		}
+		.head01_01 p{
+            float: left;
+            margin:10px 10px 0px 10px;
+            text-align: center;
+            font-size: 13px;
+            font-family: "Consola","Arial","微软雅黑"；
+		}
+		.head01_02 p{
+            float: left;
+            margin:10px 10px 0px 10px;
+            text-align: center;
+            font-size: 13px;
+            font-family: "Consola","Arial","微软雅黑"；
+		}
+		.head0201{
+			float: left;
+			width: 800px;
+			height: 140px;
+			/*background-color: blue;*/
+			background-image: url(images/x6.png);
+            background-repeat: no-repeat;
+            background-position: 360px 25px;
+		}
+		.head0202{
+			float: left;
+            width: 1000px;
+			height: 140px;
+			/*background-color: pink;*/
+		}
+		.x6{
+
+		}
+		.head02_01{
+			margin: 90px 0px 0px 373px;
+			height: 28px;
+			width: 352px;
+			background-color: white;
+		}
+		.head02_01 .input01{
+			float: left;
+			height: 28px;
+			width: 250px;
+		}
+		.head02_01 .input02{
+			float: left;
+			height: 28px;
+			width: 50px;
+		}
+		.tougao{
+			display: block;
+			background-color: #f45a8d;
+			margin: 0px;
+			width: 50px;
+			color: white;
+			height: 30px;
+		}
+		.main01{
+			width: 1150px;
+			height: 50px;
+			margin: 0px auto;
+		}
+		.main01 p{
+			float: left;
+            margin:15px 13px 8px 12px;
+            text-align: center;
+            font-size: 13px;
+		}
+		.main02{
+			width: 1150px;
+			height: 240px;
+			background-color: white;
+			margin: 0px auto;
+
+		}
+		.main02_01{
+			float: left;
+			width: 430px;
+			height: 240px;
+			background-color: lightyellow;
+			margin-right: 20px;
+		}
+		.main02_02{
+			float: left;
+			width: 700px;
+			height: 240px;
+			/*background-color: pink;*/
+		}
+		.main02_02_01{
+			width: 700px;
+			height: 110px;
+			/*background-color: lightblue;*/
+			margin-bottom: 20px
+		}
+		.main02_02_02{
+			width: 700px;
+			height: 110px;
+			/*background-color: lightblue;*/
+		}
+		.main02_02_01 .tp01{
+			float: left;
+			width: 160px;
+			height: 110px;
+			background-color: pink;
+			margin-left:0px;
+		}
+		.main02_02_01 .tp02{
+			float: left;
+			width: 160px;
+			height: 110px;
+			background-color: pink;
+			margin-left:20px;
+		}
+		.main02_02_02 .tp01{
+			float: left;
+			width: 160px;
+			height: 110px;
+			background-color: pink;
+			margin-left:0px;
+		}
+		.main02_02_02 .tp02{
+			float: left;
+			width: 160px;
+			height: 110px;
+			background-color: pink;
+			margin-left:20px;
+		}
+		.main03{
+			width: 1150px;
+			height: 240px;
+			/*background-color: lightyellow;*/
+			margin: 20px auto;
+		}
+		.main03_01{
+			font-size: 20px;
+			float: left;
+			width: 880px;
+			height: 240px;
+			/*background-color: lightblue;*/
+			margin-right: 20px;
+		}
+		.main03_02{
+			float: left;
+			width: 250px;
+			height: 240px;
+			/*background-color: pink;*/
+			font-size: 13px;
+		}
+		.tuiguang{
+			margin-bottom: 20px;
+			font-weight: bold;
+		}
+		.main03_01 .tg1{
+			float: left;
+			width: 160px;
+			height: 180px;
+			/*background-color: pink;*/
+			margin-left:0px;
+			font-size: 13px;
+		}
+
+		.tg3{
+			margin: 14px auto;
+			text-align: center;
+		}
+		.main03_01 .tg2{
+			float: left;
+			width: 160px;
+			height: 190px;
+			/*background-color: pink;*/
+			margin-left:20px;
+			font-size: 13px;
+		}
+		.main04{
+			width: 1150px;
+			height: 350px;
+			/*background-color: lightyellow;*/
+			margin: 20px auto;
+		}
+		.main04_01{
+			font-size: 20px;
+			float: left;
+			width: 880px;
+			height: 350px;
+			/*background-color: lightblue;*/
+			margin-right: 20px;
+		}
+		.main04_02{
+			float: left;
+			width: 250px;
+			height: 350px;
+			/*background-color: pink;*/
+			font-size: 13px;
+		}
+		.tg4{
+			margin-top: 15px;
+			margin-bottom: 14px;
+		}
+		.xc1,.xc2{
+			float: left;
+			margin: 20px 0px;
+		}
+		.xc2{
+			margin-left: 20px;
+		}
+		.main04_01 .dh1{
+			float: left;
+			width: 160px;
+			height: 140px;
+			/*background-color: pink;*/
+			margin-left:0px;
+			margin-bottom: 20px;
+			font-size: 13px;
+		}
+		.main04_01 .dh2{
+			float: left;
+			width: 160px;
+			height: 140px;
+			/*background-color: pink;*/
+			margin-left:20px;
+			margin-bottom: 20px;
+			font-size: 13px;
+		}
+		span{
+			font-size: 13px;
+		}
+		.foot{
+			width: 100%;
+			height: 370px;
+			background-color: #f6f9fa;
+		}
+		.foot01{
+			width: 1150px;
+			height: 165px;
+			/*background-color: lightblue;*/
+			margin: 20px auto;
+		}
+		.foot02{
+			width: 1150px;
+			height: 165px;
+			/*background-color: lightblue;*/
+			margin: 0px auto;
+		}
+		.foot01_01{
+			float: left;
+			width: 350px;
+			height: 165px;
+			/*background-color: lightyellow;*/
+		}
+		.foot01_02{
+			float: left;
+			width: 350px;
+			height: 165px;
+			margin-left: 50px;
+			/*background-color: lightyellow;*/
+		}s
+		.foot01_03{
+			float: left;
+			width: 350px;
+			height: 165px;
+			margin-left: 50px;
+			/*background-color: lightyellow;*/
+		}
+		.foot02_01{
+			float: left;
+			width: 100px;
+			height: 165px;
+			/*background-color: lightyellow;*/
+		}
+		.foot02_02{
+			float: left;
+			width: 1030px;
+			/*height: 165px;*/
+			margin-left: 20px;
+			/*background-color: lightyellow;*/
+		}
+		.wz{
+			font-size: 13px;
+			padding:15px 0px 0px 0px;
+			line-height: 28px;
+		}
+		.wz2{
+			font-size: 13px;
+			margin-top: 7px;
+		}
+		.bz{
+			margin: 35px 50px;
+		}
+	    .lj00{
+			font-size: 15px;
+			margin-top: 30px;
+		}
+	    .lj01{
+			float: left;
+			font-size: 15px;
+			margin-left: 0px;
+			margin-top: 20px;
+		}
+		.lj02{
+			float: left;
+			font-size: 15px;
+			margin-left: 60px;
+			margin-top: 20px;
+		}
+		.head01_01 a,.head01_02 a{
+			color: black;
+			text-decoration: none;
+		}
+		.head01_02 .tougao1{
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="head">
+		<div class="head01">
+			<div class="head01_01">
+				<p><a href="">主站</a></p>
+				<p><a href="">画友</a></p>
+				<p><a href="">音频</a></p>
+				<p><a href="">游戏中心</a></p>
+				<p><a href="">直播</a></p>
+				<p><a href="">会员购</a></p>
+				<p><a href="">漫画</a></p>
+				<p><a href="">拜年祭</a></p>
+				<p><a href="">下载APP</a></p>
+			</div>
+			<div class="head01_02">
+				<p><a href="">个人中心</a></p>
+				<p><a href="">大会员</a></p>
+				<p><a href="">消息</a></p>
+				<p><a href="">动态</a></p>
+				<p><a href="">稍后观看</a></p>
+				<p><a href="">收藏夹</a></p>
+				<p><a href="">历史</a></p>
+				<p class="tougao"><a class="tougao1" href="">投稿</a></p>
+			</div>
+		</div>
+		<div class="head02">
+			<div class="head0201">
+				<div class="x6"></div>
+			</div>
+			<div class="head0202"><div class="head02_01">
+				<input class="input02" type="button" name="" value="排行榜">
+				<input class="input01" type="text" name="" value="多罗罗">
+				<input class="input02" type="button" name="" value="搜索">
+			</div></div>
+		</div>
+	</div>
+	<div class="main">
+		<div class="main01">
+			<p>首页</p>
+			<p>动画</p>
+			<p>番剧</p>
+			<p>国创</p>
+			<p>音乐</p>
+			<p>舞蹈</p>
+			<p>游戏</p>
+			<p>科技</p>
+			<p>数码</p>
+			<p>生活</p>
+			<p>鬼畜</p>
+			<p>时尚</p>
+			<p>广告</p>
+			<p>娱乐</p>
+			<p>影视</p>
+			<p>放映厅</p>
+			<p>专栏</p>
+			<p>广场</p>
+			<p>直播</p>
+			<p>小黑屋</p>
+			<p><img src="https://i0.hdslb.com/bfs/archive/5e889fec08dab8cd8f7c6cc0478265ecb9839493.gif" width="50px" height="30"></p>
+		</div>
+		<div class="main02">
+			<div class="main02_01">
+				<img src="https://i0.hdslb.com/bfs/archive/5b66fd62710ff159b53602d99690803abf396945.jpg" width="430px" height="240px">
+			</div>
+			<div class="main02_02">
+				<div class="main02_02_01">
+					<div class="tp01">
+						<img src="https://i0.hdslb.com/bfs/archive/02336cff978bcffd45c421b7416e3cc0eed96633.jpg@336w_190h.jpg" width="160px" height="110px">
+					</div>
+					<div class="tp02">
+						<img src="https://i0.hdslb.com/bfs/archive/77738b897c4ad4b7cbbedf26ac20b2967a3ba62d.jpg@336w_190h.jpg" width="160px" height="110px">
+					</div>
+					<div class="tp02">
+						<img src="https://i2.hdslb.com/bfs/archive/61d19f67b0f0125c7ad782bdb250914a86b0832e.jpg@336w_190h.jpg" width="160px" height="110px">
+					</div>
+					<div class="tp02">
+						<img src="https://i2.hdslb.com/bfs/archive/76ba28ade45a1da2f77a792da420e9f6efb95004.jpg@336w_190h.jpg" width="160px" height="110px">
+					</div>
+				</div>
+				<div class="main02_02_02">
+					<div class="tp01">
+						<img src="https://i0.hdslb.com/bfs/archive/5fba0a2e0f1c739442b74eaebe682d37a220fe6a.jpg@336w_190h.jpg" width="160px" height="110px">
+					</div>
+					<div class="tp02">
+						<img src="https://i2.hdslb.com/bfs/archive/dbc9e7ffd07b73c0ff4e6ecfad8b6c4ce7892034.jpg@336w_190h.jpg" width="160px" height="110px">
+					</div>
+					<div class="tp02">
+						<img src="https://i1.hdslb.com/bfs/archive/496264d313a6bb0cdf483f49e07184da5ecec250.jpg@336w_190h.jpg" width="160px" height="110px">
+					</div>
+					<div class="tp02">
+						<img src="https://i1.hdslb.com/bfs/archive/e4c0b0c65e5f928a60a3ad931d2d575ec54322f0.jpg@336w_190h.jpg" width="160px" height="110px">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="main03">
+			<div class="main03_01">
+				<dl>
+					<dt class="tuiguang">推广</dt>
+					<dd class="tg1">
+						<img src="https://i0.hdslb.com/bfs/archive/c754bb2789d6f99d69488bfc479d2c34fcd91826.jpg@336w_190h.jpg" width="160px" height="110px">
+						【FGO/冠世一战】虽千万人逆我之我仍执着!
+					</dd>
+					<dd class="tg2">
+						<img src="https://i1.hdslb.com/bfs/archive/508a267cfd6ca1da7d33b43d7172091072b7e8f7.jpg@336w_190h.jpg" width="160px" height="110px">【白上吹雪】白上吹雪来了哦!AWSL!
+					</dd>
+					<dd class="tg2">
+						<img src="https://i2.hdslb.com/bfs/archive/9fecfdad2eb091eecd346010aa50b93d596f92aa.jpg@336w_190h.jpg"width="160px" height="110px">三玖这一段,我也就看了几万遍而已!说!三玖天下第几?
+					</dd>
+					<dd class="tg2">
+						<img src="https://i2.hdslb.com/bfs/archive/31cdd4a1ee24b8a7e37c6355a0ba24161e227c5e.jpg@336w_190h.jpg" width="160px" height="110px">【藤原千花】那个女人又征服了三首歌曲?居然还是rap???
+					</dd>
+					<dd class="tg2">
+						<img src="https://i1.hdslb.com/bfs/archive/9b11f3c8b19b5823411e06995b2b8ab241380aff.jpg@336w_190h.jpg" width="160px" height="110px">可恶!得想个办法娶了这女人
+					</dd>
+				</dl>
+			</div>
+			<div class="main03_02">
+				<div class="tg3">在线人数：5142217  最新投稿：71455</div>
+				<img src="https://i0.hdslb.com/bfs/archive/6ac94db90965caf128c0f4dcd9ec9ad4d0951c64.jpg" width="250px" height="160px">
+			</div>
+		</div>
+		<div class="main04">
+			<div class="main04_01">
+				<dl>
+					<dt class="tuiguang">动画 <span>有新动态 最新投稿</span></dt>
+					<dd class="dh1">
+						<img src="https://i2.hdslb.com/bfs/archive/745f99c85bbe6e2028970d01bec26b7914ab8e2c.jpg@336w_190h.jpg" width="160px" height="110px">请不要删♀除梦梦奈!拜托～
+					</dd>
+					<dd class="dh2">
+						<img src="https://i2.hdslb.com/bfs/archive/61d19f67b0f0125c7ad782bdb250914a86b0832e.jpg@336w_190h.jpg" width="160px" height="110px">模仿小狐狸的 夏 色 祭
+					</dd>
+					<dd class="dh2">
+						<img src="https://i0.hdslb.com/bfs/archive/66d15071e75dfca14c0322c559e25708ffa0328e.png@336w_190h.png" width="160px" height="110px">【有栖マナ】恶龙咆哮! 吞噬风漂龙的黑白角龙
+					</dd>
+					<dd class="dh2">
+						<img src="https://i2.hdslb.com/bfs/archive/02759823ef3920f77451dc86d3aa3624ee06c41d.png@336w_190h.png" width="160px" height="110px">找到新老婆啦!一月新番第一位老婆竟然是~
+					</dd>
+					<dd class="dh2">
+						<img src="https://i1.hdslb.com/bfs/archive/9e8869474ec7c12690d5d555aa40e292db47880c.png@336w_190h.png" width="160px" height="110px">【kuma桑】你们是来搞笑的吧
+					</dd>
+					<dd class="dh1">
+						<img src="https://i0.hdslb.com/bfs/archive/de800668966cdbeef4bc17d714b3b98461b8e321.png@336w_190h.png" width="160px" height="110px">【kuma桑】贵族竟然不知道什么是智能手机?
+					</dd>
+					<dd class="dh2">
+						<img src="https://i1.hdslb.com/bfs/archive/e71c785bd798cfc6583072288fe0bf8418b06fcb.jpg@336w_190h.jpg" width="160px" height="110px">目前最能开车的国创动画,能开车动画才是“好”动画!
+					</dd>
+					<dd class="dh2">
+						<img src="https://i0.hdslb.com/bfs/archive/dd1462778bc2f74cf212cd1f51076c41d6dc8b9c.jpg@320w_200h.jpg" width="160px" height="110px">中野三玖天下第一啊!!!!!!
+					</dd>
+					<dd class="dh2">
+						<img src="https://i1.hdslb.com/bfs/archive/58ed24aa3409e5a719dbf72c2eaee90a702f28e7.jpg@336w_190h.jpg" width="160px" height="110px">【10月】关于我转生变成史莱姆这档事 PV2【轻万】
+					</dd>
+					<dd class="dh2">
+						<img src="https://i0.hdslb.com/bfs/archive/ef92b9eb0f2d751825d6b646ff631f911674ef9a.jpg@336w_190h.jpg" width="160px" height="110px">
+						【僵尸rap】你脑子秀逗了吗,笨蛋僵尸!
+					</dd>
+				</dl>
+			</div>
+			<div class="main04_02">
+				<div class="tg4">直播排行  关注的主播  为你推荐</div>
+				<img src="https://i0.hdslb.com/bfs/live/49e999a96b59c5ddd986b8a2cfbaf18df65ae4b5.jpg" width="250px" height="240px">
+				<div class="xc1">
+				<img src="https://s1.hdslb.com/bfs/static/jinkela/home/asserts/wh.png" width="110px">
+			    </div>
+			    <div class="xc2">
+				<img src="https://s1.hdslb.com/bfs/static/jinkela/home/asserts/sp.png" width="110px">
+			    </div>
+			</div>
+		</div>
+		<div class="main04"><!--这里实际上是main05-->
+			<div class="main04_01">
+				<dl>
+					<dt class="tuiguang">动画 <span>有新动态 最新投稿</span></dt>
+					<dd class="dh1">
+						<img src="https://i2.hdslb.com/bfs/archive/745f99c85bbe6e2028970d01bec26b7914ab8e2c.jpg@336w_190h.jpg" width="160px" height="110px">请不要删♀除梦梦奈!拜托～
+					</dd>
+					<dd class="dh2">
+						<img src="https://i2.hdslb.com/bfs/archive/61d19f67b0f0125c7ad782bdb250914a86b0832e.jpg@336w_190h.jpg" width="160px" height="110px">模仿小狐狸的 夏 色 祭
+					</dd>
+					<dd class="dh2">
+						<img src="https://i0.hdslb.com/bfs/archive/66d15071e75dfca14c0322c559e25708ffa0328e.png@336w_190h.png" width="160px" height="110px">【有栖マナ】恶龙咆哮! 吞噬风漂龙的黑白角龙
+					</dd>
+					<dd class="dh2">
+						<img src="https://i2.hdslb.com/bfs/archive/02759823ef3920f77451dc86d3aa3624ee06c41d.png@336w_190h.png" width="160px" height="110px">找到新老婆啦!一月新番第一位老婆竟然是~
+					</dd>
+					<dd class="dh2">
+						<img src="https://i1.hdslb.com/bfs/archive/9e8869474ec7c12690d5d555aa40e292db47880c.png@336w_190h.png" width="160px" height="110px">【kuma桑】你们是来搞笑的吧
+					</dd>
+					<dd class="dh1">
+						<img src="https://i0.hdslb.com/bfs/archive/de800668966cdbeef4bc17d714b3b98461b8e321.png@336w_190h.png" width="160px" height="110px">【kuma桑】贵族竟然不知道什么是智能手机?
+					</dd>
+					<dd class="dh2">
+						<img src="https://i1.hdslb.com/bfs/archive/e71c785bd798cfc6583072288fe0bf8418b06fcb.jpg@336w_190h.jpg" width="160px" height="110px">目前最能开车的国创动画,能开车动画才是“好”动画!
+					</dd>
+					<dd class="dh2">
+						<img src="https://i0.hdslb.com/bfs/archive/dd1462778bc2f74cf212cd1f51076c41d6dc8b9c.jpg@320w_200h.jpg" width="160px" height="110px">中野三玖天下第一啊!!!!!!
+					</dd>
+					<dd class="dh2">
+						<img src="https://i1.hdslb.com/bfs/archive/58ed24aa3409e5a719dbf72c2eaee90a702f28e7.jpg@336w_190h.jpg" width="160px" height="110px">【10月】关于我转生变成史莱姆这档事 PV2【轻万】
+					</dd>
+					<dd class="dh2">
+						<img src="https://i0.hdslb.com/bfs/archive/ef92b9eb0f2d751825d6b646ff631f911674ef9a.jpg@336w_190h.jpg" width="160px" height="110px">
+						【僵尸rap】你脑子秀逗了吗,笨蛋僵尸!
+					</dd>
+				</dl>
+			</div>
+			<div class="main04_02">
+				<div class="tg4">直播排行  关注的主播  为你推荐</div>
+				<img src="https://i0.hdslb.com/bfs/live/49e999a96b59c5ddd986b8a2cfbaf18df65ae4b5.jpg" width="250px" height="240px">
+				<div class="xc1">
+				<img src="https://s1.hdslb.com/bfs/static/jinkela/home/asserts/wh.png" width="110px">
+			    </div>
+			    <div class="xc2">
+				<img src="https://s1.hdslb.com/bfs/static/jinkela/home/asserts/sp.png" width="110px">
+			    </div>
+			</div>
+		</div>
+		<div class="main04"><!--这里实际上是main06-->
+			<div class="main04_01">
+				<dl>
+					<dt class="tuiguang">动画 <span>有新动态 最新投稿</span></dt>
+					<dd class="dh1">
+						<img src="https://i2.hdslb.com/bfs/archive/745f99c85bbe6e2028970d01bec26b7914ab8e2c.jpg@336w_190h.jpg" width="160px" height="110px">请不要删♀除梦梦奈!拜托～
+					</dd>
+					<dd class="dh2">
+						<img src="https://i2.hdslb.com/bfs/archive/61d19f67b0f0125c7ad782bdb250914a86b0832e.jpg@336w_190h.jpg" width="160px" height="110px">模仿小狐狸的 夏 色 祭
+					</dd>
+					<dd class="dh2">
+						<img src="https://i0.hdslb.com/bfs/archive/66d15071e75dfca14c0322c559e25708ffa0328e.png@336w_190h.png" width="160px" height="110px">【有栖マナ】恶龙咆哮! 吞噬风漂龙的黑白角龙
+					</dd>
+					<dd class="dh2">
+						<img src="https://i2.hdslb.com/bfs/archive/02759823ef3920f77451dc86d3aa3624ee06c41d.png@336w_190h.png" width="160px" height="110px">找到新老婆啦!一月新番第一位老婆竟然是~
+					</dd>
+					<dd class="dh2">
+						<img src="https://i1.hdslb.com/bfs/archive/9e8869474ec7c12690d5d555aa40e292db47880c.png@336w_190h.png" width="160px" height="110px">【kuma桑】你们是来搞笑的吧
+					</dd>
+					<dd class="dh1">
+						<img src="https://i0.hdslb.com/bfs/archive/de800668966cdbeef4bc17d714b3b98461b8e321.png@336w_190h.png" width="160px" height="110px">【kuma桑】贵族竟然不知道什么是智能手机?
+					</dd>
+					<dd class="dh2">
+						<img src="https://i1.hdslb.com/bfs/archive/e71c785bd798cfc6583072288fe0bf8418b06fcb.jpg@336w_190h.jpg" width="160px" height="110px">目前最能开车的国创动画,能开车动画才是“好”动画!
+					</dd>
+					<dd class="dh2">
+						<img src="https://i0.hdslb.com/bfs/archive/dd1462778bc2f74cf212cd1f51076c41d6dc8b9c.jpg@320w_200h.jpg" width="160px" height="110px">中野三玖天下第一啊!!!!!!
+					</dd>
+					<dd class="dh2">
+						<img src="https://i1.hdslb.com/bfs/archive/58ed24aa3409e5a719dbf72c2eaee90a702f28e7.jpg@336w_190h.jpg" width="160px" height="110px">【10月】关于我转生变成史莱姆这档事 PV2【轻万】
+					</dd>
+					<dd class="dh2">
+						<img src="https://i0.hdslb.com/bfs/archive/ef92b9eb0f2d751825d6b646ff631f911674ef9a.jpg@336w_190h.jpg" width="160px" height="110px">
+						【僵尸rap】你脑子秀逗了吗,笨蛋僵尸!
+					</dd>
+				</dl>
+			</div>
+			<div class="main04_02">
+				<div class="tg4">直播排行  关注的主播  为你推荐</div>
+				<img src="https://i0.hdslb.com/bfs/live/49e999a96b59c5ddd986b8a2cfbaf18df65ae4b5.jpg" width="250px" height="240px">
+				<div class="xc1">
+				<img src="https://s1.hdslb.com/bfs/static/jinkela/home/asserts/wh.png" width="110px">
+			    </div>
+			    <div class="xc2">
+				<img src="https://s1.hdslb.com/bfs/static/jinkela/home/asserts/sp.png" width="110px">
+			    </div>
+			</div>
+		</div>
+		<div class="main04"><!--这里实际上是main07-->
+			<div class="main04_01">
+				<dl>
+					<dt class="tuiguang">动画 <span>有新动态 最新投稿</span></dt>
+					<dd class="dh1">
+						<img src="https://i2.hdslb.com/bfs/archive/745f99c85bbe6e2028970d01bec26b7914ab8e2c.jpg@336w_190h.jpg" width="160px" height="110px">请不要删♀除梦梦奈!拜托～
+					</dd>
+					<dd class="dh2">
+						<img src="https://i2.hdslb.com/bfs/archive/61d19f67b0f0125c7ad782bdb250914a86b0832e.jpg@336w_190h.jpg" width="160px" height="110px">模仿小狐狸的 夏 色 祭
+					</dd>
+					<dd class="dh2">
+						<img src="https://i0.hdslb.com/bfs/archive/66d15071e75dfca14c0322c559e25708ffa0328e.png@336w_190h.png" width="160px" height="110px">【有栖マナ】恶龙咆哮! 吞噬风漂龙的黑白角龙
+					</dd>
+					<dd class="dh2">
+						<img src="https://i2.hdslb.com/bfs/archive/02759823ef3920f77451dc86d3aa3624ee06c41d.png@336w_190h.png" width="160px" height="110px">找到新老婆啦!一月新番第一位老婆竟然是~
+					</dd>
+					<dd class="dh2">
+						<img src="https://i1.hdslb.com/bfs/archive/9e8869474ec7c12690d5d555aa40e292db47880c.png@336w_190h.png" width="160px" height="110px">【kuma桑】你们是来搞笑的吧
+					</dd>
+					<dd class="dh1">
+						<img src="https://i0.hdslb.com/bfs/archive/de800668966cdbeef4bc17d714b3b98461b8e321.png@336w_190h.png" width="160px" height="110px">【kuma桑】贵族竟然不知道什么是智能手机?
+					</dd>
+					<dd class="dh2">
+						<img src="https://i1.hdslb.com/bfs/archive/e71c785bd798cfc6583072288fe0bf8418b06fcb.jpg@336w_190h.jpg" width="160px" height="110px">目前最能开车的国创动画,能开车动画才是“好”动画!
+					</dd>
+					<dd class="dh2">
+						<img src="https://i0.hdslb.com/bfs/archive/dd1462778bc2f74cf212cd1f51076c41d6dc8b9c.jpg@320w_200h.jpg" width="160px" height="110px">中野三玖天下第一啊!!!!!!
+					</dd>
+					<dd class="dh2">
+						<img src="https://i1.hdslb.com/bfs/archive/58ed24aa3409e5a719dbf72c2eaee90a702f28e7.jpg@336w_190h.jpg" width="160px" height="110px">【10月】关于我转生变成史莱姆这档事 PV2【轻万】
+					</dd>
+					<dd class="dh2">
+						<img src="https://i0.hdslb.com/bfs/archive/ef92b9eb0f2d751825d6b646ff631f911674ef9a.jpg@336w_190h.jpg" width="160px" height="110px">
+						【僵尸rap】你脑子秀逗了吗,笨蛋僵尸!
+					</dd>
+				</dl>
+			</div>
+			<div class="main04_02">
+				<div class="tg4">直播排行  关注的主播  为你推荐</div>
+				<img src="https://i0.hdslb.com/bfs/live/49e999a96b59c5ddd986b8a2cfbaf18df65ae4b5.jpg" width="250px" height="240px">
+				<div class="xc1">
+				<img src="https://s1.hdslb.com/bfs/static/jinkela/home/asserts/wh.png" width="110px">
+			    </div>
+			    <div class="xc2">
+				<img src="https://s1.hdslb.com/bfs/static/jinkela/home/asserts/sp.png" width="110px">
+			    </div>
+			</div>
+		</div>
+		<div class="main03"><!--这里实际上是main08-->
+			<div class="main03_01">
+				<dl>
+					<dt class="tuiguang">推广</dt>
+					<dd class="tg1">
+						<img src="https://i0.hdslb.com/bfs/archive/c754bb2789d6f99d69488bfc479d2c34fcd91826.jpg@336w_190h.jpg" width="160px" height="110px">
+						【FGO/冠世一战】虽千万人逆我之我仍执着!
+					</dd>
+					<dd class="tg2">
+						<img src="https://i1.hdslb.com/bfs/archive/508a267cfd6ca1da7d33b43d7172091072b7e8f7.jpg@336w_190h.jpg" width="160px" height="110px">【白上吹雪】白上吹雪来了哦!AWSL!
+					</dd>
+					<dd class="tg2">
+						<img src="https://i2.hdslb.com/bfs/archive/9fecfdad2eb091eecd346010aa50b93d596f92aa.jpg@336w_190h.jpg"width="160px" height="110px">三玖这一段,我也就看了几万遍而已!说!三玖天下第几?
+					</dd>
+					<dd class="tg2">
+						<img src="https://i2.hdslb.com/bfs/archive/31cdd4a1ee24b8a7e37c6355a0ba24161e227c5e.jpg@336w_190h.jpg" width="160px" height="110px">【藤原千花】那个女人又征服了三首歌曲?居然还是rap???
+					</dd>
+					<dd class="tg2">
+						<img src="https://i1.hdslb.com/bfs/archive/9b11f3c8b19b5823411e06995b2b8ab241380aff.jpg@336w_190h.jpg" width="160px" height="110px">可恶!得想个办法娶了这女人
+					</dd>
+				</dl>
+			</div>
+			<div class="main03_02">
+				<div class="tg3">在线人数：5142217  最新投稿：71455</div>
+				<img src="https://i0.hdslb.com/bfs/archive/6ac94db90965caf128c0f4dcd9ec9ad4d0951c64.jpg" width="250px" height="160px">
+			</div>
+		</div>
+	</div>
+	<div class="foot">
+		<div class="foot01">
+			<div class="foot01_01">
+				<dl>
+					<dt class="lj00">bilibili</dt>
+					<dd class="lj01">关于我们</dd>
+					<dd class="lj02">联系我们</dd>
+					<dd class="lj02">加入我们</dd>
+					<dd class="lj01">友情链接</dd>
+					<dd class="lj02">官方认证</dd>
+					<dd class="lj02">InRelations</dd>
+				</dl>
+			</div>
+			<div class="foot01_02">
+				<dl>
+					<dt class="lj00">传送门</dt>
+					<dd class="lj01">帮助中心</dd>
+					<dd class="lj02">高级弹幕</dd>
+					<dd class="lj02">活动专题页</dd>
+					<dd class="lj01">侵权申诉</dd>
+					<dd class="lj02">活动中心</dd>
+					<dd class="lj02">用户反馈论坛</dd>
+				</dl>
+			</div>
+			<div class="foot01_03">
+				<img class="bz" src="images/bz.png">
+			</div>
+		</div>
+		<div class="foot02">
+			<div class="foot02_01">
+				<img src="data:image/png;base64,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" >
+				<img src="data:image/png;base64,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">
+			</div>
+			<div class="foot02_02">
+				<p class="wz">
+					广播电视节目制作经营许可证：（沪）字第1248号 | 网络文化经营许可证：沪网文[2016]2296-134号 | 信息网络传播视听节目许可证：0910417 | 互联网ICP备案：沪ICP备13002172号-3 沪ICP证：沪B2-20100043 | 违法不良信息举报邮箱：help@bilibili.com | 违法不良信息举报电话：4000233233转3 | 营业执照|上海互联网举报中心 |12318 全国文化市场举报网站 | <img class="ga" src="https://static.hdslb.com/images/base/beiantubiao.png" width="15px" height="15px">沪公网安备 31011002002436号 |儿童色情信息举报专区 <p class="wz2">网上有害信息举报专区： <img src="https://static.hdslb.com/images/12377.png" width="15px" height="15px">中国互联网违法和不良信息举报中心</p><p class="wz2">公司名称：上海宽娱数码科技有限公司 | 公司地址：上海市杨浦区政立路485号 | 客服电话：4000233233</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

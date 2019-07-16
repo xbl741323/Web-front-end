@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>bili jQuery jQuery事件冒泡和默认行为</title>
+	<style type="text/css">
+		body{
+			background-color: #fff;
+			height: 2000px;
+		}
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.father{
+			width: 200px;
+			height: 200px;
+			background-color: lightgray;
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			background-color: lightblue;
+		}
+	</style>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	/*
+	   1、什么是事件冒泡？
+	   2、如何阻止事件冒泡？
+	   3、什么是默认行为？
+	   4、如何阻止默认行为？
+     
+	*/
+	$(function(){
+		$(".son").click(function(event){
+			alert("son");
+			// return false;
+			event.stopPropagation();
+		});
+		    
+		$(".father").click(function(){
+			alert("father");
+		});
+		    $("a").click(function(event){
+		    	alert("niaho");
+		    	// return false;
+		    	event.preventDefault();
+		    });
+		    $("button").click(function(event){
+		    	// return false;
+		    	event.preventDefault();
+		    });
+
+       
+    
+	});
+</script>
+</head>
+<body>
+	<div class="father">
+	      <div class="son"></div>
+	</div>
+  <a href="https://www.bilibili.com/">bilibili弹幕网</a>
+  <form action="https://www.bilibili.com/">
+  	     <input type="text" name="" value="">
+  	     <button>提交</button>
+  </form>
+	
+</body>
+</html>

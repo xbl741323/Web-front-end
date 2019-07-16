@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-1</title>
+    <style type="text/css">
+    body{
+        background-color: #fff;
+    }
+    
+    </style>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <!-- vue实例所控制的元素区域，就是我们的V-->
+    <div id="app">
+        <p>{{ ms }}</p>
+    </div>
+    <script>
+        //注意：我们new出来的这个vm对象，就是我们MVVM中的VM调度者
+          var vm = new Vue({
+              el: "#app",//表示当前我们new的这个vue实例，要控制的区域对象
+              //注意：这里的data就是MVVM中的M，专门用于存放的每个页面中的数据的
+              data: {//data属性中，存放的是el中要用到的数据
+                 ms:"欢迎使用vue呀"//通过vue使用的指令，很方便的就能把数据渲染到页面上，程序员不用手动操作DOM元素了[前端vue之类的框架，不提倡我们手动去操作DOM元素了]
+              }
+          });
+    
+    </script>
+    
+</body>
+</html>

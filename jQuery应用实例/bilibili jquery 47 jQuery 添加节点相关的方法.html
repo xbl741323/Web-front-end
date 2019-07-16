@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>bili jQuery jQuery 添加节点相关的方法</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+            height: 4000px;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul {
+            list-style: none;
+        }
+    </style>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+    <script src="/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+		/*
+        内部插入
+        append
+        appendTo
+
+        prepend
+        prependTo
+
+        外部插入
+        after
+        before
+        insertAfter
+        insertBefore
+       
+		*/
+        $(function () {
+            $("button").eq(0).click(function(){
+                var $li = $("<li>新的li</li>");
+                // $("ul").eq(0).append($li);
+                // $("ul").eq(0).prepend($li);
+                // $li.appendTo("ul");
+                // $li.prependTo("ul");
+                // $("li").eq(1).after($li);
+                // $("li").eq(1).before($li);
+                // $li.insertAfter($("li").eq(1));
+                $li.insertBefore($("li").eq(1));
+            });
+                  
+            });
+    </script>
+</head>
+<ul>
+    <li>旧的li</li>
+    <li>旧的li</li>
+    <li>旧的li</li>
+</ul>
+<button>按钮</button>
+
+
+
+<body>
+
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>bili jQuery jQuery自定义动画</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+            height: 4000px;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul {
+            list-style: none;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin-bottom: 10px;
+        }
+        .t1{
+            display: none;
+            background-color: blue;
+        }
+    </style>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+    <script src="/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+		/*
+        第1个参数：对应修改的属性
+        第2个参数：指定动画时长
+        第3个参数：指定动画的节奏，默认是swing(缓动)，linear是先快后慢
+        第4个参数：回调函数
+		*/
+        $(function () {
+            $("button").eq(0).click(function(){
+                $("div").eq(0).animate({
+                    marginLeft:800
+                },3000,"linear",function(){});
+                $("div").eq(1).animate({
+                    marginLeft:800
+                },3000,function(){});
+            });
+            $("button").eq(1).click(function(){
+                $("div").eq(0).animate({
+                    width:"+=100px"
+                },1000,function(){});
+            });
+            $("button").eq(2).click(function(){
+                $("div").eq(0).animate({
+                    width:"toggle"
+                },1000,function(){});
+            });
+        });
+    </script>
+</head>
+<button>操作属性</button>
+<button>累加属性</button>
+<button>关键字</button>
+<div class="t1"></div>
+<div></div>
+
+
+<body>
+
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>利用绝对定位制作压盖效果,和居中效果</title>
+	<style type="text/css">
+		body{
+             background-color: white;
+		    }
+		   *{
+		    	margin: 0px;
+		    	padding: 0px;
+		    }
+		    .box1{
+		    	position: relative;
+		    	width: 400px;
+		    	height:400px;
+                margin: 200px auto;
+                /*padding: 20px;*/
+                border: 1px solid;
+		    }
+		    .box2{
+		    	width: 360px;
+		    	height: 360px;
+		    	margin: 20px 20px;
+		    	background-color: lightyellow;
+		    }
+		    .box3{
+		    	width: 100px;
+		    	height: 100px;
+		    	background-color: lightblue;
+		    	position: absolute;
+		    	top: 150px;
+		    	left: 150px;
+		    }
+		    
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<div class="box2"></div>
+		<div class="box3"></div>
+	</div>
+	
+</body>
+</html>

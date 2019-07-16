@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-16</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+    </style>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <p>{{ msg | msgFormat('疯狂','123') | text}}</p>
+    </div>
+    <script>
+        //定义一个vue全局的过滤器，名字叫msgFormat
+        //所谓的全局过滤器，就是所有的vm实例都共享的
+        Vue.filter('msgFormat', function (msg, arg, arg2) {
+            //字符串的replace方法，第一个参数，除了可以是字符串外，还可以是正则表达式
+            return msg.replace(/单纯/g, arg + arg2)
+        })
+        Vue.filter('text', function (msg) {
+            return msg + '--------'
+        })
+
+        var vm = new Vue({
+            el: ".app",
+            data: {
+                msg: "曾经，我也是一个单纯的孩子，单纯的我，傻傻的问，谁是世界上最单纯的孩子"
+            },
+            methods: {
+
+            },
+        })
+        //过滤器调用时的格式：{{ name | 过滤器的名字}}
+
+        //过滤器的定义语法：Vue.filter(过滤器的名字，function(data){
+        //     return data + "123"
+        // })
+    </script>
+
+</body>
+
+</html>

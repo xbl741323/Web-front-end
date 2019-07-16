@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>bili jQuery jQuery电影排行榜</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+            height: 2000px;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .box {
+            width: 300px;
+            height: 450px;
+            margin: 100px auto;
+            border: 1px solid;
+        }
+
+        .box h1 {
+            font-size: 20px;
+            line-height: 35px;
+            color: deeppink;
+            padding-left: 10px;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        .box li {
+            padding: 5px 10px;
+            border: 1px dashed #ccc;
+            cursor: pointer;
+        }
+
+        .box li:nth-child(-n+3) span {
+            background-color: deeppink;
+        }
+
+        .box li span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            color: #333;
+            background-color: lightgray;
+            margin-right: 10px;
+        }
+
+        .conter {
+            overflow: hidden;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .conter img {
+            width: 90px;
+            height: 120px;
+            float: left;
+        }
+
+        .conter p {
+            width: 180px;
+            height: 120px;
+            float: right;
+            font-size: 12px;
+            line-height: 20px;
+        }
+
+        .current .conter {
+            display: block;
+        }
+    </style>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+    <script src="/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+		/*
+		
+		*/
+        $(function () {
+            // $("li").mouseenter(function () {
+            //     $(this).addClass("current");
+            // });
+            // $("li").mouseleave(function () {
+            //     $(this).removeClass("current");
+            // });
+            $("li").hover(function () {
+                $(this).addClass("current");
+            }, function () {
+                $(this).removeClass("current");
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <h1>电影排行榜</h1>
+        <ul>
+            <li><span>1</span>电影名称
+                <div class="conter">
+                    <img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1075481921,1149912994&fm=58&w=121&h=140&img.JPEG"
+                        alt="">
+                    <p>简介：被开除军籍的冷锋（吴京饰演）本是因找杀害龙小云的凶手（余男饰演）来到非洲，但是却突然被卷入一场非洲国家的叛乱。
+                        因为国家之间政治立场的关系，中国军队无法在非洲实行武装行动撤离华侨。
+                    </p>
+                </div>
+            </li>
+            <li><span>2</span>电影名称
+                <div class="conter">
+                    <img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1075481921,1149912994&fm=58&w=121&h=140&img.JPEG"
+                        alt="">
+                    <p>简介：被开除军籍的冷锋（吴京饰演）本是因找杀害龙小云的凶手（余男饰演）来到非洲，但是却突然被卷入一场非洲国家的叛乱。
+                        因为国家之间政治立场的关系，中国军队无法在非洲实行武装行动撤离华侨。
+                    </p>
+                </div>
+            </li>
+            <li><span>3</span>电影名称
+                <div class="conter">
+                    <img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1075481921,1149912994&fm=58&w=121&h=140&img.JPEG"
+                        alt="">
+                    <p>简介：被开除军籍的冷锋（吴京饰演）本是因找杀害龙小云的凶手（余男饰演）来到非洲，但是却突然被卷入一场非洲国家的叛乱。
+                        因为国家之间政治立场的关系，中国军队无法在非洲实行武装行动撤离华侨。
+                    </p>
+                </div>
+            </li>
+            <li><span>4</span>电影名称
+                <div class="conter">
+                    <img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1075481921,1149912994&fm=58&w=121&h=140&img.JPEG"
+                        alt="">
+                    <p>简介：被开除军籍的冷锋（吴京饰演）本是因找杀害龙小云的凶手（余男饰演）来到非洲，但是却突然被卷入一场非洲国家的叛乱。
+                        因为国家之间政治立场的关系，中国军队无法在非洲实行武装行动撤离华侨。
+                    </p>
+                </div>
+            </li>
+            <li><span>5</span>电影名称
+                <div class="conter">
+                    <img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1075481921,1149912994&fm=58&w=121&h=140&img.JPEG"
+                        alt="">
+                    <p>简介：被开除军籍的冷锋（吴京饰演）本是因找杀害龙小云的凶手（余男饰演）来到非洲，但是却突然被卷入一场非洲国家的叛乱。
+                        因为国家之间政治立场的关系，中国军队无法在非洲实行武装行动撤离华侨。
+                    </p>
+                </div>
+            </li>
+            <li><span>6</span>电影名称
+                <div class="conter">
+                    <img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1075481921,1149912994&fm=58&w=121&h=140&img.JPEG"
+                        alt="">
+                    <p>简介：被开除军籍的冷锋（吴京饰演）本是因找杀害龙小云的凶手（余男饰演）来到非洲，但是却突然被卷入一场非洲国家的叛乱。
+                        因为国家之间政治立场的关系，中国军队无法在非洲实行武装行动撤离华侨。
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

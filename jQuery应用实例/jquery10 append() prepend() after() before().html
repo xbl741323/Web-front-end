@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>append() prepend() after() before()</title>
+	<style type="text/css">
+		body{
+			background-color: #fff;
+		}
+		ul{
+			list-style: none;
+		}
+		li{
+			width: 40px;
+			height: 20px;
+			background-color: lightgray;
+			margin-bottom: 10px;
+			text-align: center;
+			line-height: 20px;
+		}	
+	</style>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#btn").click(function(){
+			$("#t1").append("<li>6</li>");
+		});
+		$("#btn1").click(function(){
+			$("#t1").prepend("<li>0</li>");
+		});
+		$("#btn2").click(function(){
+			$("#th").after("<li>4</li>");
+		});
+		$("#btn3").click(function(){
+			$("#th").before("<li>2</li>");
+		});
+		
+
+	});
+
+</script>
+</head>
+<body>
+	<button id="btn">append</button>
+	<button id="btn1">prepend</button>
+	<button id="btn2">after</button>
+	<button id="btn3">before</button>
+	<div>
+		<ul id="t1">
+			<li>1</li>
+			<li id="th">3</li>
+			<li>5</li>
+		</ul>
+	</div>
+	
+	
+	
+</body>
+</html>

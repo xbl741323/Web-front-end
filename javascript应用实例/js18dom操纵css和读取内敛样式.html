@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>dom操纵css和读取内敛样式</title>
+	<style type="text/css">
+		body{
+			background-color: lightyellow;
+		}
+		.t1{
+			width: 300px;
+			height: 300px;
+			background-color: lightblue !important;
+			font-size: 12px;
+			border: 1px solid;
+		}
+	</style>
+	<script type="text/javascript">
+	      window.onload = function(){
+	      	var btn = document.getElementById("btn");
+	      	btn.onclick = function(){
+	      	var t1 = document.querySelector(".t1");
+	      	t1.style.width = "200px";
+	      	t1.style.height = "200px";
+	      	t1.style.fontSize = "30px";
+	      	t1.style.backgroundColor = "pink";
+	      	t1.style.borderColor = "red";
+	      	t1.style.borderTopWidth = "10px";
+	      };
+	      var btn2 = document.getElementById("btn2");
+	      btn2.onclick = function(){
+	      	var t1 = document.querySelector(".t1");
+	      	alert(t1.style.backgroundColor);
+	      }
+
+	      };
+	</script>
+</head>
+<body>
+	<input type="submit" name="" value="change" id="btn">
+	<input type="submit" name="" value="change" id="btn2">
+    <div class="t1">你好</div>
+
+</body>
+</html>

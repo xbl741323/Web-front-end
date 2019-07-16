@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>js操作类</title>
+	<style type="text/css">
+		body{
+			background-color: lightyellow;
+		}
+		.t1{
+			width: 100px;
+			height: 100px;
+			background-color: lightblue;
+		}
+		.t2{
+			height: 200px;
+			background-color: pink;
+		}
+	</style>
+	<script src="jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+	    window.onload = function(){
+	    	var x1 = document.getElementById("x1");
+	    	x1.onclick = function(){
+	    		// x1.className += " t2";
+                  // addClass(x1,"t2");
+                  // removeClass(x1,"t2");
+                  toggleClass(x1,"t2");
+	    	};
+	   /*
+        写一个方法，用于添加className
+        obj需要添加类名的对象
+        cn,要加上的类名
+	   */
+	   function addClass(obj,cn){
+	      	if(!hasClass(obj,cn)){
+                 obj.className += " "+cn;
+	    	};
+	   };
+	    /*
+        写一个方法，用于判断是否已有要添加的className
+	   */
+	   function hasClass(obj,cn){
+          var reg = new RegExp("\\b"+cn+"\\b");
+          return reg.test(obj.className);
+	   };
+	    /*
+        写一个方法，用于移除相应的的className
+	   */
+	   function removeClass(obj,cn){
+	   	 var reg = new RegExp("\\b"+cn+"\\b");
+	   	 obj.className = obj.className.replace(reg,"");
+	   };
+	    /*
+        写一个方法，类似于toggle
+	   */
+	   function toggleClass(obj,cn){
+	   	if(hasClass(obj,cn)){
+             removeClass(obj,cn);
+	   	}else{
+             addClass(obj,cn);
+	   	};
+	   };
+	};
+	</script>
+</head>
+<body>
+	<div class="t1 t2" id="x1">点我</div>
+    <!-- <div class="t2" id="x2"></div> -->
+	
+</body>
+</html>

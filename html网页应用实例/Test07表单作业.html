@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>表单作业</title>
+	<style type="text/css">
+		body{
+			width: 1000px;
+			background-color: lightyellow;
+			background: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549275619754&di=9fea2cdd6394c168cdc341b8826ab1d2&imgtype=0&src=http%3A%2F%2Fimgs.aixifan.com%2Flive%2F1484548320137%2F1484548320137.jpg");
+			margin: 300px;
+		    }
+		form{
+			width: 400px;
+			height: 350px;
+            margin-left: 400px;
+            padding:20px;
+		    }
+		.x2{
+             margin-left: 150px;
+		    }
+        </style>
+        <script type="text/javascript">
+        	window.onload = function(){
+        	var a = document.getElementById("bu");
+        	a.onclick = function(){
+        		alert("你好");
+        	};
+        };
+        </script>
+</head>
+<body>
+
+	<form>
+		<p>
+			<span>&nbsp&nbsp&nbsp*手机号码</span>
+			<input type="text" name="">
+			<span>@163.com</span>
+		</p>
+		<p>
+			<span>*图片验证码</span>
+			<input type="text" name="">
+			<span><img src="images/yzm.png"></span><br>
+			<input type="button" name="" value="免费获取验证码">
+		</p>
+		<p>
+			<span>*短信验证码</span>
+			<input type="text" name="">
+		</p>
+		<p>
+			<span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp*密码</span>
+			<input type="password" name="">
+		</p>
+		<p>
+			<span>&nbsp&nbsp&nbsp*确认密码</span>
+			<input type="password" name="">
+		</p>
+		<p>
+			<span>
+				<input type="checkbox" name="" checked="true" id="1">
+				<label for="1">同意"服务条款"和"用户须知"、"隐私权相关政策"</label>
+			</span>
+		</p>
+		<div class="x2">
+		<p>
+			<span><input type="submit" name="" value="立即注册" id="bu"></span>
+		</p>
+		</div>
+	</form>
+
+</body>
+</html>

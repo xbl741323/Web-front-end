@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>定时器切换图片</title>
+	<style type="text/css">
+		body{
+			background-color: lightyellow;
+		}
+	</style>
+	<script src="jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+	    window.onload = function(){
+	    	var t1 = document.getElementById("t1");
+	    	var btn1 = document.getElementById("btn1");
+	    	var btn2 = document.getElementById("btn2");
+	    	var imgtimr;
+	    	// btn1.onclick = function(){
+               var imgArr = ["images/t1.jpg","images/t2.jpg","images/t3.jpg","images/t4.jpg","images/t5.jpg"];
+	           var index = 0;
+	           //开启之前我们先关闭上一个定时器，就不会导致开启多个定时器
+	           clearInterval(imgtimr);
+	           imgtimr = setInterval(function(){
+	        	t1.src = imgArr[index++];
+	        	// if(index == imgArr.length){
+	        	// 	index = 0;
+	        	// };
+	        	index = index % imgArr.length;
+	        },1000);
+	    	// };
+	    	btn2.onclick = function(){
+	    		clearInterval(imgtimr);
+	    	};
+	};
+	</script>
+</head>
+<body>
+    <img id="t1" src="images/t1.jpg">
+    <button id="btn1">开始</button>
+    <button id="btn2">停止</button>
+	
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html> <html> <head> <meta charset="utf-8" /> <title></title> <link rel="stylesheet" type="text/css" href="css/menu.css"/> <link rel="stylesheet" type="text/css" href="css/font-awesome-4.5.0/css/font-awesome.css"/> <script src="js/jquery.min.js"></script> <style type="text/css">
+            body{
+                margin: 0;
+                padding: 0;
+            }
+            .menu{
+                background: #2E3344;
+                width: 200px;
+                height: 100%;
+                color: white;
+                position: fixed;
+                float: left;
+            }
+            .main-menu{
+                height: 40px;
+                line-height: 40px;
+                cursor: pointer;
+            }
+            .menu ul{
+                padding : 0;
+                margin: 0;
+            }
+            .menu li{
+                list-style: none;
+                background: #3A3F51;
+                height: 40px;
+                line-height: 40px;
+                padding-left: 50px;
+            }
+            .menu-icon{
+                color: #27C24C;
+                padding-left: 15px;
+                padding-right: 5px;
+            }
+            .menu .angle-icon{
+                height: 40px;
+                line-height: 40px;
+                float: right;
+                margin-right: 20px;
+            }
+            iframe{
+                position: fixed;
+            }
+            .header{
+                height: 70px;
+                width: 100%;
+                background: greenyellow;
+            }
+        </style> </head> <body> <div class="header"> header </div> <div class="menu"> <div class="menu-item"> <div class="main-menu"> <i class="fa fa-home fa-lg menu-icon"></i> 个人信息 </div> </div> <div class="menu-item"> <div class="main-menu"> <i class="fa fa-home fa-lg menu-icon"></i> 我的关注 <span class="angle-icon"><i class="fa fa-angle-right  "></i></span> </div> <ul> <li class="child-menu" onclick="show('test.html')">项目</li> <li class="child-menu" onclick="show('http://www.baidu.com')">帖子</li> </ul> </div> <div class="menu-item"> <div class="main-menu"> <i class="fa fa-home fa-lg menu-icon"></i> 我的消息 <span class="angle-icon"><i class="fa fa-angle-right"></i></span> </div> <ul> <li class="child-menu">个人消息</li> <li class="child-menu">论坛消息</li> </ul> </div> <div class="menu-item"> <div class="main-menu"> <i class="fa fa-home fa-lg menu-icon"></i> 发布的项目 <span class="angle-icon"><i class="fa fa-angle-right"></i></span> </div> <ul> <li class="child-menu">淘宝网</li> <li class="child-menu">腾讯QQ</li> </ul> </div> </div> <iframe scrolling="auto" frameborder="0"  src="test.html" style="width:950px;height:100%;margin-left: 200px;"></iframe> </body> <script type="text/javascript">
+        $('.main-menu').click(function(){
+            $(this).next().slideToggle();
+            var has = $(this).find('.angle-icon').hasClass("fa-rotate-90");
+            if(has){
+                $(this).find('.angle-icon').removeClass("fa-rotate-90");
+            }else{
+                $(this).find('.angle-icon').addClass("fa-rotate-90");
+            }
+        });
+        var menuwidth = $('.menu').width();
+        var sreenwidth = window.screen.width;
+        var framewidth = sreenwidth - menuwidth;
+        $('iframe').width(parseInt(framewidth) );
+        function show(url){
+            $('iframe').attr('src',url);
+        }
+    </script> </html>

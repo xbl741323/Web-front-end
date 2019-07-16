@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-15</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+
+        .top {
+            height: 50px;
+            border-bottom: 1px solid;
+            margin-bottom: 30px;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        table,
+        th,
+        td {
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            width: 300px;
+            text-align: center;
+            color: blueviolet;
+            font-size: 13px;
+        }
+
+        .title {
+            background-color: blueviolet;
+            color: #fff;
+            height: 30px;
+            text-indent: 2em;
+            line-height: 30px;
+            margin-bottom: 10px;
+        }
+
+        label {
+            color: blueviolet;
+            font-size: 13px;
+        }
+
+        input {
+            border: 1px solid;
+            border-color: blueviolet;
+            color: blueviolet;
+        }
+
+        .button {
+            background-color: blueviolet;
+            color: #fff;
+            padding: 2px 4px 2px;
+            border-radius: 5px;
+
+        }
+
+        .v-enter,
+        .v-leave-to {
+            opacity: 0;
+            transform: translateY(80px);
+        }
+
+        .v-enter-active,
+        .v-leave-active {
+            transition: all 0.6s ease;
+        }
+    </style>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <div class="title">添加品牌</div>
+        <div class="top">
+            <label for="">id:
+                <input type="text" v-model="id">
+            </label>
+            <label for="">name:
+                <input type="text" v-model="name">
+            </label>
+            <label for="">
+                <input type="button" value="添加" @click="add" class="button">
+            </label>
+            <label for="">搜索关键词：
+                <input type="text" v-model="keywords">
+            </label>
+        </div>
+        <table border="1px">
+            <thead>
+                <th>id</th>
+                <th>品牌名称</th>
+                <th>添加时间</th>
+                <th>操作</th>
+            </thead>
+            <!-- 之前，v-for中的数据，都是直接从data中的list中直接渲染过来的-->
+            <!-- 现在，我们自定义了一个search方法，同时，把所有的关键词通过传参的形式，传递给了serach方法-->
+            <!-- 在search方法内部，通过执行for循环，把所有符合关键词的数据，保存到一个新的数组中-->
+            <transition-group>
+                <tbody v-for="item in search(keywords)" :key="item.id">
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.date}}</td>
+                    <td><a href="" @click.prevent="del(item.id)">删除</a></td>
+                </tbody>
+            </transition-group>
+        </table>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: ".app",
+            data: {
+                id: "",
+                name: "",
+                keywords: "",
+                list: [
+                    { id: 1, name: "奥迪", date: new Date() },
+                    { id: 2, name: "宝马", date: new Date() }
+                ]
+            },
+            methods: {
+                add() {
+                    var item = { id: this.id, name: this.name, date: new Date() }
+                    this.list.push(item)
+                    this.id = this.name = ""
+                },
+                del(id) {
+                    this.list.some((item, i) => {
+                        if (item.id == id) {
+                            this.list.splice(i, 1)
+                            //在数组的some()方法中，如果return就会立即终止这个数组的后续循环
+                            return true;
+                        }
+                    })
+                },
+                //    search(keywords){
+                //        var newList = []
+                //        this.list.forEach(item => {
+                //            if(item.name.indexOf(keywords)!= -1){
+                //                newList.push(item)
+                //            }
+                //        });
+                //        return newList;
+                //    }
+                //foreach some filter findIndex 这些都护属于数组的新方法
+                //另一种方法实现搜索功能
+                search(keywords) {
+                    return this.list.filter(item => {
+                        if (item.name.includes(keywords)) {
+                            return item
+                        }
+                    })
+                }
+            },
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>完成bind函数</title>
+	<style type="text/css">
+		body{
+			background-color: lightyellow;
+		}
+		
+	</style>
+	<script src="jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+	    window.onload = function(){
+	    	 function bind(obj,eventStr,callback){
+        	if(obj.addEventListener){
+        	//大部分浏览器兼容的方式
+        	obj.addEventListener(eventStr,callback,false);
+            }else{
+        	//Ie8兼容的方式
+        	obj.attachEvent("on"+eventStr,function(){
+        		callback.call(obj);//用于设置this的对象
+        	});
+        };
+       };
+        var btn = document.getElementById("btn");
+        bind(btn,"click",function(){
+        	alert(this);
+        });
+
+	    };
+	</script>
+</head>
+<body>
+	<button id="btn">按钮</button>
+	
+
+</body>
+</html>

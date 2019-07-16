@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-8</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+    </style>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <p style="color: red;font-size: 30px;font-style: italic">aada</p>
+        <!-- 对象是无序键值对的集合，中间有-的要用''号引用-->
+        <!-- 当然也可以提取出来-->
+        <p :style="{color:'red','font-size':'30px','font-style':'italic'}">ddad</p>
+        <p :style="styleobj">ccbc</p>
+        <!-- 引用多个对象放到数组里使用-->
+        <p :style="[styleobj,styleobj2]">gghg</p>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: ".app",
+            data: {
+                msg: "123",
+                styleobj: { color: 'red', 'font-size': '30px', 'font-style': 'italic' },
+                styleobj2: { color: 'blue' }
+            },
+            methods: {
+
+            },
+        })
+    </script>
+</body>
+
+</html>
